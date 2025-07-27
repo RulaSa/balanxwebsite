@@ -117,22 +117,59 @@ export function PreOrder() {
           >
             <div>
               <h3 className="text-2xl font-light text-stone-800 mb-6">Your Wellness Timeline</h3>
-              <div className="space-y-6">
-                {timeline.map((item, index) => (
-                  <div key={item.phase} className="flex items-center space-x-4">
-                    <div
-                      className={`w-3 h-3 rounded-full ${
-                        item.status === "active" ? "bg-gradient-to-r from-stone-600 to-stone-700" : "bg-stone-300"
-                      }`}
-                    />
-                    <div className="flex-1">
-                      <p className={`font-light ${item.status === "active" ? "text-stone-800" : "text-stone-500"}`}>
-                        {item.phase}
-                      </p>
-                      <p className="text-sm text-stone-400 font-light">{item.date}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="relative">
+                {/* 动态线条 */}
+                <motion.div
+                  className="absolute left-[5px] top-6 w-0.5 bg-gradient-to-b from-stone-600 via-stone-400 to-stone-300"
+                  initial={{ height: 0 }}
+                  whileInView={{ height: 'calc(100% - 48px)' }}
+                  transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+                  viewport={{ once: true }}
+                />
+                
+                <div className="space-y-6 relative">
+                  {timeline.map((item, index) => (
+                    <motion.div 
+                      key={item.phase} 
+                      className="flex items-center space-x-4 relative z-10"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.2 }}
+                      viewport={{ once: true }}
+                    >
+                      <motion.div
+                        className={`w-3 h-3 rounded-full relative z-20 ${
+                          item.status === "active" ? "bg-gradient-to-r from-stone-600 to-stone-700" : "bg-stone-300"
+                        }`}
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
+                        viewport={{ once: true }}
+                      >
+                        {/* 发光效果 */}
+                        {item.status === "active" && (
+                          <motion.div
+                            className="absolute inset-0 w-3 h-3 rounded-full bg-stone-600"
+                            animate={{ 
+                              boxShadow: [
+                                "0 0 0 0 rgba(87, 83, 78, 0.4)",
+                                "0 0 0 8px rgba(87, 83, 78, 0)",
+                                "0 0 0 0 rgba(87, 83, 78, 0)"
+                              ]
+                            }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          />
+                        )}
+                      </motion.div>
+                      <div className="flex-1">
+                        <p className={`font-light ${item.status === "active" ? "text-stone-800" : "text-stone-500"}`}>
+                          {item.phase}
+                        </p>
+                        <p className="text-sm text-stone-400 font-light">{item.date}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
 
