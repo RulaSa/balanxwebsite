@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -73,13 +73,15 @@ export function Products() {
             </div>
 
             <div className="pt-4">
-              <Button
-                size="lg"
-                className="bg-stone-800 hover:bg-stone-900 text-stone-50 px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Pre-Order Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link href="/pre-order">
+                <Button
+                  size="lg"
+                  className="bg-stone-800 hover:bg-stone-900 text-stone-50 px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Pre-Order Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

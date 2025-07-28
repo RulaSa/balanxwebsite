@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
@@ -38,13 +39,15 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button
-                size="lg"
-                className="bg-stone-800 hover:bg-stone-900 text-stone-50 px-8 py-4 text-base font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Pre-Order BalanX-D
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+            <Link href="/pre-order">
+                <Button
+                  size="lg"
+                  className="bg-stone-800 hover:bg-stone-900 text-stone-50 px-8 py-4 text-base font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Pre-Order BalanX-D
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
 
               <Button
                 variant="outline"

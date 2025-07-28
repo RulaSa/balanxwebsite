@@ -38,9 +38,12 @@ export function Navbar() {
           element.scrollIntoView({ behavior: "smooth" })
         }
       }
+    } else if (href === "/") {
+      // For home page navigation
+      window.location.href = href
     } else {
-      // For regular page navigation, scroll to top
-      window.scrollTo(0, 0)
+      // For other regular page navigation
+      window.location.href = href
     }
     setIsOpen(false)
   }
@@ -84,9 +87,12 @@ export function Navbar() {
             >
               Support
             </Button>
-            <Button className="bg-stone-800 hover:bg-stone-900 text-stone-50 font-medium rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              Shop
-            </Button>
+            <Link href="/pre-order">
+              <Button className="bg-stone-800 hover:bg-stone-900 text-stone-50 font-medium rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                Shop
+              </Button>
+            </Link>
+ 
           </div>
 
           {/* Mobile Navigation */}
