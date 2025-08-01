@@ -5,21 +5,29 @@ import { gsap } from "gsap"
 
 const services = [
   {
-    title: "AI + Microbiome",
+    title: "Advanced Sensor Technology",
     description:
-      "Our advanced AI algorithms analyze your genetic markers and microbiome composition to provide personalized insights into your constitutional type and optimal wellness pathways.",
-    element: "Explaining Genotypes",
-    color: "light-green",
+      "Precision biomarker sensors integrated directly into the brewing cup for real-time constitutional analysis and personalized wellness insights.",
+    element: "Technology",
+    color: "blue",
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" className="mx-auto">
-        <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="24" cy="12" r="4" fill="currentColor" opacity="0.8" />
-        <circle cx="12" cy="24" r="3" fill="currentColor" opacity="0.6" />
-        <circle cx="36" cy="24" r="3" fill="currentColor" opacity="0.6" />
-        <circle cx="18" cy="36" r="2" fill="currentColor" opacity="0.4" />
-        <circle cx="30" cy="36" r="2" fill="currentColor" opacity="0.4" />
+        <rect
+          x="8"
+          y="8"
+          width="32"
+          height="32"
+          rx="6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
+        <circle cx="24" cy="24" r="4" fill="currentColor" />
         <path
-          d="M24 16 L24 20 M20 24 L28 24 M22 32 L26 32"
+          d="M16 16 L20 20 M28 20 L32 16 M32 32 L28 28 M20 28 L16 32"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
@@ -28,37 +36,55 @@ const services = [
     ),
   },
   {
-    title: "Traditional Balance System",
+    title: "Multi-Chamber Flavor Tanks",
     description:
-      "Ancient wisdom meets modern precision as we map your constitutional type through the lens of Wood, Fire, Earth, Metal, and Water elements, providing timeless insights for contemporary wellness.",
-    element: "Five Elements",
-    color: "gold",
+      "Intelligent dispensing system with separate chambers for herbs, adaptogens, and flavor compounds, ensuring perfect constitutional blending.",
+    element: "System",
+    color: "light-green",
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" className="mx-auto">
-        <polygon points="24,6 32,18 16,18" fill="none" stroke="currentColor" strokeWidth="2" />
-        <polygon points="36,16 42,24 36,32 30,24" fill="none" stroke="currentColor" strokeWidth="2" />
-        <polygon points="30,30 42,42 16,42" fill="none" stroke="currentColor" strokeWidth="2" />
-        <polygon points="16,30 6,42 6,18" fill="none" stroke="currentColor" strokeWidth="2" />
-        <polygon points="12,16 16,24 12,32 6,24" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
+        <path
+          d="M24 8 C20 12, 16 16, 20 24 C16 20, 12 24, 16 32 C20 28, 28 32, 24 24 C28 28, 32 24, 28 16 C24 20, 24 8, 24 8 Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="18" cy="18" r="2" fill="currentColor" />
+        <circle cx="30" cy="18" r="2" fill="currentColor" />
+        <circle cx="24" cy="30" r="2" fill="currentColor" />
       </svg>
     ),
   },
   {
-    title: "Hardware Design",
+    title: "Responsive Touchscreen UI",
     description:
-      "Precision-engineered biosensors with medical-grade accuracy ensure safe, non-invasive analysis. Our FDA-compliant devices deliver laboratory-quality results in the comfort of your home.",
-    element: "Sensors, Accuracy & Safety",
-    color: "rose-gold",
+      "Intuitive interface that adapts to your constitutional type, providing mindful guidance through each brewing ritual and wellness journey.",
+    element: "Interface",
+    color: "gold",
     icon: (
       <svg width="48" height="48" viewBox="0 0 48 48" className="mx-auto">
-        <rect x="12" y="14" width="24" height="20" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="24" cy="24" r="3" fill="currentColor" />
-        <rect x="14" y="12" width="20" height="2" rx="1" fill="currentColor" />
-        <rect x="16" y="36" width="16" height="2" rx="1" fill="currentColor" />
-        <path d="M18 18 L20 20 M26 20 L28 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M18 30 L20 28 M26 28 L28 30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <rect
+          x="10"
+          y="6"
+          width="28"
+          height="36"
+          rx="4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <rect x="14" y="12" width="20" height="24" rx="2" fill="none" stroke="currentColor" strokeWidth="1" />
+        <circle cx="24" cy="39" r="2" fill="currentColor" />
+        <path
+          d="M18 18 L30 18 M18 22 L26 22 M18 26 L28 26"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeLinecap="round"
+        />
       </svg>
     ),
   },
@@ -203,12 +229,57 @@ export default function ServicesSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <h2
-          className="text-6xl md:text-8xl font-serif font-bold text-center mb-20 text-gray-800 tracking-wide"
-          style={{ fontFamily: "Playfair Display, serif" }}
-        >
-          Specifications
-        </h2>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          {/* Header Title & Description */}
+          <div className="text-center mb-16 font-serif px-4 max-w-7xl mx-auto">
+            <h2
+              className="text-7xl md:text-8xl font-bold text-gray-900 tracking-wider mb-12"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              BALANX-D
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-4">
+              Experience the perfect fusion of ancient wisdom and cutting-edge technology.
+            </p>
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+              World’s first smart coffee system BalanX-D represents a breakthrough in personalized wellness, combining
+              traditional Chinese medicine principles with advanced biomarker analysis.
+            </p>
+          </div>
+
+          {/* Icon Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+            <div className="text-center font-serif">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-2xl">✔️</span>
+              </div>
+              <h3 className="text-lg font-semibold">Precision Analysis</h3>
+              <p className="text-sm text-gray-600 max-w-xs mx-auto">
+                Medical-grade sensors for accurate biomarker detection
+              </p>
+            </div>
+
+            <div className="text-center font-serif">
+              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-2xl">◯</span>
+              </div>
+              <h3 className="text-lg font-semibold">Five Elements</h3>
+              <p className="text-sm text-gray-600 max-w-xs mx-auto">
+                Traditional constitutional typing meets AI intelligence
+              </p>
+            </div>
+
+            <div className="text-center font-serif">
+              <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-2xl">⏱</span>
+              </div>
+              <h3 className="text-lg font-semibold">Real-time Brewing</h3>
+              <p className="text-sm text-gray-600 max-w-xs mx-auto">
+                Instant personalization for every wellness moment
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Product Video Showcase */}
         <div ref={productImageRef} className="flex justify-center mb-20">
@@ -216,7 +287,10 @@ export default function ServicesSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-light-green-200 via-gold-200 to-rose-gold-200 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
             <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-rose-gold-200">
               <video className="w-full max-w-2xl h-auto rounded-2xl shadow-lg" autoPlay loop muted playsInline>
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/exploded-c2BW47Iuofn3ftCarrnZ8mxKbcF4al.mp4" type="video/mp4" />
+                <source
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/exploded-c2BW47Iuofn3ftCarrnZ8mxKbcF4al.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
               <div className="text-center mt-6">
