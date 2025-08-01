@@ -42,6 +42,7 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
 
       // Set initial state for words
       gsap.set(".word-animation", { opacity: 0, y: 20 })
+      gsap.set(".scroll-indicator", { opacity: 0, y: 30 })
 
       // Add word-by-word animation with subtle upward motion, staggered per line
       tl.to(
@@ -54,17 +55,28 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
           ease: "power2.out",
         },
         "-=0.5",
-      ).to(
-        ".line-2 .word-animation",
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-          stagger: 0.08,
-          ease: "power2.out",
-        },
-        "-=0.1",
       )
+        .to(
+          ".line-2 .word-animation",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
+            stagger: 0.08,
+            ease: "power2.out",
+          },
+          "-=0.1",
+        )
+        .to(
+          ".scroll-indicator",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.2",
+        )
     }, containerRef)
 
     // Initialize particles
@@ -209,7 +221,10 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
     >
       {/* Video Background */}
       <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted playsInline>
-        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dancer-DIQ2HK31rtwu1YHZgZsN6E6zhCTG5U.mp4" type="video/mp4" />
+        <source
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dancer-DIQ2HK31rtwu1YHZgZsN6E6zhCTG5U.mp4"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 
@@ -247,7 +262,6 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
             <span className="word-animation inline-block mr-3">meets</span>
             <span className="word-animation inline-block mr-3">the</span>
             <span className="word-animation inline-block mr-3">invisible</span>
-            
           </span>
           <span className="line-2 block font-semibold font-serif">
             <span className="word-animation inline-block mr-3">decoding</span>
@@ -257,7 +271,7 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
             <span className="word-animation inline-block font-serif">BALANX-BIO.</span>
           </span>
         </p>
-        <div className="intro-element flex flex-col items-center">
+        <div className="intro-element scroll-indicator flex flex-col items-center">
           <p className="text-white/70 text-sm mb-4 tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>
             Scroll to explore
           </p>
