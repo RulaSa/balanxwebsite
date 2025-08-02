@@ -4,15 +4,16 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 
 export default function TechnologySection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const textRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
+    if (typeof window === "undefined") return
+
     const ctx = gsap.context(() => {
-      // Text animation with enhanced visibility - entrance only
+      // Title entrance animation
       gsap.fromTo(
-        textRef.current,
+        titleRef.current,
         {
           opacity: 0,
           scale: 0.8,
@@ -36,51 +37,41 @@ export default function TechnologySection() {
     return () => ctx.revert()
   }, [])
 
-  useEffect(() => {
-    // Auto-play video when component mounts
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.error)
-    }
-  }, [])
-
   return (
     <section
       ref={sectionRef}
-      data-section="technology"
-      className="fade-in-section relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden fade-in-section"
+      id="technology"
     >
       {/* Video Background */}
-      <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline>
+      <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-0">
         <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/j6Ehp0_UnYnQ7HKqHYvhF4/public/images/flame.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
 
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
-        <div ref={textRef}>
-          <h2
-            className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-bold text-white leading-tight opacity-100"
-            style={{
-              fontFamily: "Playfair Display, serif",
-              textShadow: "0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.6)",
-              filter: "drop-shadow(0 0 10px rgba(255, 255, 255, 0.1))",
-            }}
-          >
-            Our Technology
-          </h2>
+      <div className="relative z-20 text-center px-4">
+        <h2
+          ref={titleRef}
+          className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-8"
+          style={{
+            textShadow: "0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.2), 2px 2px 4px rgba(0,0,0,0.8)",
+            filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))",
+          }}
+        >
+          Our Technology
+        </h2>
 
-          {/* Subtle accent line */}
-          
-        </div>
+        {/* Decorative accent line */}
+        <div className="w-32 h-1 bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto" />
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/30 rounded-full floating"></div>
-      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-white/20 rounded-full floating"></div>
-      <div className="absolute top-2/3 left-1/6 w-1 h-1 bg-white/40 rounded-full floating"></div>
+      {/* Floating decorative elements */}
+      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/30 rounded-full floating" />
+      <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-white/20 rounded-full floating" />
+      <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-white/40 rounded-full floating" />
     </section>
   )
 }
