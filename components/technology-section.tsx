@@ -144,7 +144,7 @@ export default function TechnologySection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative min-h-[250vh] overflow-hidden fade-in-section" id="technology">
+    <section ref={sectionRef} className="relative min-h-[210vh] overflow-hidden fade-in-section" id="technology">
       {/* Video Background - stays the same */}
       <div className="fixed inset-0 w-full h-full z-0">
         <video autoPlay muted loop playsInline className="w-full h-full object-cover">
