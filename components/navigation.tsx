@@ -45,7 +45,7 @@ export default function Navigation() {
   return (
     <nav
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 py-11 ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-rose-gold-200"
           : "bg-gradient-to-b from-white/80 to-transparent"
