@@ -189,7 +189,7 @@ export default function TechnologySection() {
           <div className="flex-none py-6">
             <h2
               ref={ourSensorRef}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center font-serif"
               style={{
                 textShadow: "0 0 20px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.8)",
               }}
