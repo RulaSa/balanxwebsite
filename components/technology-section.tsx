@@ -148,10 +148,7 @@ export default function TechnologySection() {
       {/* Video Background - stays the same */}
       <div className="fixed inset-0 w-full h-full z-0">
         <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-          <source
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/j6Ehp0_UnYnQ7HKqHYvhF4/public/images/flame.mp4"
-            type="video/mp4"
-          />
+          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/WPRO5HDIqVCY7-QDD5kfdE/public/images/golden.mp4" type="video/mp4" />
         </video>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/40" />
@@ -179,7 +176,10 @@ export default function TechnologySection() {
           <div ref={videoContainerRef} className="flex-1 flex items-center justify-center px-8 pt-8">
             <div className="relative w-full max-w-2xl aspect-video rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
               <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/JyXrmrQUs6ws-vAuT3gcb3/public/images/sensor.mp4" type="video/mp4" />
+                <source
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/JyXrmrQUs6ws-vAuT3gcb3/public/images/sensor.mp4"
+                  type="video/mp4"
+                />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
