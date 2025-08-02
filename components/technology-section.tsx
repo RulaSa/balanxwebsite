@@ -10,7 +10,7 @@ export default function TechnologySection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Text animation with enhanced visibility
+      // Text animation with enhanced visibility - entrance only
       gsap.fromTo(
         textRef.current,
         {
@@ -31,16 +31,6 @@ export default function TechnologySection() {
           },
         },
       )
-
-      // Subtle text floating animation
-      gsap.to(textRef.current, {
-        y: -10,
-        duration: 3,
-        ease: "power1.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 1,
-      })
     }, sectionRef)
 
     return () => ctx.revert()
