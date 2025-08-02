@@ -158,7 +158,7 @@ export default function TechnologySection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 min-h-[210vh]">
+      <div className="relative z-20 min-h-[220vh]">
         {/* Initial "Our Technology" Title */}
         <div className="sticky top-0 h-screen flex items-center justify-center">
           <h2
