@@ -144,7 +144,7 @@ export default function TechnologySection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative min-h-[240vh] overflow-hidden fade-in-section" id="technology">
+    <section ref={sectionRef} className="relative min-h-[220vh] overflow-hidden fade-in-section" id="technology">
       {/* Video Background - stays the same */}
       <div className="fixed inset-0 w-full h-full z-0">
         <video autoPlay muted loop playsInline className="w-full h-full object-cover">
@@ -158,7 +158,7 @@ export default function TechnologySection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 min-h-[240vh]">
+      <div className="relative z-20 min-h-[220vh]">
         {/* Initial "Our Technology" Title */}
         <div className="sticky top-0 h-screen flex items-center justify-center">
           <h2
