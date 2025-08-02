@@ -41,9 +41,9 @@ const biomarkers = [
     color: "from-purple-400 to-purple-600",
   },
   {
-    name: "Conductivity",
+    name: "Electrolytes",
     icon: Radio,
-    description: "Electrical conductance measurement",
+    description: "Essential mineral balance",
     color: "from-cyan-400 to-cyan-600",
   },
 ]

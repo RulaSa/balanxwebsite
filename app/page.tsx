@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import IntroSection from "@/components/intro-section"
 import HeroSection from "@/components/hero-section"
+import IntroSection from "@/components/intro-section"
 import AboutSection from "@/components/about-section"
 import ScienceSection from "@/components/science-section"
 import TechnologySection from "@/components/technology-section"
@@ -14,6 +14,7 @@ import ContactSection from "@/components/contact-section"
 import Navigation from "@/components/navigation"
 import ParticleField from "@/components/particle-field"
 import AudioManager from "@/components/audio-manager"
+import SmoothScroll from "@/components/smooth-scroll"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -93,17 +94,17 @@ export default function Home() {
   }, [showMainContent])
 
   return (
-    <>
-      <AudioManager />
-      {!showMainContent && <IntroSection onComplete={() => setShowMainContent(true)} />}
-      <div
-        ref={containerRef}
-        className={`relative w-full h-full transition-opacity duration-1000 ${showMainContent ? "opacity-100" : "opacity-0"}`}
-        style={{ pointerEvents: showMainContent ? "auto" : "none" }}
-      >
-        <ParticleField />
-        <Navigation />
-        <main>
+    <SmoothScroll>
+      <main className="relative">
+        <AudioManager />
+        {!showMainContent && <IntroSection onComplete={() => setShowMainContent(true)} />}
+        <div
+          ref={containerRef}
+          className={`relative w-full h-full transition-opacity duration-1000 ${showMainContent ? "opacity-100" : "opacity-0"}`}
+          style={{ pointerEvents: showMainContent ? "auto" : "none" }}
+        >
+          <ParticleField />
+          <Navigation />
           <HeroSection />
           <AboutSection />
           <ScienceSection />
@@ -111,8 +112,8 @@ export default function Home() {
           <ServicesSection />
           <ScrollRevealSection />
           <ContactSection />
-        </main>
-      </div>
-    </>
+        </div>
+      </main>
+    </SmoothScroll>
   )
 }
