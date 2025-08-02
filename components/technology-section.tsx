@@ -62,7 +62,7 @@ export default function TechnologySection() {
       <div className="relative z-10 text-center px-6">
         <div ref={textRef}>
           <h2
-            className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-bold text-white leading-tight"
+            className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-bold text-white leading-tight opacity-100"
             style={{
               fontFamily: "Playfair Display, serif",
               textShadow: "0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.6)",
@@ -73,7 +73,7 @@ export default function TechnologySection() {
           </h2>
 
           {/* Subtle accent line */}
-          <div className="mt-8 mx-auto w-24 h-1 bg-white/60 rounded-full"></div>
+          
         </div>
       </div>
 
