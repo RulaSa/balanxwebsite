@@ -126,7 +126,7 @@ export default function TechnologySection() {
         0.4,
       )
 
-      // Show biomarkers at the bottom with stagger
+      // Show biomarkers earlier with stagger
       tl.to(
         ".biomarker-card",
         {
@@ -136,7 +136,7 @@ export default function TechnologySection() {
           duration: 0.5,
           stagger: 0.1,
         },
-        0.6,
+        0.5, // Changed from 0.6 to 0.5 to appear earlier
       )
     }, sectionRef)
 
