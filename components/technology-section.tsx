@@ -97,23 +97,27 @@ export default function TechnologySection() {
         },
       })
 
-      // Fade out "Our Technology"
-      tl.to(ourTechnologyRef.current, {
-        opacity: 0,
-        y: -50,
-        duration: 0.3,
-      })
-
-      // Show video container first
+      // Show video container first (while "Our Technology" is still visible)
       tl.to(
         videoContainerRef.current,
         {
           opacity: 1,
           scale: 1,
-          duration: 0.4,
+          duration: 0.3,
         },
-        0.2,
+        0.1,
       )
+
+      // Keep "Our Technology" visible longer, start fading after video appears
+      tl.to(
+        ourTechnologyRef.current,
+        {
+          opacity: 0,
+          y: -50,
+          duration: 0.3,
+        },
+        0.4,
+      ) // Delayed start - video appears first, then title fades
 
       // Fade in "Our Sensor" below the video
       tl.to(
@@ -123,7 +127,7 @@ export default function TechnologySection() {
           y: 0,
           duration: 0.3,
         },
-        0.4,
+        0.5,
       )
 
       // Show biomarkers at the bottom with stagger
@@ -133,7 +137,7 @@ export default function TechnologySection() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.5,
+          duration: 0.4,
           stagger: 0.1,
         },
         0.6,
