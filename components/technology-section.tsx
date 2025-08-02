@@ -104,24 +104,24 @@ export default function TechnologySection() {
         duration: 0.3,
       })
 
-      // Fade in "Our Sensor" at the top
-      tl.to(
-        ourSensorRef.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-        },
-        0.2,
-      )
-
-      // Show video container in the middle
+      // Show video container first
       tl.to(
         videoContainerRef.current,
         {
           opacity: 1,
           scale: 1,
           duration: 0.4,
+        },
+        0.2,
+      )
+
+      // Fade in "Our Sensor" below the video
+      tl.to(
+        ourSensorRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
         },
         0.4,
       )
@@ -175,8 +175,18 @@ export default function TechnologySection() {
 
         {/* Transformed Content */}
         <div className="sticky top-0 h-screen flex flex-col">
-          {/* "Our Sensor" at the top */}
-          <div className="flex-none pt-8 pb-4">
+          {/* Video at the top */}
+          <div ref={videoContainerRef} className="flex-1 flex items-center justify-center px-8 pt-8">
+            <div className="relative w-full max-w-2xl aspect-video rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
+              <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/JyXrmrQUs6ws-vAuT3gcb3/public/images/sensor.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
+          </div>
+
+          {/* "Our Sensor" below the video */}
+          <div className="flex-none py-6">
             <h2
               ref={ourSensorRef}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center"
@@ -186,16 +196,6 @@ export default function TechnologySection() {
             >
               Our Sensor
             </h2>
-          </div>
-
-          {/* Video in the middle */}
-          <div ref={videoContainerRef} className="flex-1 flex items-center justify-center px-8">
-            <div className="relative w-full max-w-2xl aspect-video rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
-              <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/JyXrmrQUs6ws-vAuT3gcb3/public/images/sensor.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
           </div>
 
           {/* Biomarkers at the bottom */}
