@@ -134,7 +134,7 @@ export default function TechnologySection() {
           y: 0,
           scale: 1,
           duration: 0.4,
-          stagger: 0.07,
+          stagger: 0.06,
         },
         0.5,
       )
