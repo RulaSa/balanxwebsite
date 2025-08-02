@@ -97,27 +97,23 @@ export default function TechnologySection() {
         },
       })
 
-      // Show video container first (while "Our Technology" is still visible)
+      // Fade out "Our Technology"
+      tl.to(ourTechnologyRef.current, {
+        opacity: 0,
+        y: -50,
+        duration: 0.3,
+      })
+
+      // Show video container first
       tl.to(
         videoContainerRef.current,
         {
           opacity: 1,
           scale: 1,
-          duration: 0.3,
+          duration: 0.4,
         },
-        0.1,
+        0.2,
       )
-
-      // Keep "Our Technology" visible longer, start fading after video appears
-      tl.to(
-        ourTechnologyRef.current,
-        {
-          opacity: 0,
-          y: -50,
-          duration: 0.3,
-        },
-        0.4,
-      ) // Delayed start - video appears first, then title fades
 
       // Fade in "Our Sensor" below the video
       tl.to(
@@ -127,7 +123,7 @@ export default function TechnologySection() {
           y: 0,
           duration: 0.3,
         },
-        0.5,
+        0.4,
       )
 
       // Show biomarkers at the bottom with stagger
@@ -137,7 +133,7 @@ export default function TechnologySection() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.4,
+          duration: 0.5,
           stagger: 0.1,
         },
         0.6,
@@ -148,7 +144,7 @@ export default function TechnologySection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative min-h-210vh] overflow-hidden fade-in-section" id="technology">
+    <section ref={sectionRef} className="relative min-h-[250vh] overflow-hidden fade-in-section" id="technology">
       {/* Video Background - stays the same */}
       <div className="fixed inset-0 w-full h-full z-0">
         <video autoPlay muted loop playsInline className="w-full h-full object-cover">
@@ -162,7 +158,7 @@ export default function TechnologySection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 min-h-[210vh]">
+      <div className="relative z-20 min-h-[250vh]">
         {/* Initial "Our Technology" Title */}
         <div className="sticky top-0 h-screen flex items-center justify-center">
           <h2
@@ -190,10 +186,10 @@ export default function TechnologySection() {
           </div>
 
           {/* "Our Sensor" below the video */}
-          <div className="flex-none py-10">
+          <div className="flex-none py-6">
             <h2
               ref={ourSensorRef}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center py-11"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center"
               style={{
                 textShadow: "0 0 20px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.8)",
               }}
@@ -203,7 +199,7 @@ export default function TechnologySection() {
           </div>
 
           {/* Biomarkers at the bottom */}
-          <div ref={biomarkersRef} className="flex-none pb-8">
+          <div ref={biomarkersRef} className="flex-none pb-16">
             <div className="max-w-7xl mx-auto px-4">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {biomarkers.map((biomarker, index) => {
