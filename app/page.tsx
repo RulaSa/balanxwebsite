@@ -7,12 +7,13 @@ import IntroSection from "@/components/intro-section"
 import HeroSection from "@/components/hero-section"
 import AboutSection from "@/components/about-section"
 import ScienceSection from "@/components/science-section"
+import TechnologySection from "@/components/technology-section"
 import ServicesSection from "@/components/services-section"
 import ScrollRevealSection from "@/components/scroll-reveal-section"
 import ContactSection from "@/components/contact-section"
 import Navigation from "@/components/navigation"
 import ParticleField from "@/components/particle-field"
-import AudioManager from "@/components/audio-manager" // Re-added AudioManager
+import AudioManager from "@/components/audio-manager"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -93,7 +94,7 @@ export default function Home() {
 
   return (
     <>
-      <AudioManager /> {/* AudioManager re-added here */}
+      <AudioManager />
       {!showMainContent && <IntroSection onComplete={() => setShowMainContent(true)} />}
       <div
         ref={containerRef}
@@ -106,6 +107,7 @@ export default function Home() {
           <HeroSection />
           <AboutSection />
           <ScienceSection />
+          <TechnologySection />
           <ServicesSection />
           <ScrollRevealSection />
           <ContactSection />
