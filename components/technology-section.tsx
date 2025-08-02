@@ -55,7 +55,7 @@ export default function TechnologySection() {
       <div className="relative z-20 text-center px-4">
         <h2
           ref={titleRef}
-          className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-8"
+          className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-8 font-serif"
           style={{
             textShadow: "0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.2), 2px 2px 4px rgba(0,0,0,0.8)",
             filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))",
