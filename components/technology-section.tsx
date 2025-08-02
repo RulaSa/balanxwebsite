@@ -62,7 +62,7 @@ export default function TechnologySection() {
       // Initial setup - hide elements that will appear later
       gsap.set(ourSensorRef.current, { opacity: 0, y: 50 })
       gsap.set(videoContainerRef.current, { opacity: 0, scale: 0.8 })
-      gsap.set(".biomarker-card", { opacity: 0, y: 60, scale: 0.9 })
+      // gsap.set(".biomarker-card", { opacity: 0, y: 60, scale: 0.9 }) // REMOVED
 
       // Initial "Our Technology" entrance
       gsap.fromTo(
@@ -127,17 +127,17 @@ export default function TechnologySection() {
       )
 
       // Show biomarkers earlier with stagger
-      tl.to(
-        ".biomarker-card",
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.1,
-        },
-        0.5, // Changed from 0.6 to 0.5 to appear earlier
-      )
+      // tl.to(
+      //   ".biomarker-card",
+      //   {
+      //     opacity: 1,
+      //     y: 0,
+      //     scale: 1,
+      //     duration: 0.5,
+      //     stagger: 0.1,
+      //   },
+      //   0.5, // Changed from 0.6 to 0.5 to appear earlier
+      // ) // REMOVED
     }, sectionRef)
 
     return () => ctx.revert()
@@ -179,7 +179,10 @@ export default function TechnologySection() {
           <div ref={videoContainerRef} className="flex-1 flex items-center justify-center px-8 pt-8">
             <div className="relative w-full max-w-2xl aspect-video rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
               <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/JyXrmrQUs6ws-vAuT3gcb3/public/images/sensor.mp4" type="video/mp4" />
+                <source
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/JyXrmrQUs6ws-vAuT3gcb3/public/images/sensor.mp4"
+                  type="video/mp4"
+                />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
@@ -207,7 +210,7 @@ export default function TechnologySection() {
                   return (
                     <div
                       key={biomarker.name}
-                      className="biomarker-card group relative bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+                      className="group relative bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
                     >
                       {/* Gradient Background */}
                       <div
