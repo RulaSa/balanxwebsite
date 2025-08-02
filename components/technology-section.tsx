@@ -35,9 +35,9 @@ const biomarkers = [
     color: "from-green-400 to-green-600",
   },
   {
-    name: "Electrolytes",
+    name: "pH",
     icon: Battery,
-    description: "Essential mineral balance",
+    description: "Acidity and alkalinity levels",
     color: "from-purple-400 to-purple-600",
   },
   {
