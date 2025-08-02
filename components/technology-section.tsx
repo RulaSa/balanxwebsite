@@ -101,7 +101,7 @@ export default function TechnologySection() {
       tl.to(ourTechnologyRef.current, {
         opacity: 0,
         y: -50,
-        duration: 0.3,
+        duration: 0.4,
       })
 
       // Show video container first
@@ -133,8 +133,8 @@ export default function TechnologySection() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.3,
-          stagger: 0.05,
+          duration: 0.4,
+          stagger: 0.07,
         },
         0.5,
       )
