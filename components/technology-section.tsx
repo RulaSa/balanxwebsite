@@ -61,7 +61,7 @@ export default function TechnologySection() {
     >
       {/* Video Background */}
       <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline>
-        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/JyXrmrQUs6ws-vAuT3gcb3/public/sensor.mp4" type="video/mp4" />
+        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/git-blob/prj_gt98gK1x0Ks6k94Ddc2Ylh8uoVeB/j6Ehp0_UnYnQ7HKqHYvhF4/public/images/flame.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
