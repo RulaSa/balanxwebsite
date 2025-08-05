@@ -146,6 +146,23 @@ export default function Navigation() {
                   Services
                 </a>
                 <a
+                  href="#second-last"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setIsMenuOpen(false)
+                    const secondLastSection = document.querySelector('[data-section="second-last"]')
+                    if (secondLastSection) {
+                      secondLastSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      })
+                    }
+                  }}
+                  className="block px-4 py-2 text-gray-800 hover:bg-light-green-50 hover:text-light-green-600 transition-colors duration-200"
+                >
+                  Join Us
+                </a>
+                <a
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault()

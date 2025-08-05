@@ -13,6 +13,7 @@ import ContactSection from "@/components/contact-section"
 import Navigation from "@/components/navigation"
 import ParticleField from "@/components/particle-field"
 import AudioManager from "@/components/audio-manager" // Re-added AudioManager
+import SecondLastSection from "@/components/second-last-section" // Added SecondLastSection import
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -108,6 +109,7 @@ export default function Home() {
           <ScienceSection />
           <ServicesSection />
           <ScrollRevealSection />
+          <SecondLastSection /> {/* Added SecondLastSection component */}
           <ContactSection />
         </main>
       </div>
