@@ -135,7 +135,7 @@ export default function HeroSection() {
           }}
         >
           {/* Feature Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto border-0 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto border-0 py-10 min-h-screen items-center justify-center">
             {/* Constitutional Wellness - Interactive */}
             <motion.div
               className="text-center space-y-4 cursor-pointer relative"
