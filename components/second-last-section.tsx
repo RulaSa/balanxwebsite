@@ -120,8 +120,7 @@ export default function SecondLastSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-12 leading-tight tracking-wide"
           style={{ fontFamily: "Playfair Display, serif" }}
         >
-          Modern healthcare research reveals the critical need for personalized wellness solutions that honor individual
-          constitutional differences.
+          Rooted in Ritual. Backed by Science. Focused on You.
         </h2>
 
         <button
