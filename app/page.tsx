@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import IntroSection from "@/components/intro-section"
 import HeroSection from "@/components/hero-section"
 import AboutSection from "@/components/about-section"
+import AIAlgorithmSection from "@/components/ai-algorithm-section"
 import ScienceSection from "@/components/science-section"
 import ServicesSection from "@/components/services-section"
 import ScrollRevealSection from "@/components/scroll-reveal-section"
@@ -105,6 +106,7 @@ export default function Home() {
         <main>
           <HeroSection />
           <AboutSection />
+          <AIAlgorithmSection />
           <ScienceSection />
           <ServicesSection />
           <ScrollRevealSection />
