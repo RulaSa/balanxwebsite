@@ -120,7 +120,11 @@ export default function SecondLastSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-12 leading-tight tracking-wide"
           style={{ fontFamily: "Playfair Display, serif" }}
         >
-          Rooted in Ritual. Backed by Science. Focused on You.
+          Rooted in Ritual.
+          <br />
+          Backed by Science.
+          <br />
+          Focused on You.
         </h2>
 
         <button
