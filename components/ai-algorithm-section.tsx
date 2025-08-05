@@ -21,7 +21,7 @@ export default function AIAlgorithmSection() {
       }
     }
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // 初始调用
+    handleScroll() // Initial call
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -214,7 +214,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             </div>
 
             {/* Show sentences progressively */}
-            <div className="min-h-[300px] text-lg leading-relaxed space-y-6 bg-black/90 backdrop-blur-[40px] rounded-2xl p-8 border border-white/20">
+            <div className="min-h-[300px] text-lg leading-relaxed space-y-6 bg-black/95 backdrop-blur-4xl rounded-2xl p-8 border border-white/20">
               {stories.map((story, index) => (
                 <div
                   key={index}
@@ -930,7 +930,7 @@ function CoffeeConfiguration() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">Sarah & Mike's Daily Wellness Blend</h2>
+          <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">Sarah & Mike's Daily Healthcare Blend</h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto drop-shadow-md mb-4 ml-auto px-1 py-1 rounded-lg border-transparent bg-transparent opacity-100">
             AI-selected nutrients and flavors to restore balance to your busy lives
           </p>
@@ -963,9 +963,9 @@ function CoffeeConfiguration() {
                     
                         </div>
 
-                        {/* Floating Nutrient Particles - 添加了鼠标悬停提示 */}
+                        {/* Floating Nutrient Particles - Added mouse hover tooltips */}
                         {[...Array(15)].map((_, i) => (
-                          // 1. 为每个粒子创建一个相对定位的 group 容器，扩大悬停区域
+                          // 1. Create a relatively positioned group container for each particle to expand hover area
                           <div key={i} className="absolute group cursor-pointer z-50" style={{
                               left: `${50 + Math.cos(i * 0.8) * 18}%`,
                               top: `${40 + Math.sin(i * 0.8) * 15}%`,
@@ -973,7 +973,7 @@ function CoffeeConfiguration() {
                               height: '20px',
                               transform: 'translate(-50%, -50%)'
                           }}>
-                            {/* 这是原来的粒子 Div，居中显示 */}
+                            {/* This is the original particle Div, centered display */}
                             <div
                               className="w-1.5 h-1.5 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                               style={{
@@ -984,14 +984,14 @@ function CoffeeConfiguration() {
                               }}
                             />
                             
-                            {/* 2. 添加提示框 (Tooltip) */}
+                            {/* 2. Add tooltip */}
                             <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-max px-4 py-2 bg-gradient-to-r from-purple-600/95 via-blue-600/95 to-cyan-600/95 text-white text-xs font-bold rounded-xl shadow-2xl backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105 pointer-events-none z-[100]">
                               <div className="flex items-center space-x-2">
                                 <span className="animate-pulse">✨</span>
                                 <span>Personalized Nutrients & Flavor</span>
                                 <span className="animate-pulse">✨</span>
                               </div>
-                              {/* 小三角箭头 */}
+                              {/* Small triangle arrow */}
                               <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-purple-600/95"></div>
                             </div>
                           </div>
