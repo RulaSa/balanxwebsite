@@ -6,6 +6,7 @@ import { gsap } from "gsap"
 export default function SecondLastSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
+  const subtitleRef = useRef<HTMLParagraphElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -30,10 +31,10 @@ export default function SecondLastSection() {
       // Title animation with stagger effect
       gsap.fromTo(
         titleRef.current,
-        { opacity: 0, y: 100, scale: 0.9 },
+        { opacity: 0, x: -100, scale: 0.9 },
         {
           opacity: 1,
-          y: 0,
+          x: 0,
           scale: 1,
           duration: 1.8,
           ease: "power3.out",
@@ -45,15 +46,34 @@ export default function SecondLastSection() {
         },
       )
 
+      // Subtitle animation
+      gsap.fromTo(
+        subtitleRef.current,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.5,
+          ease: "power2.out",
+          delay: 0.3,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 65%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      )
+
       // Button animation
       gsap.fromTo(
         buttonRef.current,
-        { opacity: 0, y: 50 },
+        { opacity: 0, x: -50 },
         {
           opacity: 1,
-          y: 0,
+          x: 0,
           duration: 1.2,
           ease: "power2.out",
+          delay: 0.6,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 60%",
@@ -99,7 +119,7 @@ export default function SecondLastSection() {
     <section
       ref={sectionRef}
       data-section="second-last"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden fade-in-section"
+      className="relative min-h-screen flex items-center overflow-hidden fade-in-section"
     >
       {/* Video Background */}
       <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-0">
@@ -111,26 +131,34 @@ export default function SecondLastSection() {
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-black/30 z-10"></div>
 
-      {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
-        <h2
+      {/* Content - Left aligned */}
+      <div className="relative z-20 px-6 lg:px-12 xl:px-16 max-w-2xl">
+        <h1
           ref={titleRef}
-          className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-12 leading-tight tracking-wide"
-          style={{ fontFamily: "Playfair Display, serif" }}
+          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white mb-8 leading-tight tracking-wide"
+          style={{ fontFamily: "Helvetica Neue, Arial, sans-serif", fontWeight: "300" }}
         >
           Rooted in Ritual.
           <br />
           Backed by Science.
           <br />
           Focused on You.
-        </h2>
+        </h1>
+
+        <p
+          ref={subtitleRef}
+          className="text-white/90 text-base md:text-lg lg:text-xl mb-8 leading-relaxed max-w-md"
+          style={{ fontFamily: "Helvetica Neue, Arial, sans-serif", fontWeight: "300" }}
+        >
+          Join the waitlist for early access, founding member benefits, and exclusive launch offers.
+        </p>
 
         <button
           ref={buttonRef}
-          className="bg-white text-gray-900 font-medium py-4 px-12 rounded-full hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-3 mx-auto text-lg shadow-lg"
-          style={{ fontFamily: "Crimson Text, serif" }}
+          className="bg-white/90 backdrop-blur-sm text-gray-900 font-medium py-3 px-8 rounded-full hover:bg-white transition-all duration-300 flex items-center gap-3 text-base shadow-lg group"
+          style={{ fontFamily: "Helvetica Neue, Arial, sans-serif" }}
           onClick={() => {
             // Scroll to contact section
             const contactSection = document.querySelector('[data-section="contact"]')
@@ -143,7 +171,13 @@ export default function SecondLastSection() {
           }}
         >
           Join Waitlist
-          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="group-hover:translate-x-1 transition-transform duration-300"
+          >
             <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
           </svg>
         </button>
@@ -151,10 +185,10 @@ export default function SecondLastSection() {
 
       {/* Decorative floating elements */}
       <div className="absolute inset-0 pointer-events-none z-15">
-        <div className="floating absolute top-1/4 left-1/6 w-3 h-3 bg-light-green-300 rounded-full opacity-30"></div>
-        <div className="floating absolute top-3/4 right-1/4 w-4 h-4 bg-white rounded-full opacity-20"></div>
-        <div className="floating absolute top-1/3 right-1/6 w-2 h-2 bg-champagne-300 rounded-full opacity-40"></div>
-        <div className="floating absolute bottom-1/4 left-1/3 w-3 h-3 bg-gold-200 rounded-full opacity-25"></div>
+        <div className="floating absolute top-1/4 left-1/6 w-2 h-2 bg-white/20 rounded-full opacity-60"></div>
+        <div className="floating absolute top-3/4 right-1/4 w-3 h-3 bg-white/10 rounded-full opacity-40"></div>
+        <div className="floating absolute top-1/3 right-1/6 w-1 h-1 bg-white/30 rounded-full opacity-50"></div>
+        <div className="floating absolute bottom-1/4 left-1/3 w-2 h-2 bg-white/15 rounded-full opacity-35"></div>
       </div>
     </section>
   )
