@@ -13,6 +13,8 @@ import ContactSection from "@/components/contact-section"
 import Navigation from "@/components/navigation"
 import ParticleField from "@/components/particle-field"
 import AudioManager from "@/components/audio-manager" // Re-added AudioManager
+import SecondLastSection from "@/components/second-last-section" // Added SecondLastSection import
+import SmoothScroll from "@/components/smooth-scroll"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -23,6 +25,24 @@ export default function Home() {
   const [showMainContent, setShowMainContent] = useState(false)
 
   useEffect(() => {
+    // Initialize GSAP ScrollTrigger
+    ScrollTrigger.refresh()
+
+    // Add floating animation for decorative elements
+    gsap.to(".floating", {
+      y: "random(-20, 20)",
+      x: "random(-10, 10)",
+      rotation: "random(-15, 15)",
+      duration: "random(3, 6)",
+      ease: "sine.inOut",
+      repeat: -1,
+      yoyo: true,
+      stagger: {
+        amount: 2,
+        from: "random",
+      },
+    })
+
     if (!showMainContent) return
 
     const ctx = gsap.context(() => {
@@ -59,17 +79,6 @@ export default function Home() {
         })
       })
 
-      gsap.utils.toArray(".floating").forEach((element: any) => {
-        gsap.to(element, {
-          y: -20,
-          duration: 4 + Math.random() * 2,
-          ease: "power1.inOut",
-          yoyo: true,
-          repeat: -1,
-          delay: Math.random() * 2,
-        })
-      })
-
       gsap.utils.toArray(".svg-draw").forEach((path: any) => {
         gsap.fromTo(
           path,
@@ -88,11 +97,15 @@ export default function Home() {
       })
     }, containerRef)
 
-    return () => ctx.revert()
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      ctx.revert()
+    }
   }, [showMainContent])
 
   return (
-    <>
+    <main className="relative">
+      <SmoothScroll />
       <AudioManager /> {/* AudioManager re-added here */}
       {!showMainContent && <IntroSection onComplete={() => setShowMainContent(true)} />}
       <div
@@ -102,15 +115,14 @@ export default function Home() {
       >
         <ParticleField />
         <Navigation />
-        <main>
-          <HeroSection />
-          <AboutSection />
-          <ScienceSection />
-          <ServicesSection />
-          <ScrollRevealSection />
-          <ContactSection />
-        </main>
+        <HeroSection />
+        <AboutSection />
+        <ScienceSection />
+        <ServicesSection />
+        <ScrollRevealSection />
+        <SecondLastSection /> {/* Added SecondLastSection component */}
+        <ContactSection />
       </div>
-    </>
+    </main>
   )
 }
