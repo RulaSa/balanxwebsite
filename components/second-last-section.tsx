@@ -137,7 +137,7 @@ export default function SecondLastSection() {
       <div className="relative z-20 px-6 lg:px-12 xl:px-16 max-w-2xl">
         <h1
           ref={titleRef}
-          className="text-4xl md:text-5xl xl:text-7xl text-white mb-8 leading-tight tracking-wide lg:text-6xl font-black font-serif"
+          className="text-4xl md:text-5xl xl:text-7xl text-white mb-8 leading-tight tracking-wide font-black font-serif lg:text-5xl"
           style={{ fontFamily: "Helvetica Neue, Arial, sans-serif", fontWeight: "900" }}
         >
           Rooted in Ritual.
