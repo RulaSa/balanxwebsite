@@ -8,7 +8,7 @@ export default function AudioManager() {
   useEffect(() => {
     // Create an audio element if it doesn't exist
     if (!audioRef.current) {
-      audioRef.current = new Audio("")
+      audioRef.current = new Audio("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DaniHaDani%20-%20Lev%201-8WrSeomYufOVNSCKfl8V1yCGYeiLbL.mp3")
       audioRef.current.loop = true // Loop the song
       audioRef.current.volume = 0.05 // Set a subtle volume
     }
