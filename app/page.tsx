@@ -12,9 +12,8 @@ import ScrollRevealSection from "@/components/scroll-reveal-section"
 import ContactSection from "@/components/contact-section"
 import Navigation from "@/components/navigation"
 import ParticleField from "@/components/particle-field"
-import AudioManager from "@/components/audio-manager" // Re-added AudioManager
-import SecondLastSection from "@/components/second-last-section" // Added SecondLastSection import
-import SmoothScroll from "@/components/smooth-scroll"
+import AudioManager from "@/components/audio-manager"
+import { FadingFooter } from "@/components/fading-foot"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -23,26 +22,9 @@ if (typeof window !== "undefined") {
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [showMainContent, setShowMainContent] = useState(false)
+  const [showContactSection, setShowContactSection] = useState(false)
 
   useEffect(() => {
-    // Initialize GSAP ScrollTrigger
-    ScrollTrigger.refresh()
-
-    // Add floating animation for decorative elements
-    gsap.to(".floating", {
-      y: "random(-20, 20)",
-      x: "random(-10, 10)",
-      rotation: "random(-15, 15)",
-      duration: "random(3, 6)",
-      ease: "sine.inOut",
-      repeat: -1,
-      yoyo: true,
-      stagger: {
-        amount: 2,
-        from: "random",
-      },
-    })
-
     if (!showMainContent) return
 
     const ctx = gsap.context(() => {
@@ -79,6 +61,17 @@ export default function Home() {
         })
       })
 
+      gsap.utils.toArray(".floating").forEach((element: any) => {
+        gsap.to(element, {
+          y: -20,
+          duration: 4 + Math.random() * 2,
+          ease: "power1.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: Math.random() * 2,
+        })
+      })
+
       gsap.utils.toArray(".svg-draw").forEach((path: any) => {
         gsap.fromTo(
           path,
@@ -95,18 +88,57 @@ export default function Home() {
           },
         )
       })
+
+      // 改进的滚动检测逻辑
+      let scrollTimeout: NodeJS.Timeout
+      const handleScroll = () => {
+        clearTimeout(scrollTimeout)
+        
+        scrollTimeout = setTimeout(() => {
+          const footerElement = document.getElementById("fading-footer")
+          if (!footerElement || showContactSection) return
+
+          const footerRect = footerElement.getBoundingClientRect()
+          const viewportHeight = window.innerHeight
+          
+          // 检查 footer 是否在视窗中占据大部分空间
+          if (footerRect.top <= viewportHeight * 0.1 && footerRect.bottom >= viewportHeight * 0.8) {
+            // 添加额外的滚动检测
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+            const documentHeight = document.documentElement.scrollHeight
+            const windowHeight = window.innerHeight
+            
+            // 如果接近页面底部，显示联系表单
+            if (scrollTop + windowHeight >= documentHeight - 100) {
+              console.log("Triggering contact section") // 调试日志
+              setShowContactSection(true)
+            }
+          }
+        }, 100)
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true })
+
+      return () => {
+        clearTimeout(scrollTimeout)
+        window.removeEventListener('scroll', handleScroll)
+      }
     }, containerRef)
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-      ctx.revert()
-    }
-  }, [showMainContent])
+    return () => ctx.revert()
+  }, [showMainContent, showContactSection])
+
+  const handleFooterClick = () => {
+    console.log("Footer clicked") // 调试日志
+    setShowContactSection(true)
+  }
+
+  // 调试日志
+  console.log("showContactSection:", showContactSection)
 
   return (
-    <main className="relative">
-      <SmoothScroll />
-      <AudioManager /> {/* AudioManager re-added here */}
+    <>
+      <AudioManager />
       {!showMainContent && <IntroSection onComplete={() => setShowMainContent(true)} />}
       <div
         ref={containerRef}
@@ -115,14 +147,30 @@ export default function Home() {
       >
         <ParticleField />
         <Navigation />
-        <HeroSection />
-        <AboutSection />
-        <ScienceSection />
-        <ServicesSection />
-        <ScrollRevealSection />
-        <SecondLastSection /> {/* Added SecondLastSection component */}
-        <ContactSection />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ScienceSection />
+          <ServicesSection />
+          <ScrollRevealSection />
+        </main>
+        
+        {/* 条件渲染：显示 FadingFooter 或 ContactSection */}
+        {!showContactSection ? (
+          <div 
+            onClick={handleFooterClick} 
+            className="cursor-pointer relative z-10"
+          >
+            <FadingFooter />
+          </div>
+        ) : (
+          <div 
+            className="relative z-10 transition-all duration-1000 ease-out"
+          >
+            <ContactSection />
+          </div>
+        )}
       </div>
-    </main>
+    </>
   )
 }
