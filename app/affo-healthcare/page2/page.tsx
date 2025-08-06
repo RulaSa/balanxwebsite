@@ -116,7 +116,7 @@ export default function AffoHealthcarePage2() {
           <div className="w-full max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-2xl">
             <video
               className="w-full h-auto object-cover"
-              src="/video/affo-healthcare-produc.mp4"
+              src="/video/affo-healthcare-product.mp4?v=2"
               autoPlay
               loop
               muted
