@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Link from "next/link"
 import CoffeeHealthSection from "@/components/coffee-health-section"
 
 if (typeof window !== "undefined") {
@@ -64,6 +65,20 @@ export default function AffoHealthcarePage3Section() {
       className="fade-in-section relative overflow-hidden"
     >
       <CoffeeHealthSection ref={coffeeHealthSectionRef} />
+      
+      {/* Join Waitlist Button */}
+      <div className="absolute bottom-8 right-8 z-10">
+        <Link
+          href="/pre-order"
+          className="inline-flex items-center gap-2 bg-white text-gray-900 font-medium py-3 px-6 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          style={{ fontFamily: "Crimson Text, serif" }}
+        >
+          Join Waitlist
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </Link>
+      </div>
     </section>
   )
 } 

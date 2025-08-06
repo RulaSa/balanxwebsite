@@ -137,42 +137,62 @@ export default function HeroSection() {
 
       {/* Content */}
       <div
-        className="relative z-30 text-center px-6 w-full"
+        className="relative z-30 text-center px-6 w-full h-full"
         onClick={(e) => {
           // Reset if clicking on the content container itself (empty space)
           const target = e.target as HTMLElement
-          if (target === e.currentTarget || target.classList.contains("grid")) {
+          if (target === e.currentTarget) {
             setActiveFeature(null)
           }
         }}
       >
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-32 max-w-8xl mx-auto border-0 py-10 px-32">
-          {/* Constitutional Wellness - Interactive */}
+        {/* Arc Curve Feature Layout */}
+        <div className="relative w-full h-full">
+          
+          {/* Centralized Text Display */}
+          <AnimatePresence>
+            {activeFeature && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="fixed left-[30%] top-60 -translate-x-1/2 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 z-50 flex items-center justify-center min-w-[300px] max-w-[500px]"
+              >
+                <motion.p
+                  className="text-white/95 leading-relaxed text-lg md:text-xl text-center font-medium"
+                  style={{ fontFamily: "Crimson Text, serif" }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1, duration: 0.3 }}
+                >
+                  {activeFeature === "constitutional" && "Personalized to your unique body constitution using traditional Chinese medicine principles."}
+                  {activeFeature === "smart" && "AI-powered biomarker analysis provides real-time insights into your wellness needs."}
+                  {activeFeature === "harmony" && "Blend ancient herbal wisdom with modern coffee culture for daily balance."}
+                  {activeFeature === "safe" && "Non-invasive, medical-grade sensors designed with mindfulness at the core."}
+                </motion.p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {/* Constitutional Wellness - Outer Left */}
           <motion.div
-            className="text-center space-y-4 cursor-pointer relative"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute left-[15%] -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center space-y-3 cursor-pointer"
+            onMouseEnter={() => setActiveFeature("constitutional")}
             onClick={(e) => e.stopPropagation()}
           >
             <motion.div
               className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto relative overflow-hidden"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveFeature(activeFeature === "constitutional" ? null : "constitutional")}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               animate={{
-                boxShadow:
-                  activeFeature === "constitutional"
-                    ? "0 0 30px rgba(255, 255, 255, 0.3)"
-                    : "0 0 0px rgba(255, 255, 255, 0)",
-                opacity: activeFeature === "constitutional" ? 0 : 1,
+                boxShadow: activeFeature === "constitutional" ? "0 0 30px rgba(255, 255, 255, 0.3)" : "0 0 0px rgba(255, 255, 255, 0)",
               }}
             >
               <motion.div
                 animate={{
-                  filter: activeFeature && activeFeature !== "constitutional" ? "blur(2px)" : "blur(0px)",
-                  opacity: activeFeature && activeFeature !== "constitutional" ? 0.4 : 1,
+                  filter: activeFeature && activeFeature !== "constitutional" ? "blur(1px)" : "blur(0px)",
+                  opacity: activeFeature && activeFeature !== "constitutional" ? 0.6 : 1,
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -202,68 +222,38 @@ export default function HeroSection() {
               />
             </motion.div>
 
-            <AnimatePresence>
-              {activeFeature === "constitutional" && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1.1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl border-white/20 p-8 z-10 flex items-center justify-center border min-h-[200px] max-h-[300px]"
-                >
-                  <motion.p
-                    className="text-white/95 leading-relaxed text-base md:text-lg text-center font-medium"
-                    style={{ fontFamily: "Crimson Text, serif" }}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                  >
-                    Personalized to your unique body constitution using traditional Chinese medicine principles.
-                  </motion.p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
             <motion.h3
-              className="text-xl md:text-2xl font-serif font-bold text-white cursor-pointer"
+              className="text-xl md:text-2xl font-serif font-bold text-white"
               style={{ fontFamily: "Playfair Display, serif" }}
               animate={{
-                filter: activeFeature && activeFeature !== "constitutional" ? "blur(2px)" : "blur(0px)",
-                opacity: activeFeature && activeFeature !== "constitutional" ? 0.4 : 1,
+                filter: activeFeature && activeFeature !== "constitutional" ? "blur(1px)" : "blur(0px)",
+                opacity: activeFeature && activeFeature !== "constitutional" ? 0.6 : 1,
               }}
               transition={{ duration: 0.3 }}
-              onClick={(e) => {
-                e.stopPropagation()
-                setActiveFeature(activeFeature === "constitutional" ? null : "constitutional")
-              }}
             >
               Constitutional Wellness
             </motion.h3>
           </motion.div>
 
-          {/* Smart Analysis - Interactive */}
+          {/* Smart Analysis - Inner Left */}
           <motion.div
-            className="text-center space-y-4 cursor-pointer relative"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute left-[30%] -translate-x-1/2 top-20 flex flex-col items-center space-y-3 cursor-pointer"
+            onMouseEnter={() => setActiveFeature("smart")}
             onClick={(e) => e.stopPropagation()}
           >
             <motion.div
               className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto relative overflow-hidden"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveFeature(activeFeature === "smart" ? null : "smart")}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               animate={{
-                boxShadow:
-                  activeFeature === "smart" ? "0 0 30px rgba(255, 255, 255, 0.3)" : "0 0 0px rgba(255, 255, 255, 0)",
-                opacity: activeFeature === "smart" ? 0 : 1,
+                boxShadow: activeFeature === "smart" ? "0 0 30px rgba(255, 255, 255, 0.3)" : "0 0 0px rgba(255, 255, 255, 0)",
               }}
             >
               <motion.div
                 animate={{
-                  filter: activeFeature && activeFeature !== "smart" ? "blur(2px)" : "blur(0px)",
-                  opacity: activeFeature && activeFeature !== "smart" ? 0.4 : 1,
+                  filter: activeFeature && activeFeature !== "smart" ? "blur(1px)" : "blur(0px)",
+                  opacity: activeFeature && activeFeature !== "smart" ? 0.6 : 1,
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -298,68 +288,38 @@ export default function HeroSection() {
               />
             </motion.div>
 
-            <AnimatePresence>
-              {activeFeature === "smart" && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 z-10 flex items-center justify-center min-h-[200px] max-h-[300px]"
-                >
-                  <motion.p
-                    className="text-white/95 leading-relaxed text-base md:text-lg text-center font-medium"
-                    style={{ fontFamily: "Crimson Text, serif" }}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                  >
-                    AI-powered biomarker analysis provides real-time insights into your wellness needs.
-                  </motion.p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
             <motion.h3
-              className="text-xl md:text-2xl font-serif font-bold text-white cursor-pointer"
+              className="text-xl md:text-2xl font-serif font-bold text-white"
               style={{ fontFamily: "Playfair Display, serif" }}
               animate={{
-                filter: activeFeature && activeFeature !== "smart" ? "blur(2px)" : "blur(0px)",
-                opacity: activeFeature && activeFeature !== "smart" ? 0.4 : 1,
+                filter: activeFeature && activeFeature !== "smart" ? "blur(1px)" : "blur(0px)",
+                opacity: activeFeature && activeFeature !== "smart" ? 0.6 : 1,
               }}
               transition={{ duration: 0.3 }}
-              onClick={(e) => {
-                e.stopPropagation()
-                setActiveFeature(activeFeature === "smart" ? null : "smart")
-              }}
             >
               Smart Analysis
             </motion.h3>
           </motion.div>
 
-          {/* Natural Harmony - Interactive */}
+          {/* Natural Harmony - Inner Right */}
           <motion.div
-            className="text-center space-y-4 cursor-pointer relative"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute right-[30%] -translate-x-1/2 top-20 flex flex-col items-center space-y-3 cursor-pointer"
+            onMouseEnter={() => setActiveFeature("harmony")}
             onClick={(e) => e.stopPropagation()}
           >
             <motion.div
               className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto relative overflow-hidden"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveFeature(activeFeature === "harmony" ? null : "harmony")}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               animate={{
-                boxShadow:
-                  activeFeature === "harmony" ? "0 0 30px rgba(255, 255, 255, 0.3)" : "0 0 0px rgba(255, 255, 255, 0)",
-                opacity: activeFeature === "harmony" ? 0 : 1,
+                boxShadow: activeFeature === "harmony" ? "0 0 30px rgba(255, 255, 255, 0.3)" : "0 0 0px rgba(255, 255, 255, 0)",
               }}
             >
               <motion.div
                 animate={{
-                  filter: activeFeature && activeFeature !== "harmony" ? "blur(2px)" : "blur(0px)",
-                  opacity: activeFeature && activeFeature !== "harmony" ? 0.4 : 1,
+                  filter: activeFeature && activeFeature !== "harmony" ? "blur(1px)" : "blur(0px)",
+                  opacity: activeFeature && activeFeature !== "harmony" ? 0.6 : 1,
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -396,68 +356,38 @@ export default function HeroSection() {
               />
             </motion.div>
 
-            <AnimatePresence>
-              {activeFeature === "harmony" && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 z-10 flex items-center justify-center min-h-[200px] max-h-[300px]"
-                >
-                  <motion.p
-                    className="text-white/95 leading-relaxed text-base md:text-lg text-center font-medium"
-                    style={{ fontFamily: "Crimson Text, serif" }}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                  >
-                    Blend ancient herbal wisdom with modern coffee culture for daily balance.
-                  </motion.p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
             <motion.h3
-              className="text-xl md:text-2xl font-serif font-bold text-white cursor-pointer"
+              className="text-xl md:text-2xl font-serif font-bold text-white"
               style={{ fontFamily: "Playfair Display, serif" }}
               animate={{
-                filter: activeFeature && activeFeature !== "harmony" ? "blur(2px)" : "blur(0px)",
-                opacity: activeFeature && activeFeature !== "harmony" ? 0.4 : 1,
+                filter: activeFeature && activeFeature !== "harmony" ? "blur(1px)" : "blur(0px)",
+                opacity: activeFeature && activeFeature !== "harmony" ? 0.6 : 1,
               }}
               transition={{ duration: 0.3 }}
-              onClick={(e) => {
-                e.stopPropagation()
-                setActiveFeature(activeFeature === "harmony" ? null : "harmony")
-              }}
             >
               Natural Harmony
             </motion.h3>
           </motion.div>
 
-          {/* Gentle & Safe - Interactive */}
+          {/* Gentle & Safe - Outer Right */}
           <motion.div
-            className="text-center space-y-4 cursor-pointer relative"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute right-[15%] -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center space-y-3 cursor-pointer"
+            onMouseEnter={() => setActiveFeature("safe")}
             onClick={(e) => e.stopPropagation()}
           >
             <motion.div
               className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto relative overflow-hidden"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveFeature(activeFeature === "safe" ? null : "safe")}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               animate={{
-                boxShadow:
-                  activeFeature === "safe" ? "0 0 30px rgba(255, 255, 255, 0.3)" : "0 0 0px rgba(255, 255, 255, 0)",
-                opacity: activeFeature === "safe" ? 0 : 1,
+                boxShadow: activeFeature === "safe" ? "0 0 30px rgba(255, 255, 255, 0.3)" : "0 0 0px rgba(255, 255, 255, 0)",
               }}
             >
               <motion.div
                 animate={{
-                  filter: activeFeature && activeFeature !== "safe" ? "blur(2px)" : "blur(0px)",
-                  opacity: activeFeature && activeFeature !== "safe" ? 0.4 : 1,
+                  filter: activeFeature && activeFeature !== "safe" ? "blur(1px)" : "blur(0px)",
+                  opacity: activeFeature && activeFeature !== "safe" ? 0.6 : 1,
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -489,47 +419,19 @@ export default function HeroSection() {
               />
             </motion.div>
 
-            <AnimatePresence>
-              {activeFeature === "safe" && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 z-10 flex items-center justify-center min-h-[200px] max-h-[300px]"
-                >
-                  <motion.p
-                    className="text-white/95 leading-relaxed text-base md:text-lg text-center font-medium"
-                    style={{ fontFamily: "Crimson Text, serif" }}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                  >
-                    Non-invasive, medical-grade sensors designed with mindfulness at the core.
-                  </motion.p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
             <motion.h3
-              className="text-xl md:text-2xl font-serif font-bold text-white cursor-pointer"
+              className="text-xl md:text-2xl font-serif font-bold text-white"
               style={{ fontFamily: "Playfair Display, serif" }}
               animate={{
-                filter: activeFeature && activeFeature !== "safe" ? "blur(2px)" : "blur(0px)",
-                opacity: activeFeature && activeFeature !== "safe" ? 0.4 : 1,
+                filter: activeFeature && activeFeature !== "safe" ? "blur(1px)" : "blur(0px)",
+                opacity: activeFeature && activeFeature !== "safe" ? 0.6 : 1,
               }}
               transition={{ duration: 0.3 }}
-              onClick={(e) => {
-                e.stopPropagation()
-                setActiveFeature(activeFeature === "safe" ? null : "safe")
-              }}
             >
               Gentle & Safe
             </motion.h3>
           </motion.div>
         </div>
-
-        {/* Element indicators */}
       </div>
     </section>
   )
