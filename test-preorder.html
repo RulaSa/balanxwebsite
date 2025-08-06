@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Order API Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: #22c55e; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #16a34a; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .success { background: #dcfce7; border: 1px solid #22c55e; color: #15803d; }
+        .error { background: #fef2f2; border: 1px solid #ef4444; color: #dc2626; }
+        .info { background: #f0f9ff; border: 1px solid #0ea5e9; color: #0369a1; }
+    </style>
+</head>
+<body>
+    <h1>BalanX-Bio Pre-Order API Test</h1>
+    <p>Test the pre-order functionality with email sending</p>
+    
+    <form id="preorderForm">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <button type="submit" id="submitBtn">Test Pre-Order</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('preorderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const resultDiv = document.getElementById('result');
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value
+            };
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Testing...';
+            resultDiv.innerHTML = '';
+            
+            try {
+                const response = await fetch('/api/pre-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            <h3>✅ Success!</h3>
+                            <p><strong>Message:</strong> ${result.message}</p>
+                            <p><strong>Pre-order ID:</strong> ${result.preOrderId}</p>
+                            <p><strong>Storage:</strong> ${result.storage}</p>
+                            <p><strong>Email Status:</strong> ${result.email.success ? '✅ Sent' : '❌ Failed'}</p>
+                            ${result.email.emailId ? `<p><strong>Email ID:</strong> ${result.email.emailId}</p>` : ''}
+                            ${result.email.error ? `<p><strong>Email Error:</strong> ${result.email.error}</p>` : ''}
+                            
+                            <div class="info" style="margin-top: 15px;">
+                                <strong>Configuration Status:</strong><br>
+                                📧 Email Service: ${result.details.emailConfigured ? '✅ Configured' : '❌ Not Configured'}<br>
+                                💾 KV Storage: ${result.details.kvConfigured ? '✅ Configured' : '❌ Not Configured'}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="result error">
+                            <h3>❌ Error</h3>
+                            <p><strong>Error:</strong> ${result.error}</p>
+                            ${result.details ? `<p><strong>Details:</strong> ${result.details}</p>` : ''}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        <h3>❌ Network Error</h3>
+                        <p>Failed to connect to the API: ${error.message}</p>
+                    </div>
+                `;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Test Pre-Order';
+            }
+        });
+    </script>
+</body>
+</html> 
