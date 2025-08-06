@@ -3,7 +3,25 @@
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 
-export default function ContactSection() {
+interface BalanceCommunitySectionProps {
+  onSubmit?: (email: string) => void
+  title?: string
+  subtitle?: string
+  buttonText?: string
+  placeholderText?: string
+  disclaimerText?: string
+  className?: string
+}
+
+export default function BalanceCommunitySection({
+  onSubmit,
+  title = "Join the Balance Community",
+  subtitle = "Be the first to experience personalized wellness. Reserve your BalanX-D and join thousands on the journey toward natural balance.",
+  buttonText = "Reserve Now",
+  placeholderText = "Enter your email",
+  disclaimerText = "No payment required. Free shipping on pre-orders.",
+  className = ""
+}: BalanceCommunitySectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
   const [email, setEmail] = useState("")
@@ -30,7 +48,7 @@ export default function ContactSection() {
 
       // Staggered content animation
       gsap.fromTo(
-        ".contact-element",
+        ".balance-element",
         { opacity: 0, y: 60 },
         {
           opacity: 1,
@@ -47,7 +65,7 @@ export default function ContactSection() {
       )
 
       // Form input focus effects
-      gsap.utils.toArray(".form-input").forEach((input: any) => {
+      gsap.utils.toArray(".balance-form-input").forEach((input: any) => {
         input.addEventListener("focus", () => {
           gsap.to(input, {
             scale: 1.02,
@@ -67,7 +85,7 @@ export default function ContactSection() {
       })
 
       // Button hover animation
-      const reserveButton = document.querySelector(".reserve-button")
+      const reserveButton = document.querySelector(".balance-reserve-button")
       if (reserveButton) {
         reserveButton.addEventListener("mouseenter", () => {
           gsap.to(reserveButton, {
@@ -98,10 +116,14 @@ export default function ContactSection() {
     setIsSubmitting(true)
     
     try {
-      // Default behavior - you can customize this
-      console.log("Email submitted:", email)
-      // Here you could add your own submission logic
-      // For example: await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
+      if (onSubmit) {
+        await onSubmit(email)
+      } else {
+        // Default behavior - you can customize this
+        console.log("Email submitted:", email)
+        // Here you could add your own submission logic
+        // For example: await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
+      }
       
       setEmail("")
       // Show success message or redirect
@@ -115,7 +137,7 @@ export default function ContactSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-24 px-6 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50"
+      className={`relative py-24 px-6 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 ${className}`}
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -126,37 +148,37 @@ export default function ContactSection() {
       {/* Main Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h2
-          className="contact-element text-5xl md:text-7xl font-serif font-bold mb-8 tracking-wide bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent"
+          className="balance-element text-5xl md:text-7xl font-serif font-bold mb-8 tracking-wide bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent"
           style={{ fontFamily: "Playfair Display, serif" }}
         >
-          Join the Balance Community
+          {title}
         </h2>
 
         <p
-          className="contact-element text-xl md:text-2xl text-gray-700 leading-relaxed mb-16 max-w-3xl mx-auto"
+          className="balance-element text-xl md:text-2xl text-gray-700 leading-relaxed mb-16 max-w-3xl mx-auto"
           style={{ fontFamily: "Crimson Text, serif" }}
         >
-          Be the first to experience personalized wellness. Reserve your BalanX-D and join thousands on the journey toward natural balance.
+          {subtitle}
         </p>
 
         {/* Email Form */}
-        <form ref={formRef} onSubmit={handleSubmit} className="contact-element flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <form ref={formRef} onSubmit={handleSubmit} className="balance-element flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            placeholder={placeholderText}
             required
-            className="form-input flex-1 max-w-md bg-white/80 border border-orange-300 rounded-full py-4 px-6 text-gray-800 placeholder-gray-500 focus:border-orange-500 focus:outline-none transition-all duration-300"
+            className="balance-form-input flex-1 max-w-md bg-white/80 border border-orange-300 rounded-full py-4 px-6 text-gray-800 placeholder-gray-500 focus:border-orange-500 focus:outline-none transition-all duration-300"
             style={{ fontFamily: "Crimson Text, serif" }}
           />
           <button
             type="submit"
             disabled={isSubmitting}
-            className="reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 min-w-fit shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="balance-reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 min-w-fit shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ fontFamily: "Crimson Text, serif" }}
           >
-            {isSubmitting ? "Reserving..." : "Reserve Now"}
+            {isSubmitting ? "Reserving..." : buttonText}
             {!isSubmitting && (
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
@@ -165,10 +187,10 @@ export default function ContactSection() {
           </button>
         </form>
 
-        <p className="contact-element text-gray-600 text-sm" style={{ fontFamily: "Crimson Text, serif" }}>
-          No payment required. Free shipping on pre-orders.
+        <p className="balance-element text-gray-600 text-sm" style={{ fontFamily: "Crimson Text, serif" }}>
+          {disclaimerText}
         </p>
       </div>
     </section>
   )
-}
+} 
