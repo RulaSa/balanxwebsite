@@ -8,6 +8,7 @@ export default function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null)
   const [showContactForm, setShowContactForm] = useState(false)
   const [showPartnershipForm, setShowPartnershipForm] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -101,40 +102,76 @@ export default function ContactSection() {
     }
   }, [])
 
-  const handleContactFormSubmit = (e: React.FormEvent) => {
+  const handleContactFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent("Question from BalanX Website")
-    const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-
-Question:
-${formData.question}
-    `)
-    const mailtoLink = `mailto:balanx25@gmail.com?subject=${subject}&body=${body}`
-    window.location.href = mailtoLink
+    setIsSubmitting(true)
     
-    // Reset form
-    setFormData({ name: "", email: "", question: "" })
-    setShowContactForm(false)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          question: formData.question,
+          type: 'contact'
+        }),
+      })
+
+      if (response.ok) {
+        // Success - show success message or redirect
+        alert('Message sent successfully!')
+        // Reset form
+        setFormData({ name: "", email: "", question: "" })
+        setShowContactForm(false)
+      } else {
+        // Error handling
+        alert('Failed to send message. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('Failed to send message. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
-  const handlePartnershipFormSubmit = (e: React.FormEvent) => {
+  const handlePartnershipFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent("Partnership Inquiry from BalanX Website")
-    const body = encodeURIComponent(`
-Name: ${partnershipData.name}
-Company Email: ${partnershipData.companyEmail}
-
-Partnership Message:
-${partnershipData.message}
-    `)
-    const mailtoLink = `mailto:balanx25@gmail.com?subject=${subject}&body=${body}`
-    window.location.href = mailtoLink
+    setIsSubmitting(true)
     
-    // Reset form
-    setPartnershipData({ name: "", companyEmail: "", message: "" })
-    setShowPartnershipForm(false)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: partnershipData.name,
+          email: partnershipData.companyEmail,
+          question: partnershipData.message,
+          type: 'partnership'
+        }),
+      })
+
+      if (response.ok) {
+        // Success - show success message or redirect
+        alert('Partnership inquiry sent successfully!')
+        // Reset form
+        setPartnershipData({ name: "", companyEmail: "", message: "" })
+        setShowPartnershipForm(false)
+      } else {
+        // Error handling
+        alert('Failed to send partnership inquiry. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error sending partnership inquiry:', error)
+      alert('Failed to send partnership inquiry. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleBackToMain = () => {
@@ -275,13 +312,16 @@ ${partnershipData.message}
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                    disabled={isSubmitting}
+                    className="reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ fontFamily: "Crimson Text, serif" }}
                   >
-                    Send Message
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                      <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
-                    </svg>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {!isSubmitting && (
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+                      </svg>
+                    )}
                   </button>
                 </div>
               </form>
@@ -355,13 +395,16 @@ ${partnershipData.message}
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                    disabled={isSubmitting}
+                    className="reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ fontFamily: "Crimson Text, serif" }}
                   >
-                    Send Partnership Inquiry
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                      <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
-                    </svg>
+                    {isSubmitting ? 'Sending...' : 'Send Partnership Inquiry'}
+                    {!isSubmitting && (
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+                      </svg>
+                    )}
                   </button>
                 </div>
               </form>
