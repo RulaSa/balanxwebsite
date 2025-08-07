@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
     if (resend) {
       try {
         const emailData = await resend.emails.send({
-          from: 'Welcome@balanxbio.com',
+          from: 'BalanX-Bio <welcome@balanxbio.com>',
           to: [email],
           subject: "You're in! Your BalanX-Bio pre-order is confirmed",
           html: `
