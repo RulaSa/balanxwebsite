@@ -60,32 +60,21 @@ export default function AffoHealthcarePage2Section() {
     <section
       ref={sectionRef}
       data-section="affo-healthcare-page2"
-      className="fade-in-section relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-black to-gray-900"
+      className="fade-in-section relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden"
+      style={{
+        background: "linear-gradient(to bottom, #d4c1a7 0%, #e8dccd 50%, #f8f5f0 100%)"
+      }}
     >
-      {/* Background video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1846e211-60b1-4108-86f9-901aeef72c29%20%281%29-Ayv68fmwXKkfHBtbYgzAza9cZQ8pi8.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
       <div ref={contentRef} className="relative z-20 max-w-7xl mx-auto text-center">
         <h2
-          className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-lg"
-          style={{ fontFamily: "Playfair Display, serif" }}
+          className="text-5xl md:text-7xl font-bold text-gray-800 mb-8 drop-shadow-lg"
+          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
         >
           BALANX-ÁFFO HEALTHCARE
         </h2>
-        <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-16 drop-shadow-md">
+        <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-16 drop-shadow-md">
           Experience personalized wellness through advanced bio-analysis and tailored nutrition.
         </p>
         
@@ -93,7 +82,7 @@ export default function AffoHealthcarePage2Section() {
         <div className="w-full max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-2xl">
           <video
             className="w-full h-auto object-cover"
-            src="/video/affo-healthcare-product.mp4?v=2"
+            src="/video/affofinal.mp4"
             autoPlay
             loop
             muted
@@ -101,6 +90,75 @@ export default function AffoHealthcarePage2Section() {
           >
             Your browser does not support the video tag.
           </video>
+        </div>
+
+        {/* Four Core Steps */}
+        <div className="w-full max-w-7xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 drop-shadow-lg">
+            Our Service Process
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-8">
+            {/* Step 1: Daily Data Collection */}
+            <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-blue-400/80 to-purple-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <span className="text-3xl">📅</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                  Daily Data Collection
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  We gather essential health metrics and lifestyle data every day to track your wellness journey.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2: AI Analysis */}
+            <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-green-400/80 to-teal-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <span className="text-3xl">🧠</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                  AI Analysis
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  Our algorithms process your data to identify trends and health patterns unique to you.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3: Personalized Recommendations */}
+            <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-orange-400/80 to-red-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <span className="text-3xl">🌿</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                  Personalized Recommendations
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  Receive tailored wellness and nutrition suggestions based on your individual profile.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 4: Health Reports */}
+            <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-purple-400/80 to-pink-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <span className="text-3xl">📄</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                  Health Reports
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  Get regular, easy-to-read reports that summarize your progress and suggest next steps.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -174,8 +174,8 @@ export default function ScrollRevealSection() {
         >
           <div className="max-w-4xl mx-auto">
             <h2
-              className="block-title text-6xl md:text-8xl font-serif font-bold text-gray-800 mb-8 tracking-wide"
-              style={{ fontFamily: "Playfair Display, serif" }}
+              className="block-title text-6xl md:text-8xl font-wide font-bold text-gray-800 mb-8 tracking-wide"
+              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
             >
               {block.title}
             </h2>
@@ -192,7 +192,7 @@ export default function ScrollRevealSection() {
               </div>
               <p
                 className="block-description text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
-                style={{ fontFamily: "Crimson Text, serif" }}
+                style={{ fontFamily: "Agrandir Wide, sans-serif" }}
               >
                 {block.description}
               </p>

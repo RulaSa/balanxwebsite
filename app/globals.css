@@ -83,14 +83,17 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: 'Agrandir Wide', sans-serif;
   }
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
+    font-family: 'Agrandir Wide', sans-serif;
   }
   
   html {
     scroll-behavior: smooth;
+    font-family: 'Agrandir Wide', sans-serif;
   }
 }
 
@@ -117,4 +120,48 @@
   color: transparent;
   background-image: linear-gradient(to right, #e5e7eb, #9ca3af, #e5e7eb); /* Silver gradient */
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)); /* Subtle white glow */
+}
+
+/* Glassmorphism navbar styles */
+.navbar.glass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 72px;
+  padding-inline: clamp(16px, 4vw, 40px);
+  padding-top: env(safe-area-inset-top);
+  background: linear-gradient(to bottom, rgba(16,16,16,0.40), rgba(16,16,16,0.15));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transition: background 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+.navbar.glass.scrolled {
+  background: linear-gradient(to bottom, rgba(16,16,16,0.55), rgba(16,16,16,0.30));
+}
+
+.no-backdrop .navbar.glass {
+  background: rgba(20,20,20,0.70);
+}
+
+/* Hero section bottom fade */
+.hero {
+  position: relative;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 14vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #d4c1a7 55%, #f8f5f0 100%);
+  pointer-events: none;
+  z-index: 1;
 }

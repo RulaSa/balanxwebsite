@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - bufferutil
+  - sharp
+
+onlyBuiltDependencies:
+  - bufferutil
+  - sharp

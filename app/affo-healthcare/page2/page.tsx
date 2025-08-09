@@ -73,7 +73,7 @@ export default function AffoHealthcarePage2() {
           <Link
             href="/affo-healthcare/page1"
             className="text-white hover:text-gold-400 transition-colors duration-300 flex items-center gap-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ export default function AffoHealthcarePage2() {
         <div className="max-w-7xl mx-auto text-center">
           <h1
             className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-lg"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             BALANX-ÁFFO HEALTHCARE
           </h1>
@@ -131,7 +131,7 @@ export default function AffoHealthcarePage2() {
             <Link
               href="/affo-healthcare/page3"
               className="bg-gold-500 text-black font-bold py-4 px-10 rounded-full text-lg hover:bg-gold-400 transition-colors duration-300 shadow-lg flex items-center gap-3"
-              style={{ fontFamily: "Crimson Text, serif" }}
+              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
             >
               Next: Coffee & Wellness
               <svg
@@ -153,7 +153,7 @@ export default function AffoHealthcarePage2() {
             <Link
               href="/"
               className="text-white border border-white/50 py-4 px-10 rounded-full text-lg hover:bg-white/10 transition-colors duration-300 flex items-center gap-3"
-              style={{ fontFamily: "Crimson Text, serif" }}
+              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
             >
               Back to Home
               <svg

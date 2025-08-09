@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import { Activity, Zap, Heart, Brain, Droplets, Users, Briefcase, Home } from "lucide-react"
 
 export default function AIAlgorithmSection() {
   const [scrollY, setScrollY] = useState(0)
@@ -44,21 +43,9 @@ export default function AIAlgorithmSection() {
   }
 
   return (
-    <section ref={sectionRef} data-section="algorithm" className="relative min-h-screen">
-      {/* Fixed Background */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/images/code-background.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        {/* Overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+    <section ref={sectionRef} data-section="algorithm" className="relative min-h-screen" style={{
+      background: "linear-gradient(to bottom, #d4c1a7 0%, #e8dccd 50%, #f8f5f0 100%)"
+    }}>
 
       {/* Scrollable Content */}
       <div className="relative z-10">
@@ -88,11 +75,23 @@ export default function AIAlgorithmSection() {
 function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/video/Website- Sarah & Mark.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30" />
       <div className="text-center z-10 px-6">
-        <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
+        <div className="rounded-3xl p-12">
           <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-r from-blue-400/80 to-purple-400/80 rounded-full flex items-center justify-center animate-pulse backdrop-blur-sm">
-            <Users className="w-12 h-12 text-white" />
+            <span className="text-4xl">👥</span>
           </div>
           <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent mb-4 drop-shadow-lg">
             Meet Sarah &amp; Mark
@@ -180,11 +179,11 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
                 <div className="relative h-full flex flex-col items-center justify-center p-8">
                   <div className="flex items-center justify-center space-x-8 mb-6">
                     <div className="w-16 h-16 bg-blue-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-blue-400/30">
-                      <Briefcase className="w-8 h-8 text-blue-200" />
+                      <span className="text-4xl">💼</span>
                     </div>
                     <div className="w-2 h-2 bg-white/60 rounded-full"></div>
                     <div className="w-16 h-16 bg-purple-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-purple-400/30">
-                      <Home className="w-8 h-8 text-purple-200" />
+                      <span className="text-4xl">🏠</span>
                     </div>
                   </div>
                   <p className="text-white font-medium text-center leading-relaxed drop-shadow-md">
@@ -267,7 +266,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
           {[
             {
               title: "Work Stress",
-              icon: Briefcase,
+              icon: "⚠️",
               items: ["Mark facing potential layoff", "Sarah's demanding deadlines", "Financial uncertainty"],
               bgColor: "bg-red-500/20",
               borderColor: "border-red-400/30",
@@ -279,7 +278,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             },
             {
               title: "Family Life",
-              icon: Home,
+              icon: "👨‍👩‍👧‍👦",
               items: ["Two kids under 8 years old", "Constant school activities", "No time for self-care"],
               bgColor: "bg-blue-500/20",
               borderColor: "border-blue-400/30",
@@ -291,7 +290,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             },
             {
               title: "Health Concerns",
-              icon: Heart,
+              icon: "❤️",
               items: ["Mark's Type 2 diabetes", "Sarah's chronic fatigue", "No time for doctor visits"],
               bgColor: "bg-purple-500/20",
               borderColor: "border-purple-400/30",
@@ -310,7 +309,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
                 <div
                   className={`w-12 h-12 ${card.iconBg} rounded-2xl flex items-center justify-center mr-4 backdrop-blur-sm`}
                 >
-                  <card.icon className={`w-6 h-6 ${card.iconColor}`} />
+                  <span className={`text-4xl ${card.iconColor}`}>{card.icon}</span>
                 </div>
                 <h3 className={`text-xl font-bold ${card.titleColor} drop-shadow-md`}>{card.title}</h3>
               </div>
@@ -351,7 +350,7 @@ function BiomarkerInputs() {
       name: "Bifidobacterium longum",
       value: "Decreased Activity",
       status: "Insufficient",
-      icon: Brain,
+      icon: "🧠",
       color: "from-purple-400 to-purple-600",
       concern: "Key for Mood Stability",
     },
@@ -359,7 +358,7 @@ function BiomarkerInputs() {
       name: "Lactobacillus rhamnosus",
       value: "Decreased Activity",
       status: "Stress Imbalance",
-      icon: Activity,
+      icon: "⚡",
       color: "from-blue-400 to-blue-600",
       concern: "Body's Stress Regulator",
     },
@@ -367,7 +366,7 @@ function BiomarkerInputs() {
       name: "Faecalibacterium prausnitzii",
       value: "Decreased",
       status: "Low Power",
-      icon: Zap,
+      icon: "⚙️",
       color: "from-green-400 to-green-600",
       concern: "Gut's Core Energy Factory",
     },
@@ -375,7 +374,7 @@ function BiomarkerInputs() {
       name: "Akkermansia muciniphila",
       value: "Decreased",
       status: "Weakened Barrier",
-      icon: Heart,
+      icon: "❤️",
       color: "from-teal-400 to-teal-600",
       concern: "Metabolism & Barrier Guardian",
     },
@@ -383,7 +382,7 @@ function BiomarkerInputs() {
       name: "Alistipes spp.",
       value: "Increased",
       status: "Overgrowth",
-      icon: Droplets,
+      icon: "💧",
       color: "from-gray-400 to-orange-500",
       concern: "Linked to Persistent Fatigue",
     },
@@ -391,7 +390,7 @@ function BiomarkerInputs() {
       name: "F/B Ratio",
       value: "Imbalanced",
       status: "Dysbiosis",
-      icon: Activity,
+      icon: "⚙️",
       color: "from-orange-400 to-orange-600",
       concern: "Overall Gut Wellness",
     },
@@ -414,7 +413,7 @@ function BiomarkerInputs() {
                   <div
                     className={`w-16 h-16 rounded-full bg-gradient-to-r ${biomarker.color} flex items-center justify-center mb-4 mx-auto shadow-lg relative z-20`}
                   >
-                    <biomarker.icon className="w-8 h-8 text-white" />
+                    <span className="text-4xl text-white">{biomarker.icon}</span>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2 text-center drop-shadow-md">{biomarker.name}</h3>
                   <p className="text-lg text-gray-200 text-center font-mono mb-1">{biomarker.value}</p>
@@ -585,7 +584,7 @@ function BiomarkerInputs() {
                   {/* Enhanced pulsing core */}
                   <div className="relative">
                     <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-cyan-400/50 relative z-10">
-                      <Brain className="w-8 h-8 text-white animate-pulse" />
+                      <span className="text-4xl text-white animate-pulse">🧠</span>
                     </div>
 
                     {/* Multiple ripple effects */}
@@ -876,7 +875,7 @@ function MicrobiomeResults() {
           <div className="bg-red-500/20 backdrop-blur-md rounded-2xl p-8 border border-red-400/30">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-red-500/40 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
-                <span className="text-white font-bold text-xl">⚠️</span>
+                <span className="text-4xl">⚠️</span>
               </div>
               <h3 className="text-2xl font-bold text-red-100 drop-shadow-md">Stress Factors</h3>
             </div>
@@ -895,7 +894,7 @@ function MicrobiomeResults() {
           <div className="bg-green-500/20 backdrop-blur-md rounded-2xl p-8 border border-green-400/30">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-green-500/40 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
-                <span className="text-white font-bold text-xl">✨</span>
+                <span className="text-4xl">✨</span>
               </div>
               <h3 className="text-2xl font-bold text-green-100 drop-shadow-md">Solutions</h3>
             </div>
@@ -1159,15 +1158,7 @@ function CoffeeConfiguration() {
             </div>
           </div>
 
-          {/* Bottom Summary */}
-          <div className="mt-16 text-center bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-4">Personalized for Your Lifestyle</h3>
-            <p className="text-gray-200 text-lg leading-relaxed max-w-4xl mx-auto">
-              This isn't just coffee—it's a precision-engineered wellness solution. Every ingredient has been selected
-              by AI analysis of your microbiome, stress patterns, and lifestyle needs. One simple morning ritual that
-              addresses fatigue, stress, gut health, and mental clarity.
-            </p>
-          </div>
+
         </div>
       </div>
 

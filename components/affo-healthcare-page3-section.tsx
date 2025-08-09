@@ -71,7 +71,7 @@ export default function AffoHealthcarePage3Section() {
         <Link
           href="/pre-order"
           className="inline-flex items-center gap-2 bg-white text-gray-900 font-medium py-3 px-6 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-          style={{ fontFamily: "Crimson Text, serif" }}
+          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
         >
           Join Waitlist
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

@@ -80,7 +80,6 @@ export default function AffoHealthcareSection() {
       <div className="relative z-20 max-w-7xl mx-auto text-center">
         <h2
           className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-lg"
-          style={{ fontFamily: "Playfair Display, serif" }}
         >
           BALANX-ÁFFO HEALTHCARE
         </h2>

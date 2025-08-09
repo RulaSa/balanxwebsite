@@ -43,7 +43,7 @@ export default function AffoHealthcarePage1() {
           <Link
             href="/"
             className="text-white hover:text-gold-400 transition-colors duration-300 flex items-center gap-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ export default function AffoHealthcarePage1() {
           <Link
             href="/affo-healthcare/page2"
             className="inline-flex items-center gap-2 bg-gold-500 text-black font-bold py-3 px-8 rounded-full hover:bg-gold-400 transition-colors duration-300"
-            style={{ fontFamily: "Crimson Text, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             Next: BALANX-ÁFFO HEALTHCARE
             <svg

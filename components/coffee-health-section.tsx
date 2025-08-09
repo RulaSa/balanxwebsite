@@ -185,14 +185,14 @@ const CoffeeHealthSection = forwardRef<HTMLDivElement, CoffeeHealthSectionProps>
           <h2
             ref={titleRef}
             className="text-6xl md:text-8xl font-bold mb-8 tracking-wide drop-shadow-lg"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             Coffee & Wellness
           </h2>
           <p
             ref={descriptionRef}
             className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-16 drop-shadow-md"
-            style={{ fontFamily: "Crimson Text, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             Discover how our unique coffee blends, infused with ancient wisdom and modern science, can elevate your
             daily wellness routine.
@@ -211,11 +211,11 @@ const CoffeeHealthSection = forwardRef<HTMLDivElement, CoffeeHealthSectionProps>
                 </p>
                 <h3
                   className="text-2xl font-bold mb-4 drop-shadow-sm"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ fontFamily: "Agrandir Wide, sans-serif" }}
                 >
                   {item.title}
                 </h3>
-                <p className="leading-relaxed text-white/80" style={{ fontFamily: "Crimson Text, serif" }}>
+                <p className="leading-relaxed text-white/80" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
                   {item.description}
                 </p>
               </div>

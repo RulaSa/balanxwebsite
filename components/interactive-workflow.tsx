@@ -74,34 +74,25 @@ export default function InteractiveWorkflow() {
     <section
       ref={sectionRef}
       data-section="interactive-workflow"
-      className="relative min-h-[550vh] text-white flex flex-col items-center justify-start py-24 overflow-hidden"
+      className="relative min-h-[550vh] flex flex-col items-center justify-start py-24 overflow-hidden"
+      style={{
+        background: "linear-gradient(to bottom, #d4c1a7 0%, #e8dccd 50%, #f8f5f0 100%)",
+        marginTop: 0,
+        marginBottom: 0
+      }}
     >
-      {/* Background video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover opacity-90"
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1846e211-60b1-4108-86f9-901aeef72c29%20%281%29-Ayv68fmwXKkfHBtbYgzAza9cZQ8pi8.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/30"></div>
 
       <div ref={stickyContainerRef} className="sticky top-0 w-full h-screen flex flex-col items-center justify-center relative z-10">
         <h1
           className="text-6xl md:text-8xl font-bold text-center mb-16 drop-shadow-lg"
-          style={{ fontFamily: "Playfair Display, serif" }}
+          style={{ color: "#1a1a1a" }}
         >
           {"What If Health Was ..."}
         </h1>
 
         <div className="relative w-full max-w-6xl mx-auto h-[calc(100%-10rem)] flex flex-col justify-around">
           {/* Central Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gray-700"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px" style={{ backgroundColor: "#333" }}></div>
 
           {workflowSteps.map((step, index) => (
             <div key={step.number} className="relative flex items-center w-full">
@@ -109,8 +100,8 @@ export default function InteractiveWorkflow() {
               <div className="flex-1 flex justify-end pr-12">
                 {index === 0 || index === 2 ? ( // Step 1 & 3: Description on left
                   <p
-                    className="text-lg text-gray-300 leading-relaxed max-w-md text-right"
-                    style={{ fontFamily: "Inter, sans-serif" }}
+                    className="text-lg leading-relaxed max-w-md text-right"
+                    style={{ color: "#333" }}
                   >
                     {step.description}
                   </p> // Step 2: Title on left
@@ -118,15 +109,16 @@ export default function InteractiveWorkflow() {
                   <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-8 max-w-md text-right card-glow">
                     <p
                       className={`step-number-text text-2xl font-bold mb-2 transition-colors duration-500 ${
-                        index === activeStep ? "metallic-text-gold" : "text-gray-500"
+                        index === activeStep ? "metallic-text-gold" : ""
                       }`}
+                      style={{ color: index === activeStep ? undefined : "#222" }}
                     >
                       {"Step "}
                       {step.number}
                     </p>
                     <h3
-                      className="step-title-text text-4xl font-bold metallic-text-silver"
-                      style={{ fontFamily: "Playfair Display, serif" }}
+                      className="step-title-text text-4xl font-bold"
+                      style={{ color: "#222" }}
                     >
                       {step.title}
                     </h3>
@@ -149,23 +141,24 @@ export default function InteractiveWorkflow() {
                   <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-8 max-w-md text-left card-glow">
                     <p
                       className={`step-number-text text-2xl font-bold mb-2 transition-colors duration-500 ${
-                        index === activeStep ? "metallic-text-gold" : "text-gray-500"
+                        index === activeStep ? "metallic-text-gold" : ""
                       }`}
+                      style={{ color: index === activeStep ? undefined : "#222" }}
                     >
                       {"Step "}
                       {step.number}
                     </p>
                     <h3
-                      className="step-title-text text-4xl font-bold metallic-text-silver"
-                      style={{ fontFamily: "Playfair Display, serif" }}
+                      className="step-title-text text-4xl font-bold"
+                      style={{ color: "#222" }}
                     >
                       {step.title}
                     </h3>
                   </div> // Step 2: Description on right
                 ) : (
                   <p
-                    className="text-lg text-gray-300 leading-relaxed max-w-md text-left"
-                    style={{ fontFamily: "Inter, sans-serif" }}
+                    className="text-lg leading-relaxed max-w-md text-left"
+                    style={{ color: "#333" }}
                   >
                     {step.description}
                   </p>

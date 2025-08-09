@@ -59,7 +59,7 @@ export default function AffoHealthcarePage3() {
           <Link
             href="/affo-healthcare/page2"
             className="text-white hover:text-gold-400 transition-colors duration-300 flex items-center gap-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,14 +105,14 @@ export default function AffoHealthcarePage3() {
             <Link
               href="/"
               className="bg-gold-500 text-black font-bold py-3 px-8 rounded-full hover:bg-gold-400 transition-colors duration-300"
-              style={{ fontFamily: "Crimson Text, serif" }}
+              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
             >
               Back to Home
             </Link>
             <Link
               href="/affo-healthcare/page1"
               className="text-white border border-white/50 py-3 px-8 rounded-full hover:bg-white/10 transition-colors duration-300"
-              style={{ fontFamily: "Crimson Text, serif" }}
+              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
             >
               Start Over
             </Link>

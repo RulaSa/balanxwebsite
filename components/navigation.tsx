@@ -7,8 +7,6 @@ import { useRouter, usePathname } from "next/navigation"
 
 export default function Navigation() {
   const navRef = useRef<HTMLElement>(null)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
 
@@ -20,36 +18,29 @@ export default function Navigation() {
       { y: 0, opacity: 1, duration: 1.618, delay: 3.5, ease: "power3.out" },
     )
 
-    // Scroll detection
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
+    // Backdrop filter support detection
+    const root = document.documentElement
+    const test = CSS.supports('backdrop-filter', 'blur(1px)') || CSS.supports('-webkit-backdrop-filter', 'blur(1px)')
+    if (!test) root.classList.add('no-backdrop')
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    // Close menu when clicking outside
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false)
+    // Scroll detection for glassmorphism
+    const nav = document.querySelector('.navbar.glass')
+    const onScroll = () => {
+      if (nav) {
+        nav.classList.toggle('scrolled', window.scrollY > 100)
       }
     }
-
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside)
-    }
+    
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll() // Initial check
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
+      window.removeEventListener('scroll', onScroll)
     }
-  }, [isMenuOpen])
+  }, [])
 
   // Handle navigation clicks
   const handleNavigationClick = (sectionId: string) => {
-    setIsMenuOpen(false)
-    
     if (pathname === '/') {
       // If on home page, scroll to section with enhanced smooth behavior
       if (sectionId === 'hero') {
@@ -82,102 +73,84 @@ export default function Navigation() {
   return (
     <nav
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-rose-gold-200"
-          : "bg-gradient-to-b from-white/80 to-transparent"
-      }`}
+      className="navbar glass"
     >
-      <div className="max-w-7xl mx-auto px-0 py-3">
-        <div className="flex items-center justify-between w-full">
-          {/* Logo Image */}
-          <Link href="/" className="-ml-16 text-left py-0">
-            <img
-              src="/images/logo-clean.png"
-              alt="BALANX Logo"
-              className="h-14 md:h-20 object-contain bg-transparent transition-opacity duration-500 hover:opacity-80 cursor-pointer"
-            />
-          </Link>
+      <div className="flex items-center justify-between w-full h-full">
+        {/* Logo Image */}
+        <Link href="/" className="text-left py-0 ml-8">
+          <img
+            src="/images/logo-clean.png"
+            alt="BALANX Logo"
+            className="h-12 md:h-16 object-contain bg-transparent transition-opacity duration-500 hover:opacity-80 cursor-pointer brightness-0 invert"
+          />
+        </Link>
 
-          {/* Navigation Menu and Pre-Order Button */}
-          <div className="flex items-center space-x-4">
-            {/* Navigation Menu */}
-            <div className="hidden md:flex items-center space-x-6 relative">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="flex space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-light-green-400"></div>
-                  <div className="w-2 h-2 rounded-full bg-gold-400"></div>
-                  <div className="w-2 h-2 rounded-full bg-rose-gold-400"></div>
-                </div>
-                <span className="text-gray-800 font-medium">Menu</span>
-                <div className={`w-4 h-4 transition-transform duration-300 ${isMenuOpen ? "rotate-180" : ""}`}>
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </button>
-
-              {isMenuOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-rose-gold-200 py-2 z-50">
-                  <button
-                    onClick={() => handleNavigationClick('hero')}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-light-green-50 hover:text-light-green-600 transition-colors duration-200"
-                  >
-                    Home
-                  </button>
-                  <button
-                    onClick={() => handleNavigationClick('interactive-workflow')}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-light-green-50 hover:text-light-green-600 transition-colors duration-200"
-                  >
-                    About
-                  </button>
-                  <button
-                    onClick={() => handleNavigationClick('algorithm')}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-light-green-50 hover:text-light-green-600 transition-colors duration-200"
-                  >
-                    Our Algorithm
-                  </button>
-                  <button
-                    onClick={() => handleNavigationClick('affo-healthcare-page2')}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-light-green-50 hover:text-light-green-600 transition-colors duration-200"
-                  >
-                    Affo Healthcare
-                  </button>
-                  <button
-                    onClick={() => handleNavigationClick('affo-healthcare-page3')}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-light-green-50 hover:text-light-green-600 transition-colors duration-200"
-                  >
-                    Services
-                  </button>
-                  <button
-                    onClick={() => handleNavigationClick('contact')}
-                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-light-green-50 hover:text-light-green-600 transition-colors duration-200"
-                  >
-                    Contact
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* Pre-Order Button */}
-            <Link
-              href="/pre-order"
-              className="hidden md:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-stone-600 to-stone-700 text-white font-medium rounded-full hover:from-stone-700 hover:to-stone-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 -mr-4"
-            >
-              Pre-Order
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <button className="md:hidden text-gray-800 hover:text-light-green-600 transition-colors duration-300">
-            <div className="w-8 h-px bg-current mb-2 transition-all duration-300"></div>
-            <div className="w-8 h-px bg-current mb-2 transition-all duration-300"></div>
-            <div className="w-8 h-px bg-current transition-all duration-300"></div>
+        {/* Navigation Links - Horizontal Layout */}
+        <div className="hidden md:flex items-center space-x-6">
+          <button
+            onClick={() => handleNavigationClick('hero')}
+            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          >
+            Home
+          </button>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <button
+            onClick={() => handleNavigationClick('interactive-workflow')}
+            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          >
+            About
+          </button>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <button
+            onClick={() => handleNavigationClick('algorithm')}
+            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          >
+            Our Algorithm
+          </button>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <button
+            onClick={() => handleNavigationClick('affo-healthcare-page2')}
+            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          >
+            Affo Healthcare
+          </button>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <button
+            onClick={() => handleNavigationClick('affo-healthcare-page3')}
+            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          >
+            Services
+          </button>
+          <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+          <button
+            onClick={() => handleNavigationClick('contact')}
+            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          >
+            Contact
           </button>
         </div>
+
+        {/* Pre-Order Button */}
+        <Link
+          href="/pre-order"
+          className="hidden md:inline-flex items-center px-6 py-2.5 bg-black/80 text-white font-medium rounded-full hover:bg-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 backdrop-blur-sm mr-8"
+          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+        >
+          Pre-Order
+        </Link>
+
+        {/* Mobile menu button */}
+        <button className="md:hidden text-white hover:text-light-green-400 transition-colors duration-300">
+          <div className="w-8 h-px bg-current mb-2 transition-all duration-300"></div>
+          <div className="w-8 h-px bg-current mb-2 transition-all duration-300"></div>
+          <div className="w-8 h-px bg-current transition-all duration-300"></div>
+        </button>
       </div>
     </nav>
   )

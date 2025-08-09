@@ -46,10 +46,10 @@ export default function PartnershipPopup({ isOpen, onClose }: PartnershipPopupPr
 
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-orange-600 mb-2" style={{ fontFamily: "Playfair Display, serif" }}>
+          <h2 className="text-3xl font-bold text-orange-600 mb-2" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
             Partnership
           </h2>
-          <p className="text-gray-700" style={{ fontFamily: "Crimson Text, serif" }}>
+          <p className="text-gray-700" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
             Send message to show your interest.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function PartnershipPopup({ isOpen, onClose }: PartnershipPopupPr
               value={formData.name}
               onChange={handleChange}
               className="w-full px-4 py-3 bg-white border border-orange-200 rounded-lg focus:border-orange-400 focus:outline-none transition-colors"
-              style={{ fontFamily: "Crimson Text, serif" }}
+              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
               required
             />
             <input
@@ -75,7 +75,7 @@ export default function PartnershipPopup({ isOpen, onClose }: PartnershipPopupPr
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-3 bg-white border border-orange-200 rounded-lg focus:border-orange-400 focus:outline-none transition-colors"
-              style={{ fontFamily: "Crimson Text, serif" }}
+              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
               required
             />
           </div>
@@ -88,7 +88,7 @@ export default function PartnershipPopup({ isOpen, onClose }: PartnershipPopupPr
             onChange={handleChange}
             rows={6}
             className="w-full px-4 py-3 bg-white border border-orange-200 rounded-lg focus:border-orange-400 focus:outline-none transition-colors resize-none"
-            style={{ fontFamily: "Crimson Text, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
             required
           />
 
@@ -96,7 +96,7 @@ export default function PartnershipPopup({ isOpen, onClose }: PartnershipPopupPr
           <button
             type="submit"
             className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium py-3 px-6 rounded-lg hover:from-orange-500 hover:to-orange-700 transition-all duration-300 flex items-center justify-center gap-2"
-            style={{ fontFamily: "Crimson Text, serif" }}
+            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
           >
             Send Partnership Inquiry
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

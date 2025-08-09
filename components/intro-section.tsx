@@ -243,7 +243,7 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
         <h1
           className="intro-element text-7xl md:text-9xl font-serif font-bold text-white tracking-wider mb-6 drop-shadow-2xl"
           style={{
-            fontFamily: "Playfair Display, serif",
+            fontFamily: "Agrandir Wide, sans-serif",
             textShadow: "0 4px 20px rgba(0,0,0,0.5)",
           }}
         >
@@ -252,7 +252,7 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
         <p
           className="intro-element text-xl md:text-3xl text-white/90 font-light mb-12 tracking-widest drop-shadow-lg"
           style={{
-            fontFamily: "Inter, sans-serif",
+
             textShadow: "0 2px 10px rgba(0,0,0,0.5)",
           }}
         >
@@ -272,7 +272,7 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
           </span>
         </p>
         <div className="intro-element scroll-indicator flex flex-col items-center">
-          <p className="text-white/70 text-sm mb-4 tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>
+          <p className="text-white/70 text-sm mb-4 tracking-wide">
             Scroll to explore
           </p>
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">

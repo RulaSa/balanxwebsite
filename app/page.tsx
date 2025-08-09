@@ -6,11 +6,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import IntroSection from "@/components/intro-section"
 import HeroSection from "@/components/hero-section"
 import InteractiveWorkflow from "@/components/interactive-workflow"
+import AboutAffoHealthcareSection from "@/components/about-affo-healthcare-section"
 import AboutSection from "@/components/about-section"
 import AIAlgorithmSection from "@/components/ai-algorithm-section"
 import AffoHealthcarePage2Section from "@/components/affo-healthcare-page2-section"
 import AffoHealthcarePage3Section from "@/components/affo-healthcare-page3-section"
-import WaitlistSection from "@/components/waitlist-section"
+import PersonalizedLifestyleSection from "@/components/personalized-lifestyle-section"
 import ContactSection from "@/components/contact-section"
 import Navigation from "@/components/navigation"
 import ParticleField from "@/components/particle-field"
@@ -107,11 +108,12 @@ export default function Home() {
         <main>
           <HeroSection />
           <InteractiveWorkflow />
-          <AboutSection />
-          <AIAlgorithmSection />
+          <AboutAffoHealthcareSection />
           <AffoHealthcarePage2Section />
+          <AboutSection />
           <AffoHealthcarePage3Section />
-          <WaitlistSection />
+          <AIAlgorithmSection />
+          <PersonalizedLifestyleSection />
           <ContactSection />
         </main>
       </div>
