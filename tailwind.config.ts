@@ -180,8 +180,8 @@ const config: Config = {
         float: "float 4s ease-in-out infinite",
       },
       fontFamily: {
-        serif: ["Agrandir Wide", "serif"],
-        sans: ["Agrandir Wide", "system-ui", "sans-serif"],
+        serif: ["var(--font-agrandir-wide)", "Agrandir Wide", "serif"],
+        sans: ["var(--font-agrandir-wide)", "Agrandir Wide", "system-ui", "sans-serif"],
       },
       backdropBlur: {
         xs: "2px",

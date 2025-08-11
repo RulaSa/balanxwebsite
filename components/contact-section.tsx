@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
+import Link from "next/link"
 import EmailPopup from "./email-popup"
 import PartnershipPopup from "./partnership-popup"
 
@@ -97,45 +98,65 @@ export default function ContactSection() {
     }}>
       {/* Main Contact Section */}
       <div className="relative z-10 py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2
-            className="contact-element text-5xl md:text-7xl font-wide font-bold mb-8 tracking-wide bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
-          >
-            Join the Balance Community
-          </h2>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Text Content */}
+            <div className="text-left">
+              <h2
+                className="contact-element text-5xl md:text-7xl font-wide font-extralight mb-8 tracking-wide bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
+                style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
+              >
+                Join the Balance Community
+              </h2>
 
-          <p
-            className="contact-element text-xl md:text-2xl text-gray-700 leading-relaxed mb-16 max-w-3xl mx-auto"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
-          >
-            Be the first to experience personalized wellness. Reserve your BalanX-D and join thousands on the journey
-            toward natural balance.
-          </p>
+              <p
+                className="contact-element text-xl md:text-2xl text-gray-700 leading-relaxed max-w-lg"
+                style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
+              >
+                Be the first to experience personalized wellness. Reserve your BalanX-D and join thousands on the journey
+                toward natural balance.
+              </p>
+            </div>
 
-          {/* Email Form */}
-          <form ref={formRef} className="contact-element flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="form-input flex-1 max-w-md bg-white border border-orange-200 rounded-full py-4 px-6 text-gray-900 placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all duration-300 shadow-lg"
-              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
-            />
-            <button
-              type="submit"
-              className="reserve-button bg-orange-600 text-white font-medium py-4 px-8 rounded-full hover:bg-orange-700 transition-all duration-300 flex items-center justify-center gap-2 min-w-fit shadow-lg"
-              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
-            >
-              Reserve Now
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
-              </svg>
-            </button>
-          </form>
+            {/* Right Side - Form and Disclaimer */}
+            <div className="text-center lg:text-left">
+              {/* Email Form */}
+              <form ref={formRef} className="contact-element flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="form-input flex-1 max-w-md bg-white border border-orange-200 rounded-full py-4 px-6 text-gray-900 placeholder-gray-500 focus:border-orange-400 focus:outline-none transition-all duration-300 shadow-lg"
+                  style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
+                />
+                <button
+                  type="submit"
+                  className="reserve-button bg-orange-600 text-white font-extralight py-4 px-8 rounded-full hover:bg-orange-700 transition-all duration-300 flex items-center justify-center gap-2 min-w-fit shadow-lg"
+                  style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
+                >
+                  Reserve Now
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+                  </svg>
+                </button>
+              </form>
 
-          <p className="contact-element text-gray-600 text-sm" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
-            No payment required. Free shipping on pre-orders.
-          </p>
+              <p className="contact-element text-gray-600 text-sm mb-6" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
+                No payment required. Free shipping on pre-orders.
+              </p>
+
+              {/* Join the Waitlist Button */}
+              <Link
+                href="/pre-order"
+                className="contact-element bg-orange-600 text-white font-extralight py-3 px-6 rounded-full hover:bg-orange-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl w-fit"
+                style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
+              >
+                Join the Waitlist
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -147,15 +168,15 @@ export default function ContactSection() {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-gray-900 font-bold text-xl" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                  <span className="text-gray-900 font-extralight text-xl" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                     B
                   </span>
                 </div>
-                <span className="text-2xl font-wide font-bold" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                <span className="text-2xl font-wide font-extralight" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                   BalanX
                 </span>
               </div>
-              <p className="text-gray-600 mb-8" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+              <p className="text-gray-600 mb-8" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                 Where ancient wisdom meets modern wellness.
               </p>
 
@@ -197,7 +218,7 @@ export default function ContactSection() {
                 
                 {/* Copyright */}
                 <div className="mt-6">
-                  <p className="text-gray-600 text-sm" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                  <p className="text-gray-600 text-sm" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                     © 2025 BalanX. All rights reserved.
                   </p>
                 </div>
@@ -205,7 +226,7 @@ export default function ContactSection() {
 
             {/* Contact Column */}
             <div>
-              <h3 className="text-xl font-wide font-bold mb-6" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+              <h3 className="text-xl font-wide font-extralight mb-6" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                 Contact
               </h3>
               <ul className="space-y-4">
@@ -213,7 +234,7 @@ export default function ContactSection() {
                   <button
                     onClick={() => setIsEmailPopupOpen(true)}
                     className="text-gray-600 hover:text-orange-700 transition-colors duration-300 flex items-center gap-3"
-                    style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                    style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -225,7 +246,7 @@ export default function ContactSection() {
                   <button
                     onClick={() => setIsPartnershipPopupOpen(true)}
                     className="text-gray-600 hover:text-orange-700 transition-colors duration-300 flex items-center gap-3"
-                    style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                    style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -239,7 +260,7 @@ export default function ContactSection() {
 
             {/* Company Column */}
             <div>
-              <h3 className="text-xl font-wide font-bold mb-6" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+              <h3 className="text-xl font-wide font-extralight mb-6" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                 Company
               </h3>
               <ul className="space-y-4">
@@ -247,7 +268,7 @@ export default function ContactSection() {
                   <a
                     href="#"
                     className="text-gray-600 hover:text-orange-700 transition-colors duration-300 flex items-center gap-3"
-                    style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                    style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -260,7 +281,7 @@ export default function ContactSection() {
 
             {/* Resources Column */}
             <div>
-              <h3 className="text-xl font-wide font-bold mb-6" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+              <h3 className="text-xl font-wide font-extralight mb-6" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                 Resources
               </h3>
               <ul className="space-y-4">
@@ -268,7 +289,7 @@ export default function ContactSection() {
                   <a
                     href="#"
                     className="text-gray-600 hover:text-orange-700 transition-colors duration-300 flex items-center gap-3"
-                    style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                    style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -280,7 +301,7 @@ export default function ContactSection() {
                   <a
                     href="#"
                     className="text-gray-600 hover:text-orange-700 transition-colors duration-300 flex items-center gap-3"
-                    style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                    style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -292,7 +313,7 @@ export default function ContactSection() {
                   <a
                     href="#"
                     className="text-gray-600 hover:text-orange-700 transition-colors duration-300 flex items-center gap-3"
-                    style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                    style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />

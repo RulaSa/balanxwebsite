@@ -83,10 +83,10 @@ export default function AffoHealthcarePage() {
         className="relative z-20 pt-24 pb-16 px-6 md:px-12 lg:px-24 text-white"
       >
         <h1
-          className="text-5xl md:text-7xl font-bold text-center mb-8 drop-shadow-lg"
-          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          className="text-5xl md:text-7xl font-extralight text-center mb-8 drop-shadow-lg"
+          style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
         >
-          BALANX-ÁFFO HEALTHCARE
+          ÁFFO HEALTHCARE
         </h1>
         <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto mb-16 drop-shadow-md">
           Experience personalized wellness through advanced bio-analysis and tailored nutrition.
@@ -112,8 +112,8 @@ export default function AffoHealthcarePage() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-20">
           <Link
             href="/"
-            className="bg-gold-500 text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-gold-600 transition-colors duration-300 shadow-lg flex items-center gap-3"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="bg-gold-500 text-white font-extralight py-4 px-10 rounded-full text-lg hover:bg-gold-600 transition-colors duration-300 shadow-lg flex items-center gap-3"
+            style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
             Join the Waitlist
             <svg
@@ -135,7 +135,7 @@ export default function AffoHealthcarePage() {
           <Link
             href="/"
             className="text-white border border-white/50 py-4 px-10 rounded-full text-lg hover:bg-white/10 transition-colors duration-300 flex items-center gap-3"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
             Home
             <svg

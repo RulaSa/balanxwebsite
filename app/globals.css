@@ -83,17 +83,17 @@
 @layer base {
   * {
     @apply border-border;
-    font-family: 'Agrandir Wide', sans-serif;
+    font-family: var(--font-agrandir-wide), 'Agrandir Wide', sans-serif;
   }
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
-    font-family: 'Agrandir Wide', sans-serif;
+    font-family: var(--font-agrandir-wide), 'Agrandir Wide', sans-serif;
   }
   
   html {
     scroll-behavior: smooth;
-    font-family: 'Agrandir Wide', sans-serif;
+    font-family: var(--font-agrandir-wide), 'Agrandir Wide', sans-serif;
   }
 }
 

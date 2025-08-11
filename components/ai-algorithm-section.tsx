@@ -93,7 +93,7 @@ function HeroSection() {
           <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-r from-blue-400/80 to-purple-400/80 rounded-full flex items-center justify-center animate-pulse backdrop-blur-sm">
             <span className="text-4xl">👥</span>
           </div>
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent mb-4 drop-shadow-lg">
+          <h1 className="text-6xl font-extralight mb-4 drop-shadow-lg" style={{ color: '#0E7490' }}>
             Meet Sarah &amp; Mark
           </h1>
         </div>
@@ -186,7 +186,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
                       <span className="text-4xl">🏠</span>
                     </div>
                   </div>
-                  <p className="text-white font-medium text-center leading-relaxed drop-shadow-md">
+                  <p className="text-white font-extralight text-center leading-relaxed drop-shadow-md">
                     Sarah & Mark's Daily Reality
                   </p>
                   <div className="mt-4 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
@@ -206,7 +206,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             }}
           >
             <div>
-              <h2 className="text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+              <h2 className="text-5xl font-extralight text-white mb-6 leading-tight drop-shadow-lg">
                 The Real-Life Struggle
               </h2>
               <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mb-8"></div>
@@ -225,13 +225,13 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
                 >
                   <p className="text-gray-100 drop-shadow-md">
                     {story.text}
-                    <span className="font-bold text-white bg-gradient-to-r from-blue-500/40 to-purple-500/40 px-3 rounded-md backdrop-blur-sm border border-white/20 py-px">
+                    <span className="font-extralight text-white bg-gradient-to-r from-blue-500/40 to-purple-500/40 px-3 rounded-md backdrop-blur-sm border border-white/20 py-px">
                       {story.emphasis}
                     </span>
                     {story.suffix}
                     {story.emphasis2 && (
                       <>
-                        <span className="font-bold text-yellow-100 bg-gradient-to-r from-yellow-500/40 to-orange-500/40 px-3 rounded-md backdrop-blur-sm border border-white/20 ml-1 mt-0 py-px">
+                        <span className="font-extralight text-yellow-100 bg-gradient-to-r from-yellow-500/40 to-orange-500/40 px-3 rounded-md backdrop-blur-sm border border-white/20 ml-1 mt-0 py-px">
                           {story.emphasis2}
                         </span>
                         {story.suffix2}
@@ -239,7 +239,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
                     )}
                     {story.emphasis3 && (
                       <>
-                        <span className="font-bold text-cyan-100 bg-gradient-to-r from-cyan-500/40 to-blue-500/40 rounded-md ml-1 backdrop-blur-sm border border-white/20 py-px px-3">
+                        <span className="font-extralight text-cyan-100 bg-gradient-to-r from-cyan-500/40 to-blue-500/40 rounded-md ml-1 backdrop-blur-sm border border-white/20 py-px px-3">
                           {story.emphasis3}
                         </span>
                         {story.suffix3}
@@ -271,10 +271,10 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
               bgColor: "bg-red-500/20",
               borderColor: "border-red-400/30",
               iconBg: "bg-red-500/30",
-              iconColor: "text-red-200",
-              titleColor: "text-red-100",
-              textColor: "text-red-200",
-              dotColor: "bg-red-400",
+              iconColor: "text-amber-900",
+              titleColor: "text-amber-900",
+              textColor: "text-amber-900",
+              dotColor: "bg-amber-900",
             },
             {
               title: "Family Life",
@@ -283,10 +283,10 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
               bgColor: "bg-blue-500/20",
               borderColor: "border-blue-400/30",
               iconBg: "bg-blue-500/30",
-              iconColor: "text-blue-200",
-              titleColor: "text-blue-100",
-              textColor: "text-blue-200",
-              dotColor: "bg-blue-400",
+              iconColor: "text-amber-900",
+              titleColor: "text-amber-900",
+              textColor: "text-amber-900",
+              dotColor: "bg-amber-900",
             },
             {
               title: "Health Concerns",
@@ -295,10 +295,10 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
               bgColor: "bg-purple-500/20",
               borderColor: "border-purple-400/30",
               iconBg: "bg-purple-500/30",
-              iconColor: "text-purple-200",
-              titleColor: "text-purple-100",
-              textColor: "text-purple-200",
-              dotColor: "bg-purple-400",
+              iconColor: "text-amber-900",
+              titleColor: "text-amber-900",
+              textColor: "text-amber-900",
+              dotColor: "bg-amber-900",
             },
           ].map((card, index) => (
             <div
@@ -311,7 +311,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
                 >
                   <span className={`text-4xl ${card.iconColor}`}>{card.icon}</span>
                 </div>
-                <h3 className={`text-xl font-bold ${card.titleColor} drop-shadow-md`}>{card.title}</h3>
+                <h3 className={`text-xl font-extralight ${card.titleColor} drop-shadow-md`}>{card.title}</h3>
               </div>
               <ul className={`${card.textColor} space-y-3 text-sm`}>
                 {card.items.map((item, itemIndex) => (
@@ -333,8 +333,8 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             transition: "all 0.6s ease-out",
           }}
         >
-          <h3 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">Sound Familiar?</h3>
-          <p className="text-gray-200 text-lg leading-relaxed max-w-4xl mx-auto drop-shadow-md">
+          <h3 className="text-3xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sound Familiar?</h3>
+          <p className="text-amber-900 text-lg leading-relaxed max-w-4xl mx-auto drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             Like millions of working people, Sarah and Mark are caught in the endless cycle of responsibilities. They
             need a solution that fits into their chaotic schedule - something simple, personalized, and effective.
           </p>
@@ -350,7 +350,7 @@ function BiomarkerInputs() {
       name: "Bifidobacterium longum",
       value: "Decreased Activity",
       status: "Insufficient",
-      icon: "🧠",
+      image: "/images/bifidobacterium_longum.png",
       color: "from-purple-400 to-purple-600",
       concern: "Key for Mood Stability",
     },
@@ -358,7 +358,7 @@ function BiomarkerInputs() {
       name: "Lactobacillus rhamnosus",
       value: "Decreased Activity",
       status: "Stress Imbalance",
-      icon: "⚡",
+      image: "/images/lactobacilius_rhamnosus.png",
       color: "from-blue-400 to-blue-600",
       concern: "Body's Stress Regulator",
     },
@@ -366,7 +366,7 @@ function BiomarkerInputs() {
       name: "Faecalibacterium prausnitzii",
       value: "Decreased",
       status: "Low Power",
-      icon: "⚙️",
+      image: "/images/faecalibacterium prausnitzii.png",
       color: "from-green-400 to-green-600",
       concern: "Gut's Core Energy Factory",
     },
@@ -374,7 +374,7 @@ function BiomarkerInputs() {
       name: "Akkermansia muciniphila",
       value: "Decreased",
       status: "Weakened Barrier",
-      icon: "❤️",
+      image: "/images/akkermansia_mucinlphila.png",
       color: "from-teal-400 to-teal-600",
       concern: "Metabolism & Barrier Guardian",
     },
@@ -382,7 +382,7 @@ function BiomarkerInputs() {
       name: "Alistipes spp.",
       value: "Increased",
       status: "Overgrowth",
-      icon: "💧",
+      image: "/images/alistipes_spp..png",
       color: "from-gray-400 to-orange-500",
       concern: "Linked to Persistent Fatigue",
     },
@@ -390,7 +390,7 @@ function BiomarkerInputs() {
       name: "F/B Ratio",
       value: "Imbalanced",
       status: "Dysbiosis",
-      icon: "⚙️",
+      image: "/images/FB_ratio.png",
       color: "from-orange-400 to-orange-600",
       concern: "Overall Gut Wellness",
     },
@@ -400,8 +400,8 @@ function BiomarkerInputs() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6 drop-shadow-lg">Sarah's Microbiome Analysis</h2>
-          <p className="text-xl text-gray-200 drop-shadow-md">Detected by BALANX's Advanced Microbiome Analysis</p>
+          <h2 className="text-4xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah's Microbiome Analysis</h2>
+          <p className="text-xl text-amber-900 drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Detected by BALANX's Advanced Microbiome Analysis</p>
         </div>
 
         <div className="relative">
@@ -411,14 +411,18 @@ function BiomarkerInputs() {
               <div key={biomarker.name} className="relative group">
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                   <div
-                    className={`w-16 h-16 rounded-full bg-gradient-to-r ${biomarker.color} flex items-center justify-center mb-4 mx-auto shadow-lg relative z-20`}
+                    className={`w-16 h-16 rounded-full bg-gradient-to-r ${biomarker.color} flex items-center justify-center mb-4 mx-auto shadow-lg relative z-20 overflow-hidden`}
                   >
-                    <span className="text-4xl text-white">{biomarker.icon}</span>
+                    <img 
+                      src={biomarker.image} 
+                      alt={biomarker.name} 
+                      className="w-full h-full object-cover rounded-full"
+                    />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2 text-center drop-shadow-md">{biomarker.name}</h3>
-                  <p className="text-lg text-gray-200 text-center font-mono mb-1">{biomarker.value}</p>
-                  <p className="text-sm text-yellow-300 text-center font-medium mb-2">({biomarker.status})</p>
-                  <p className="text-sm text-gray-300 text-center italic">{biomarker.concern}</p>
+                  <h3 className="text-xl font-extralight text-amber-900 mb-2 text-center drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{biomarker.name}</h3>
+                  <p className="text-lg text-amber-900 text-center font-mono mb-1" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{biomarker.value}</p>
+                  <p className="text-sm text-amber-900 text-center font-extralight mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>({biomarker.status})</p>
+                  <p className="text-sm text-amber-900 text-center italic" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{biomarker.concern}</p>
                 </div>
               </div>
             ))}
@@ -772,8 +776,8 @@ function AIBlackBox() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
-          <h2 className="text-4xl font-bold text-white mb-6 drop-shadow-lg">AI Understanding Their Life</h2>
-          <p className="text-xl text-gray-200 drop-shadow-md">
+          <h2 className="text-4xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>AI Understanding Their Life</h2>
+          <p className="text-xl text-amber-900 drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             Advanced algorithms recognize the patterns of modern family stress
           </p>
         </div>
@@ -787,11 +791,11 @@ function AIBlackBox() {
                 <div className="w-3 h-3 bg-yellow-400 rounded-full shadow-lg"></div>
                 <div className="w-3 h-3 bg-green-400 rounded-full shadow-lg"></div>
               </div>
-              <span className="text-slate-300 text-sm font-medium">BALANX Family AI Terminal</span>
+              <span className="text-slate-300 text-sm font-extralight">BALANX Family AI Terminal</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
-              <span className="text-emerald-400 text-sm font-medium">ACTIVE</span>
+              <span className="text-emerald-400 text-sm font-extralight">ACTIVE</span>
             </div>
           </div>
 
@@ -803,7 +807,7 @@ function AIBlackBox() {
                   <span className="text-cyan-400 select-none mr-2">{"❯"}</span>
                   <span>{line}</span>
                   {index === currentLineIndex && isTyping && (
-                    <span className="text-white animate-pulse ml-1 font-bold">|</span>
+                    <span className="text-white animate-pulse ml-1 font-extralight">|</span>
                   )}
                 </div>
               ))}
@@ -811,7 +815,7 @@ function AIBlackBox() {
               {currentLineIndex < codeStream.length && displayedLines.length === currentLineIndex && (
                 <div className="text-emerald-400">
                   <span className="text-cyan-400 select-none mr-2">{"❯"}</span>
-                  <span className="text-white animate-pulse font-bold">|</span>
+                  <span className="text-white animate-pulse font-extralight">|</span>
                 </div>
               )}
             </div>
@@ -865,8 +869,8 @@ function MicrobiomeResults() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6 drop-shadow-lg">Lifestyle Impact Analysis</h2>
-          <p className="text-xl text-gray-200 drop-shadow-md">
+          <h2 className="text-4xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Lifestyle Impact Analysis</h2>
+          <p className="text-xl text-amber-900 drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             AI reveals how modern life is affecting Sarah & Mike's health
           </p>
         </div>
@@ -877,7 +881,7 @@ function MicrobiomeResults() {
               <div className="w-12 h-12 bg-red-500/40 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
                 <span className="text-4xl">⚠️</span>
               </div>
-              <h3 className="text-2xl font-bold text-red-100 drop-shadow-md">Stress Factors</h3>
+              <h3 className="text-2xl font-extralight text-amber-900 drop-shadow-md">Stress Factors</h3>
             </div>
             <div className="space-y-4">
               {stressFactors.map((factor, index) => (
@@ -885,7 +889,7 @@ function MicrobiomeResults() {
                   key={index}
                   className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-white/20"
                 >
-                  <span className="text-red-200">{factor}</span>
+                  <span className="text-amber-900">{factor}</span>
                 </div>
               ))}
             </div>
@@ -896,7 +900,7 @@ function MicrobiomeResults() {
               <div className="w-12 h-12 bg-green-500/40 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
                 <span className="text-4xl">✨</span>
               </div>
-              <h3 className="text-2xl font-bold text-green-100 drop-shadow-md">Solutions</h3>
+              <h3 className="text-2xl font-extralight text-amber-900 drop-shadow-md">Solutions</h3>
             </div>
             <div className="space-y-4">
               {healthOpportunities.map((opportunity, index) => (
@@ -904,7 +908,7 @@ function MicrobiomeResults() {
                   key={index}
                   className="bg-white/10 backdrop-blur-sm rounded-lg p-4 shadow-sm border border-white/20"
                 >
-                  <span className="text-green-200">{opportunity}</span>
+                  <span className="text-amber-900">{opportunity}</span>
                 </div>
               ))}
             </div>
@@ -912,8 +916,8 @@ function MicrobiomeResults() {
         </div>
 
         <div className="mt-12 text-center bg-blue-500/20 backdrop-blur-md rounded-2xl p-8 border border-blue-400/30">
-          <h4 className="text-xl font-semibold text-blue-100 mb-4 drop-shadow-md">AI Insight</h4>
-          <p className="text-blue-200 leading-relaxed">
+          <h4 className="text-xl font-extralight text-amber-900 mb-4 drop-shadow-md">AI Insight</h4>
+          <p className="text-amber-900 leading-relaxed">
             The analysis shows classic patterns of modern family stress manifesting as a significant gut microbiome
             imbalance. Sarah and Mike need targeted nutritional support that addresses this root cause, fitting
             seamlessly into their busy lifestyle.
@@ -929,13 +933,13 @@ function CoffeeConfiguration() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">Sarah & Mike's Daily Healthcare Blend</h2>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto drop-shadow-md mb-4 ml-auto px-1 py-1 rounded-lg border-transparent bg-transparent opacity-100">
+          <h2 className="text-5xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah & Mike's Daily Healthcare Blend</h2>
+          <p className="text-xl text-amber-900 max-w-3xl mx-auto drop-shadow-md mb-4 ml-auto px-1 py-1 rounded-lg border-transparent bg-transparent opacity-100" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             AI-selected nutrients and flavors to restore balance to your busy lives
           </p>
-          <div className="text-lg text-cyan-200 font-medium px-0.5 py-1.5 rounded-lg my-0 mx-28 bg-black opacity-75">
+          <div className="text-lg text-amber-900 font-extralight px-0.5 py-1.5 rounded-lg my-0 mx-28 bg-black opacity-75" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             Based on your microbiome analysis, the AI has selected the optimal flavor and nutrient combination from the<br />{" "}
-            <span className="text-yellow-300 font-bold">Calm & Focus Mind & Body Balance Series</span>
+            <span className="text-amber-900 font-extralight" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Calm & Focus Mind & Body Balance Series</span>
           </div>
         </div>
 
@@ -984,7 +988,7 @@ function CoffeeConfiguration() {
                             />
                             
                             {/* 2. Add tooltip */}
-                            <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-max px-4 py-2 bg-gradient-to-r from-purple-600/95 via-blue-600/95 to-cyan-600/95 text-white text-xs font-bold rounded-xl shadow-2xl backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105 pointer-events-none z-[100]">
+                            <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-max px-4 py-2 bg-gradient-to-r from-purple-600/95 via-blue-600/95 to-cyan-600/95 text-white text-xs font-extralight rounded-xl shadow-2xl backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105 pointer-events-none z-[100]">
                               <div className="flex items-center space-x-2">
                                 <span className="animate-pulse">✨</span>
                                 <span>Personalized Nutrients & Flavor</span>
@@ -1037,7 +1041,7 @@ function CoffeeConfiguration() {
 
           {/* Base Drink Configuration Section */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-white text-center mb-8">Base Drink Configuration</h3>
+            <h3 className="text-3xl font-extralight text-amber-900 text-center mb-8" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Base Drink Configuration</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
@@ -1045,28 +1049,28 @@ function CoffeeConfiguration() {
                   amount: "85 mg",
                   description: "A gentle energy boost to combat fatigue without the crash",
                   color: "from-yellow-400 to-orange-500",
-                  icon: "⚡",
+                  image: "/images/coffee.jpg",
                 },
                 {
                   title: "Sugar",
                   amount: "Zero Sugar",
                   description: "Recommended to maintain stable blood sugar, considering Mark's health profile",
                   color: "from-green-400 to-emerald-500",
-                  icon: "🚫",
+                  image: "/images/haohao.jpg",
                 },
                 {
                   title: "Milk",
                   amount: "Oat Milk, 60 ml",
                   description: "Provides a smooth, sustained energy release",
                   color: "from-amber-400 to-orange-500",
-                  icon: "🌾",
+                  image: "/images/milk.jpg",
                 },
                 {
                   title: "Water",
                   amount: "180 ml",
                   description: "Ensures foundational hydration while delivering key nutrients",
                   color: "from-blue-400 to-cyan-500",
-                  icon: "💧",
+                  image: "/images/water.jpg",
                 },
               ].map((item, index) => (
                 <div
@@ -1075,16 +1079,43 @@ function CoffeeConfiguration() {
                 >
                   <div className="flex items-center mb-4">
                     <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mr-4 text-xl shadow-md`}
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mr-4 shadow-md overflow-hidden`}
                     >
-                      {item.icon}
+                      {item.title === "Caffeine" && (
+                        <img 
+                          src="/images/coffee.jpg" 
+                          alt="Coffee" 
+                          className="w-full h-full object-cover rounded-xl"
+                        />
+                      )}
+                      {item.title === "Sugar" && (
+                        <img 
+                          src="/images/haohao.jpg" 
+                          alt="Sugar" 
+                          className="w-full h-full object-cover rounded-xl"
+                        />
+                      )}
+                      {item.title === "Milk" && (
+                        <img 
+                          src="/images/milk.jpg" 
+                          alt="Milk" 
+                          className="w-full h-full object-cover rounded-xl"
+                        />
+                      )}
+                      {item.title === "Water" && (
+                        <img 
+                          src="/images/water.jpg" 
+                          alt="Water" 
+                          className="w-full h-full object-cover rounded-xl"
+                        />
+                      )}
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold text-lg">{item.title}</h4>
-                      <p className="text-gray-300 text-sm font-mono">{item.amount}</p>
+                      <h4 className="text-amber-900 font-extralight text-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
+                      <p className="text-amber-900 text-sm font-mono" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.amount}</p>
                     </div>
                   </div>
-                  <p className="text-gray-200 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-amber-900 text-sm leading-relaxed" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
                 </div>
               ))}
             </div>
@@ -1092,7 +1123,7 @@ function CoffeeConfiguration() {
 
           {/* Personalized Nutrients & Flavor Section */}
           <div>
-            <h3 className="text-3xl font-bold text-white text-center mb-8">Personalized Nutrients & Flavor</h3>
+            <h3 className="text-3xl font-extralight text-amber-900 text-center mb-8" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Personalized Nutrients & Flavor</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -1100,59 +1131,55 @@ function CoffeeConfiguration() {
                   subtitle: "Yuzu Rosemary",
                   description:
                     "Mental clarity, fatigue relief. A bright, herbal blend designed to cut through mental fog and restore focus to your day",
-                  color: "from-purple-400 to-pink-500",
-                  icon: "🌿",
+                  background: "/images/wu1.png",
                 },
                 {
                   title: "Omega-3",
                   subtitle: "500 mg (from Algae Oil)",
                   description: "Supports brain health and combats inflammation linked to gut dysbiosis",
-                  color: "from-blue-400 to-indigo-500",
-                  icon: "🧠",
+                  background: "/images/wu2.png",
                 },
                 {
                   title: "L-Theanine",
                   subtitle: "150 mg",
                   description:
                     "Works with caffeine to provide a state of calm focus, buffering the stress response identified by your analysis",
-                  color: "from-green-400 to-teal-500",
-                  icon: "🧘",
+                  background: "/images/wu3.png",
                 },
                 {
                   title: "Stress Resilience Complex",
                   subtitle: "Magnesium & B-Complex",
                   description:
                     "Essential nutrients for nervous system support, helping to improve mood and restore energy levels depleted by chronic stress",
-                  color: "from-red-400 to-pink-500",
-                  icon: "💪",
+                  background: "/images/wu4.png",
                 },
                 {
                   title: "Microbiome Support",
                   subtitle: "Polyphenols + Soluble Fiber",
                   description:
                     "Each flavor tank contains ingredients to nourish beneficial gut bacteria, addressing the root cause of imbalance",
-                  color: "from-cyan-400 to-blue-500",
-                  icon: "🦠",
+                  background: "/images/wu5.png",
                 },
               ].map((item, index) => (
                 <div
                   key={`nutrient-${index}`}
-                  className={`bg-white/15 backdrop-blur-lg rounded-3xl p-6 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 ${
+                  className={`rounded-3xl p-6 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden ${
                     index === 4 ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""
                   }`}
+                  style={{
+                    backgroundImage: `url(${item.background})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
                 >
                   <div className="flex items-start mb-4">
-                    <div
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mr-4 text-2xl shadow-md`}
-                    >
-                      {item.icon}
-                    </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-bold text-lg mb-1">{item.title}</h4>
-                      <p className="text-yellow-200 text-sm font-semibold mb-2">{item.subtitle}</p>
+                      <h4 className="text-white font-extralight text-lg mb-1" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
+                      <p className="text-white text-sm font-extralight mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
                     </div>
                   </div>
-                  <p className="text-gray-200 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-white text-sm leading-relaxed" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
                 </div>
               ))}
             </div>

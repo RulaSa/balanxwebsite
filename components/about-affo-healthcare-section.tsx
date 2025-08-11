@@ -94,16 +94,12 @@ export default function AboutAffoHealthcareSection() {
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
                 {/* Main icon container */}
-                <div className="w-24 h-24 md:w-32 md:h-32 bg-white/20 backdrop-blur-md rounded-2xl shadow-lg border border-white/30 flex items-center justify-center">
-                  <span className="text-4xl md:text-5xl text-white">❤️</span>
-                </div>
-                
-                {/* Decorative smaller icons */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center">
-                  <span className="text-lg text-white">🧠</span>
-                </div>
-                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center">
-                  <span className="text-lg text-white">⚡</span>
+                <div className="w-24 h-24 md:w-32 md:h-32 bg-white/20 backdrop-blur-md rounded-2xl shadow-lg border border-white/30 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/images/heartplace.png" 
+                    alt="Heart icon" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -112,7 +108,7 @@ export default function AboutAffoHealthcareSection() {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white drop-shadow-lg"
+              className="text-4xl md:text-5xl lg:text-6xl font-extralight mb-6 leading-tight text-white drop-shadow-lg"
             >
               What is Affo Healthcare?
             </h2>

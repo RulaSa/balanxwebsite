@@ -174,8 +174,8 @@ export default function ScrollRevealSection() {
         >
           <div className="max-w-4xl mx-auto">
             <h2
-              className="block-title text-6xl md:text-8xl font-wide font-bold text-gray-800 mb-8 tracking-wide"
-              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+              className="block-title text-6xl md:text-8xl font-wide font-extralight text-gray-800 mb-8 tracking-wide"
+              style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
             >
               {block.title}
             </h2>
@@ -185,14 +185,14 @@ export default function ScrollRevealSection() {
                   {block.icon}
                 </div>
                 <span
-                  className={`block-subtitle inline-block px-4 py-2 bg-${block.color}-100 text-${block.color}-700 rounded-full text-sm font-medium tracking-wide uppercase mt-8`}
+                  className={`block-subtitle inline-block px-4 py-2 bg-${block.color}-100 text-${block.color}-700 rounded-full text-sm font-extralight tracking-wide uppercase mt-8`}
                 >
                   {block.subtitle}
                 </span>
               </div>
               <p
                 className="block-description text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
-                style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
               >
                 {block.description}
               </p>

@@ -89,60 +89,60 @@ export default function Navigation() {
         <div className="hidden md:flex items-center space-x-6">
           <button
             onClick={() => handleNavigationClick('hero')}
-            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-white font-extralight hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             Home
           </button>
           <div className="w-1 h-1 bg-white/60 rounded-full"></div>
           <button
             onClick={() => handleNavigationClick('interactive-workflow')}
-            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-white font-extralight hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             About
           </button>
           <div className="w-1 h-1 bg-white/60 rounded-full"></div>
           <button
             onClick={() => handleNavigationClick('algorithm')}
-            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-white font-extralight hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             Our Algorithm
           </button>
           <div className="w-1 h-1 bg-white/60 rounded-full"></div>
           <button
             onClick={() => handleNavigationClick('affo-healthcare-page2')}
-            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-white font-extralight hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             Affo Healthcare
           </button>
           <div className="w-1 h-1 bg-white/60 rounded-full"></div>
           <button
             onClick={() => handleNavigationClick('affo-healthcare-page3')}
-            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-white font-extralight hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             Services
           </button>
           <div className="w-1 h-1 bg-white/60 rounded-full"></div>
           <button
             onClick={() => handleNavigationClick('contact')}
-            className="text-white font-medium hover:text-light-green-400 transition-colors duration-200"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-white font-extralight hover:text-light-green-400 transition-colors duration-200"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             Contact
           </button>
         </div>
 
-        {/* Pre-Order Button */}
+        {/* Join the Waitlist Button */}
         <Link
           href="/pre-order"
-          className="hidden md:inline-flex items-center px-6 py-2.5 bg-black/80 text-white font-medium rounded-full hover:bg-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 backdrop-blur-sm mr-8"
-          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          className="hidden md:inline-flex items-center px-6 py-2.5 bg-black/80 text-white font-extralight rounded-full hover:bg-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 backdrop-blur-sm mr-8"
+          style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
         >
-          Pre-Order
+          Join the Waitlist
         </Link>
 
         {/* Mobile menu button */}

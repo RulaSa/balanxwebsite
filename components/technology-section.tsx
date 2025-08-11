@@ -70,9 +70,9 @@ export default function TechnologySection() {
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
         <h1
           ref={titleRef}
-          className="text-6xl md:text-8xl lg:text-9xl font-wide font-bold text-center leading-tight"
+          className="text-6xl md:text-8xl lg:text-9xl font-wide font-extralight text-center leading-tight"
           style={{ 
-            fontFamily: "Agrandir Wide, sans-serif",
+            fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
             color: "rgba(255, 255, 255, 0.6)",
             WebkitTextStroke: "2px rgba(255, 255, 255, 0.8)",
             textShadow: "0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6)",

@@ -90,8 +90,8 @@ export default function PersonalizedLifestyleSection() {
           className="text-center max-w-[1040px] mx-auto"
         >
           <h2 
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-white drop-shadow-lg"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-2xl md:text-4xl lg:text-5xl font-extralight mb-4 md:mb-6 text-white drop-shadow-lg"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             Personalized for Your Lifestyle
           </h2>

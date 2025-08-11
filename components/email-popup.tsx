@@ -46,10 +46,10 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
 
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-orange-600 mb-2" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+          <h2 className="text-3xl font-extralight text-orange-600 mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
             Email Us
           </h2>
-          <p className="text-gray-700" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+          <p className="text-gray-700" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
             Ask us anything about BalanX.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
               value={formData.name}
               onChange={handleChange}
               className="w-full px-4 py-3 bg-white border border-orange-200 rounded-lg focus:border-orange-400 focus:outline-none transition-colors"
-              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+              style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
               required
             />
             <input
@@ -75,7 +75,7 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-3 bg-white border border-orange-200 rounded-lg focus:border-orange-400 focus:outline-none transition-colors"
-              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+              style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
               required
             />
           </div>
@@ -88,15 +88,15 @@ export default function EmailPopup({ isOpen, onClose }: EmailPopupProps) {
             onChange={handleChange}
             rows={6}
             className="w-full px-4 py-3 bg-white border border-orange-200 rounded-lg focus:border-orange-400 focus:outline-none transition-colors resize-none"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
             required
           />
 
           {/* Send Button */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-medium py-3 px-6 rounded-lg hover:from-orange-500 hover:to-orange-700 transition-all duration-300 flex items-center justify-center gap-2"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white font-extralight py-3 px-6 rounded-lg hover:from-orange-500 hover:to-orange-700 transition-all duration-300 flex items-center justify-center gap-2"
+            style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
             Send Message
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

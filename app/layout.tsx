@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import PageTransition from '@/components/page-transition'
+import { agrandirWide } from '@/lib/fonts'
 
 export const metadata: Metadata = {
   title: 'BalanX - Join the Balance Community',
@@ -14,14 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <style>{`
-html {
-  font-family: 'Agrandir Wide', sans-serif;
-}
-        `}</style>
-      </head>
+    <html lang="en" className={agrandirWide.variable}>
       <body>
         <PageTransition>
           {children}

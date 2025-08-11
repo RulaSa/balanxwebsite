@@ -43,7 +43,7 @@ export default function WhatIfPage() {
           <Link
             href="/"
             className="text-white hover:text-gold-400 transition-colors duration-300 flex items-center gap-2"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -82,8 +82,8 @@ export default function WhatIfPage() {
           </p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-gold-500 text-black font-bold py-3 px-8 rounded-full hover:bg-gold-400 transition-colors duration-300"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="inline-flex items-center gap-2 bg-gold-500 text-black font-extralight py-3 px-8 rounded-full hover:bg-gold-400 transition-colors duration-300"
+            style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
             Join the Waitlist
             <svg

@@ -78,13 +78,13 @@ export default function PreOrdersAdminPage() {
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-stone-100/50 p-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-light text-stone-800 mb-4">Pre-Orders Management</h1>
+          <h1 className="text-3xl font-extralight text-stone-800 mb-4">Pre-Orders Management</h1>
           <p className="text-stone-600">View and manage BalanX-Bio pre-orders from the database.</p>
         </div>
 
         <Card className="bg-white/70 backdrop-blur-sm border-stone-200/50 shadow-lg">
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-xl font-light text-stone-800">
+            <CardTitle className="text-xl font-extralight text-stone-800">
               Pre-Orders ({preOrders.length})
             </CardTitle>
             <div className="flex gap-4">
@@ -92,14 +92,14 @@ export default function PreOrdersAdminPage() {
                 onClick={fetchPreOrders}
                 disabled={loading}
                 variant="outline"
-                className="font-light"
+                className="font-extralight"
               >
                 {loading ? 'Refreshing...' : 'Refresh'}
               </Button>
               <Button
                 onClick={exportToCSV}
                 disabled={preOrders.length === 0}
-                className="bg-stone-700 hover:bg-stone-800 font-light"
+                className="bg-stone-700 hover:bg-stone-800 font-extralight"
               >
                 Export CSV
               </Button>
@@ -109,19 +109,19 @@ export default function PreOrdersAdminPage() {
             {loading && (
               <div className="text-center py-8">
                 <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-stone-700"></div>
-                <p className="mt-2 text-stone-600 font-light">Loading pre-orders...</p>
+                <p className="mt-2 text-stone-600 font-extralight">Loading pre-orders...</p>
               </div>
             )}
 
             {error && (
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
-                <p className="text-red-700 font-light">{error}</p>
+                <p className="text-red-700 font-extralight">{error}</p>
               </div>
             )}
 
             {!loading && !error && preOrders.length === 0 && (
               <div className="text-center py-8">
-                <p className="text-stone-600 font-light">No pre-orders found.</p>
+                <p className="text-stone-600 font-extralight">No pre-orders found.</p>
               </div>
             )}
 
@@ -130,10 +130,10 @@ export default function PreOrdersAdminPage() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="font-light">ID</TableHead>
-                      <TableHead className="font-light">Name</TableHead>
-                      <TableHead className="font-light">Email</TableHead>
-                      <TableHead className="font-light">Created At</TableHead>
+                      <TableHead className="font-extralight">ID</TableHead>
+                      <TableHead className="font-extralight">Name</TableHead>
+                      <TableHead className="font-extralight">Email</TableHead>
+                      <TableHead className="font-extralight">Created At</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -142,13 +142,13 @@ export default function PreOrdersAdminPage() {
                         <TableCell className="font-mono text-xs text-stone-500">
                           {order.id}
                         </TableCell>
-                        <TableCell className="font-light">
+                        <TableCell className="font-extralight">
                           {order.first_name} {order.last_name}
                         </TableCell>
-                        <TableCell className="font-light">
+                        <TableCell className="font-extralight">
                           {order.email}
                         </TableCell>
-                        <TableCell className="font-light text-stone-600">
+                        <TableCell className="font-extralight text-stone-600">
                           {formatDate(order.created_at)}
                         </TableCell>
                       </TableRow>

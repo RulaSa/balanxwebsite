@@ -241,16 +241,16 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
 
       <div ref={contentRef} className="relative z-10 text-center px-6">
         <h1
-          className="intro-element text-7xl md:text-9xl font-serif font-bold text-white tracking-wider mb-6 drop-shadow-2xl"
+          className="intro-element text-7xl md:text-9xl font-serif font-extralight text-white tracking-wider mb-6 drop-shadow-2xl"
           style={{
-            fontFamily: "Agrandir Wide, sans-serif",
+            fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
             textShadow: "0 4px 20px rgba(0,0,0,0.5)",
           }}
         >
           BALANX
         </h1>
         <p
-          className="intro-element text-xl md:text-3xl text-white/90 font-light mb-12 tracking-widest drop-shadow-lg"
+          className="intro-element text-xl md:text-3xl text-white/90 font-extralight mb-12 tracking-widest drop-shadow-lg"
           style={{
 
             textShadow: "0 2px 10px rgba(0,0,0,0.5)",
@@ -263,7 +263,7 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
             <span className="word-animation inline-block mr-3">the</span>
             <span className="word-animation inline-block mr-3">invisible</span>
           </span>
-          <span className="line-2 block font-semibold font-serif">
+          <span className="line-2 block font-extralight font-serif">
             <span className="word-animation inline-block mr-3">decoding</span>
             <span className="word-animation inline-block mr-3">life</span>
             <span className="word-animation inline-block mr-3">with</span>

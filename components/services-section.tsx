@@ -204,8 +204,8 @@ export default function ServicesSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <h2
-          className="text-6xl md:text-8xl font-wide font-bold text-center mb-20 text-gray-800 tracking-wide"
-          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          className="text-6xl md:text-8xl font-wide font-extralight text-center mb-20 text-gray-800 tracking-wide"
+          style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
         >
           Specifications
         </h2>
@@ -221,12 +221,12 @@ export default function ServicesSection() {
               </video>
               <div className="text-center mt-6">
                 <h3
-                  className="text-2xl font-wide font-bold text-gray-800 mb-2"
-                  style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                  className="text-2xl font-wide font-extralight text-gray-800 mb-2"
+                  style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                 >
                   BALANX Wellness System
                 </h3>
-                <p className="text-gray-600 font-light" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                <p className="text-gray-600 font-extralight" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                   Premium constitutional brewing technology
                 </p>
               </div>
@@ -247,17 +247,17 @@ export default function ServicesSection() {
                 <div className="service-content space-y-4">
                   <div className="flex items-center space-x-3 mb-4">
                     <div className={`w-3 h-3 rounded-full bg-${service.color}-400`}></div>
-                    <span className="text-sm text-gray-500 font-light tracking-wider uppercase">{service.element}</span>
+                    <span className="text-sm text-gray-500 font-extralight tracking-wider uppercase">{service.element}</span>
                   </div>
 
                   <h3
-                    className="text-2xl font-wide font-bold text-gray-800 tracking-wide mb-4"
-                    style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                    className="text-2xl font-wide font-extralight text-gray-800 tracking-wide mb-4"
+                    style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                   >
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                     {service.description}
                   </p>
                 </div>

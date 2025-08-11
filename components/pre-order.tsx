@@ -79,8 +79,8 @@ export function PreOrder() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-light text-stone-800 mb-8">Reserve Your Journey</h2>
-          <p className="text-xl text-stone-600 font-light leading-relaxed">
+          <h2 className="text-4xl md:text-5xl font-extralight text-stone-800 mb-8">Reserve Your Journey</h2>
+          <p className="text-xl text-stone-600 font-extralight leading-relaxed">
             Begin your path to personalized wellness. Join us in creating a more balanced, mindful approach to daily
             nourishment.
           </p>
@@ -95,13 +95,13 @@ export function PreOrder() {
           >
             <Card className="bg-white/70 backdrop-blur-sm border-stone-200/50 shadow-lg rounded-3xl">
               <CardHeader className="pb-6">
-                <CardTitle className="text-2xl font-light text-stone-800">Begin Your Balance</CardTitle>
+                <CardTitle className="text-2xl font-extralight text-stone-800">Begin Your Balance</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName" className="text-stone-600 font-light">
+                      <Label htmlFor="firstName" className="text-stone-600 font-extralight">
                         First Name
                       </Label>
                       <Input
@@ -109,12 +109,12 @@ export function PreOrder() {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         placeholder="Enter first name"
-                        className="border-stone-200 rounded-2xl py-3 font-light bg-white/80 focus:bg-white transition-colors"
+                        className="border-stone-200 rounded-2xl py-3 font-extralight bg-white/80 focus:bg-white transition-colors"
                         required
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="lastName" className="text-stone-600 font-light">
+                      <Label htmlFor="lastName" className="text-stone-600 font-extralight">
                         Last Name
                       </Label>
                       <Input
@@ -122,14 +122,14 @@ export function PreOrder() {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         placeholder="Enter last name"
-                        className="border-stone-200 rounded-2xl py-3 font-light bg-white/80 focus:bg-white transition-colors"
+                        className="border-stone-200 rounded-2xl py-3 font-extralight bg-white/80 focus:bg-white transition-colors"
                         required
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-stone-600 font-light">
+                    <Label htmlFor="email" className="text-stone-600 font-extralight">
                       Email Address
                     </Label>
                     <Input
@@ -138,7 +138,7 @@ export function PreOrder() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="Enter email address"
-                      className="border-stone-200 rounded-2xl py-3 font-light bg-white/80 focus:bg-white transition-colors"
+                      className="border-stone-200 rounded-2xl py-3 font-extralight bg-white/80 focus:bg-white transition-colors"
                       required
                     />
                   </div>
@@ -146,30 +146,30 @@ export function PreOrder() {
                   <Button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-stone-700 hover:bg-stone-800 text-stone-50 py-4 rounded-2xl font-light transition-all duration-500 shadow-lg hover:shadow-xl disabled:opacity-50"
+                    className="w-full bg-stone-700 hover:bg-stone-800 text-stone-50 py-4 rounded-2xl font-extralight transition-all duration-500 shadow-lg hover:shadow-xl disabled:opacity-50"
                   >
                     {isSubmitting ? "Reserving..." : "Reserve My BalanX-D"}
                   </Button>
 
                   {submitStatus === "success" && (
-                    <p className="text-green-600 text-center font-light">
+                    <p className="text-green-600 text-center font-extralight">
                       {responseMessage}
                     </p>
                   )}
 
                   {submitStatus === "duplicate" && (
-                    <p className="text-blue-600 text-center font-light">
+                    <p className="text-blue-600 text-center font-extralight">
                       {responseMessage}
                     </p>
                   )}
                   
                   {submitStatus === "error" && (
-                    <p className="text-red-600 text-center font-light">
+                    <p className="text-red-600 text-center font-extralight">
                       {responseMessage}
                     </p>
                   )}
 
-                  <p className="text-xs text-stone-400 text-center font-light">
+                  <p className="text-xs text-stone-400 text-center font-extralight">
                     No payment required. Begin your journey when ready.
                   </p>
                 </form>
@@ -185,7 +185,7 @@ export function PreOrder() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-light text-stone-800 mb-6">Your Wellness Timeline</h3>
+              <h3 className="text-2xl font-extralight text-stone-800 mb-6">Your Wellness Timeline</h3>
               <div className="space-y-6">
                 {timeline.map((item, index) => (
                   <div key={item.phase} className="flex items-center space-x-4">
@@ -195,10 +195,10 @@ export function PreOrder() {
                       }`}
                     />
                     <div className="flex-1">
-                      <p className={`font-light ${item.status === "active" ? "text-stone-800" : "text-stone-500"}`}>
+                      <p className={`font-extralight ${item.status === "active" ? "text-stone-800" : "text-stone-500"}`}>
                         {item.phase}
                       </p>
-                      <p className="text-sm text-stone-400 font-light">{item.date}</p>
+                      <p className="text-sm text-stone-400 font-extralight">{item.date}</p>
                     </div>
                   </div>
                 ))}
@@ -206,8 +206,8 @@ export function PreOrder() {
             </div>
 
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-stone-200/50">
-              <h4 className="font-medium text-stone-800 mb-4">Your Wellness Kit Includes</h4>
-              <div className="space-y-3 text-sm text-stone-600 font-light">
+              <h4 className="font-extralight text-stone-800 mb-4">Your Wellness Kit Includes</h4>
+              <div className="space-y-3 text-sm text-stone-600 font-extralight">
                 <div className="flex items-center">
                   <div className="w-1.5 h-1.5 bg-stone-400 rounded-full mr-3" />
                   BalanX-D Mindful Coffee System

@@ -128,12 +128,12 @@ export default function ScienceSection() {
               {/* Biomarker Analysis */}
               <div className="science-content-item">
                 <h3
-                  className="text-2xl md:text-3xl font-wide font-bold text-gray-800 mb-4"
-                  style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                  className="text-2xl md:text-3xl font-wide font-extralight text-gray-800 mb-4"
+                  style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                 >
                   Biomarker Analysis
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-lg" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                <p className="text-gray-600 leading-relaxed text-lg" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                   Our sensors analyze salivary biomarkers including pH levels, cortisol, and short-chain fatty acids to
                   understand your current state.
                 </p>
@@ -142,12 +142,12 @@ export default function ScienceSection() {
               {/* Five Elements Typing */}
               <div className="science-content-item">
                 <h3
-                  className="text-2xl md:text-3xl font-wide font-bold text-gray-800 mb-4"
-                  style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                  className="text-2xl md:text-3xl font-wide font-extralight text-gray-800 mb-4"
+                  style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                 >
                   Five Elements Typing
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-lg" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                <p className="text-gray-600 leading-relaxed text-lg" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                   Ancient constitutional analysis meets modern AI to determine your dominant element and current
                   imbalances.
                 </p>
@@ -156,12 +156,12 @@ export default function ScienceSection() {
               {/* Personalized Blending */}
               <div className="science-content-item">
                 <h3
-                  className="text-2xl md:text-3xl font-wide font-bold text-gray-800 mb-4"
-                  style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                  className="text-2xl md:text-3xl font-wide font-extralight text-gray-800 mb-4"
+                  style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                 >
                   Personalized Blending
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-lg" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+                <p className="text-gray-600 leading-relaxed text-lg" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                   Carefully selected herbs and adaptogens are blended to support your specific constitutional needs.
                 </p>
               </div>
@@ -173,15 +173,15 @@ export default function ScienceSection() {
             {/* Main Title and Description - Upper Right */}
             <div ref={contentRef} className="space-y-8 mb-12">
               <h2
-                className="text-5xl md:text-6xl lg:text-7xl font-wide font-bold text-gray-800 leading-tight py-0 border-0"
-                style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                className="text-5xl md:text-6xl lg:text-7xl font-wide font-extralight text-gray-800 leading-tight py-0 border-0"
+                style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
               >
                 The Science Behind Balance
               </h2>
 
               <p
                 className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl"
-                style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+                style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
               >
                 Traditional Chinese medicine has understood for millennia what modern science now confirms: true
                 wellness comes from understanding your body's unique constitution and supporting its natural balance.

@@ -148,15 +148,15 @@ export default function BalanceCommunitySection({
       {/* Main Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h2
-          className="balance-element text-5xl md:text-7xl font-wide font-bold mb-8 tracking-wide bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent"
-          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          className="balance-element text-5xl md:text-7xl font-wide font-extralight mb-8 tracking-wide bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent"
+          style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
         >
           {title}
         </h2>
 
         <p
           className="balance-element text-xl md:text-2xl text-gray-700 leading-relaxed mb-16 max-w-3xl mx-auto"
-          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
         >
           {subtitle}
         </p>
@@ -170,13 +170,13 @@ export default function BalanceCommunitySection({
             placeholder={placeholderText}
             required
             className="balance-form-input flex-1 max-w-md bg-white/80 border border-orange-300 rounded-full py-4 px-6 text-gray-800 placeholder-gray-500 focus:border-orange-500 focus:outline-none transition-all duration-300"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           />
           <button
             type="submit"
             disabled={isSubmitting}
-            className="balance-reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 min-w-fit shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="balance-reserve-button bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extralight py-4 px-8 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center justify-center gap-2 min-w-fit shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
           >
             {isSubmitting ? "Reserving..." : buttonText}
             {!isSubmitting && (
@@ -187,7 +187,7 @@ export default function BalanceCommunitySection({
           </button>
         </form>
 
-        <p className="balance-element text-gray-600 text-sm" style={{ fontFamily: "Agrandir Wide, sans-serif" }}>
+        <p className="balance-element text-gray-600 text-sm" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
           {disclaimerText}
         </p>
       </div>

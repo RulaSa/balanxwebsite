@@ -125,9 +125,9 @@ export default function HeroSection() {
         <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
           <div className="text-center">
             <div 
-              className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-widest drop-shadow-2xl mb-4"
+              className="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-widest drop-shadow-2xl mb-4"
               style={{ 
-                fontFamily: "Agrandir Wide, sans-serif",
+                fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
                 background: "linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(173,216,230,0.7) 50%, rgba(255,215,0,0.6) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -138,9 +138,9 @@ export default function HeroSection() {
             BALANX-BIO
             </div>
             <div 
-              className="text-lg md:text-xl lg:text-2xl text-white font-medium tracking-wide drop-shadow-lg ml-24 md:ml-36 lg:ml-48"
+              className="text-lg md:text-xl lg:text-2xl text-white font-extralight tracking-wide drop-shadow-lg ml-24 md:ml-36 lg:ml-48"
               style={{ 
-                fontFamily: "Agrandir Wide, sans-serif"
+                fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif"
               }}
             >
               - Where AI Meet Health, Where You Meet Balance

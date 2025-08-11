@@ -79,10 +79,10 @@ export default function AffoHealthcareSection() {
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto text-center">
         <h2
-          className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-lg"
-          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          className="text-5xl md:text-7xl font-extralight text-white mb-8 drop-shadow-lg"
+          style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
         >
-          BALANX-ÁFFO HEALTHCARE
+          ÁFFO HEALTHCARE
         </h2>
         <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-16 drop-shadow-md">
           Experience personalized wellness through advanced bio-analysis and tailored nutrition.

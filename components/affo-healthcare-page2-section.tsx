@@ -69,10 +69,10 @@ export default function AffoHealthcarePage2Section() {
       {/* Content */}
       <div ref={contentRef} className="relative z-20 max-w-7xl mx-auto text-center">
         <h2
-          className="text-5xl md:text-7xl font-bold text-gray-800 mb-8 drop-shadow-lg"
-          style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+          className="text-5xl md:text-7xl font-extralight text-gray-800 mb-8 drop-shadow-lg"
+          style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
         >
-          BALANX-ÁFFO HEALTHCARE
+          ÁFFO HEALTHCARE
         </h2>
         <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-16 drop-shadow-md">
           Experience personalized wellness through advanced bio-analysis and tailored nutrition.
@@ -94,7 +94,7 @@ export default function AffoHealthcarePage2Section() {
 
         {/* Four Core Steps */}
         <div className="w-full max-w-7xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 drop-shadow-lg">
+          <h3 className="text-3xl md:text-4xl font-extralight text-gray-800 mb-12 drop-shadow-lg">
             Our Service Process
           </h3>
           
@@ -102,10 +102,14 @@ export default function AffoHealthcarePage2Section() {
             {/* Step 1: Daily Data Collection */}
             <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-blue-400/80 to-purple-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <span className="text-3xl">📅</span>
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-blue-400/80 to-purple-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <img 
+                    src="/images/affo1.jpg" 
+                    alt="Daily Data Collection" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
-                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                <h4 className="text-xl font-extralight text-gray-800 mb-3">
                   Daily Data Collection
                 </h4>
                 <p className="text-gray-700 leading-relaxed">
@@ -117,10 +121,14 @@ export default function AffoHealthcarePage2Section() {
             {/* Step 2: AI Analysis */}
             <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-green-400/80 to-teal-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <span className="text-3xl">🧠</span>
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-green-400/80 to-teal-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <img 
+                    src="/images/affo2.jpg" 
+                    alt="AI Analysis" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
-                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                <h4 className="text-xl font-extralight text-gray-800 mb-3">
                   AI Analysis
                 </h4>
                 <p className="text-gray-700 leading-relaxed">
@@ -132,10 +140,14 @@ export default function AffoHealthcarePage2Section() {
             {/* Step 3: Personalized Recommendations */}
             <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-orange-400/80 to-red-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <span className="text-3xl">🌿</span>
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-orange-400/80 to-red-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <img 
+                    src="/images/affo3.jpg" 
+                    alt="Personalized Recommendations" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
-                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                <h4 className="text-xl font-extralight text-gray-800 mb-3">
                   Personalized Recommendations
                 </h4>
                 <p className="text-gray-700 leading-relaxed">
@@ -147,10 +159,14 @@ export default function AffoHealthcarePage2Section() {
             {/* Step 4: Health Reports */}
             <div className="group p-10 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-purple-400/80 to-pink-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <span className="text-3xl">📄</span>
+                <div className="w-20 h-20 mb-6 rounded-full bg-gradient-to-br from-purple-400/80 to-pink-400/80 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <img 
+                    src="/images/affo4.jpg" 
+                    alt="Health Reports" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
-                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                <h4 className="text-xl font-extralight text-gray-800 mb-3">
                   Health Reports
                 </h4>
                 <p className="text-gray-700 leading-relaxed">

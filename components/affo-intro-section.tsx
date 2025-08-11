@@ -74,8 +74,8 @@ export default function AffoIntroSection() {
       <div ref={contentRef} className="relative z-20 max-w-6xl mx-auto text-center">
         <div className="mb-12">
           <h2
-            className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 drop-shadow-lg"
-            style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+            className="text-4xl md:text-6xl font-extralight text-gray-800 mb-6 drop-shadow-lg"
+            style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
             ÁFFO Healthcare Services
           </h2>
@@ -85,8 +85,8 @@ export default function AffoIntroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-left space-y-6">
             <h3
-              className="text-2xl md:text-3xl font-bold text-gray-800 mb-4"
-              style={{ fontFamily: "Agrandir Wide, sans-serif" }}
+              className="text-2xl md:text-3xl font-extralight text-gray-800 mb-4"
+              style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
             >
               可以帮助到你的健康
             </h3>
@@ -106,7 +106,7 @@ export default function AffoIntroSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h4 className="text-xl font-bold text-gray-800">个性化分析</h4>
+                <h4 className="text-xl font-extralight text-gray-800">个性化分析</h4>
               </div>
               <p className="text-gray-700">基于您的独特生物特征，提供精准的健康评估和个性化建议。</p>
             </div>
@@ -118,7 +118,7 @@ export default function AffoIntroSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h4 className="text-xl font-bold text-gray-800">智能营养</h4>
+                <h4 className="text-xl font-extralight text-gray-800">智能营养</h4>
               </div>
               <p className="text-gray-700">结合AI算法，为您推荐最适合的营养搭配和生活方式建议。</p>
             </div>
@@ -126,7 +126,7 @@ export default function AffoIntroSection() {
         </div>
 
         <div className="mt-16">
-          <div className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 text-white px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          <div className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 text-white px-8 py-4 rounded-full font-extralight text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
             探索更多服务 →
           </div>
         </div>

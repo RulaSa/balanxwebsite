@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
               <title>Welcome to BalanX-Bio</title>
             </head>
             <body style="margin: 0; padding: 0; background-color: #f9fafb;">
-              <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+              <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; font-family: 'Agrandir Wide', sans-serif;">
                 
                 <!-- Header -->
                 <div style="background: #ffffff; text-align: center; padding: 40px 30px 20px;">
