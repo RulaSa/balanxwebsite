@@ -184,18 +184,17 @@ const CoffeeHealthSection = forwardRef<HTMLDivElement, CoffeeHealthSectionProps>
         <div className="text-center">
           <h2
             ref={titleRef}
-            className="text-6xl md:text-8xl font-extralight mb-8 tracking-wide drop-shadow-lg"
+            className="text-6xl md:text-8xl font-semibold mb-8 tracking-wide drop-shadow-lg"
             style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
             Coffee & Wellness
           </h2>
           <p
             ref={descriptionRef}
-            className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-16 drop-shadow-md"
+            className="text-xl md:text-2xl leading-relaxed max-w-5xl mx-auto mb-16 drop-shadow-md font-light"
             style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
           >
-            Discover how our unique coffee blends, infused with ancient wisdom and modern science, can elevate your
-            daily wellness routine.
+            Discover how our unique coffee blends, infused with ancient wisdom and modern science, can elevate your daily wellness routine.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -206,16 +205,16 @@ const CoffeeHealthSection = forwardRef<HTMLDivElement, CoffeeHealthSectionProps>
                 className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-8 flex flex-col items-center text-center border border-white/20 hover:shadow-xl transition-all duration-300"
               >
                 <div className={`p-4 rounded-full bg-${item.color}-100/20 mb-6`}>{item.icon}</div>
-                <p className={`text-sm font-extralight uppercase tracking-wider text-${item.color}-300 mb-2`}>
+                <p className={`text-sm font-semibold uppercase tracking-wider text-${item.color}-300 mb-2`}>
                   {item.flavor}
                 </p>
                 <h3
-                  className="text-2xl font-extralight mb-4 drop-shadow-sm"
+                  className="text-2xl font-semibold mb-4 drop-shadow-sm"
                   style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
                 >
                   {item.title}
                 </h3>
-                <p className="leading-relaxed text-white/80" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
+                <p className="leading-relaxed text-white/80 font-thin" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                   {item.description}
                 </p>
               </div>

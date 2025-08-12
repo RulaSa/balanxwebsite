@@ -87,20 +87,47 @@ export default function PersonalizedLifestyleSection() {
       <div className="relative z-20 w-full h-full flex items-center justify-center px-4 md:px-6">
         <div 
           ref={textRef}
-          className="text-center max-w-[1040px] mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1200px] mx-auto w-full"
         >
-          <h2 
-            className="text-2xl md:text-4xl lg:text-5xl font-extralight mb-4 md:mb-6 text-white drop-shadow-lg"
-            style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
-          >
-            Personalized for Your Lifestyle
-          </h2>
-          <p 
-            className="text-base md:text-lg lg:text-xl leading-relaxed text-white drop-shadow-md max-w-[780px] mx-auto"
-            style={{ lineHeight: "1.6" }}
-          >
-            This isn't just coffee—it's a precision-engineered wellness solution. Every ingredient has been selected by AI analysis of your microbiome, stress patterns, and lifestyle needs. One simple morning ritual that addresses fatigue, stress, gut health, and mental clarity.
-          </p>
+          {/* Left Side - Three Numbered Points */}
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                1
+              </div>
+              <p className="text-lg leading-relaxed text-white drop-shadow-md">
+                Every ingredient is selected through AI analysis of your microbiome, stress patterns, and lifestyle needs.
+              </p>
+            </div>
+            
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                2
+              </div>
+              <p className="text-lg leading-relaxed text-white drop-shadow-md">
+                A precision-engineered wellness solution that goes beyond coffee.
+              </p>
+            </div>
+            
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                3
+              </div>
+              <p className="text-lg leading-relaxed text-white drop-shadow-md">
+                One simple morning ritual to address fatigue, stress, gut health, and mental clarity.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Side - Title */}
+          <div className="text-center lg:text-left">
+            <h2 
+              className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white drop-shadow-lg"
+              style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
+            >
+              Personalize Your Lifestyle
+            </h2>
+          </div>
         </div>
       </div>
     </section>

@@ -89,34 +89,63 @@ export default function AboutAffoHealthcareSection() {
       {/* Content */}
       <div className="relative z-20 w-full h-full flex items-center justify-center px-6">
         <div ref={contentRef} className="flex flex-col lg:flex-row items-center gap-12 max-w-7xl mx-auto">
-          {/* Icon/Image Section */}
-          <div className="flex-shrink-0 w-full lg:w-auto">
+          {/* Left Side: Icon/Image and Title */}
+          <div className="flex-1 flex flex-col items-center lg:items-start gap-6">
+            {/* Icon/Image */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
-                {/* Main icon container */}
                 <div className="w-24 h-24 md:w-32 md:h-32 bg-white/20 backdrop-blur-md rounded-2xl shadow-lg border border-white/30 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/images/heartplace.png" 
-                    alt="Heart icon" 
+                    src="/images/drinkcoffee.png" 
+                    alt="Coffee drink icon" 
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left">
+            
+            {/* Title */}
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-extralight mb-6 leading-tight text-white drop-shadow-lg"
+              className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white drop-shadow-lg text-center lg:text-left"
             >
               What is Affo Healthcare?
             </h2>
-            <p 
-              className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto lg:mx-0 text-white drop-shadow-md"
-            >
-              Affo Healthcare is an innovative approach to personalized wellness, combining AI-driven analysis with traditional balance principles. It focuses on understanding your unique biology to create tailored health recommendations.
-            </p>
+          </div>
+
+          {/* Right Side: Three Numbered Points */}
+          <div className="flex-1 flex flex-col gap-6">
+            <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 border border-white/30">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                  1
+                </div>
+                <p className="text-lg leading-relaxed drop-shadow-md" style={{ color: "#FFFFFF" }}>
+                  Affo Healthcare offers an innovative approach to personalized wellness.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 border border-white/30">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                  2
+                </div>
+                <p className="text-lg leading-relaxed drop-shadow-md" style={{ color: "#FFFFFF" }}>
+                  It combines AI-driven analysis with traditional balance principles.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 border border-white/30">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                  3
+                </div>
+                <p className="text-lg leading-relaxed drop-shadow-md" style={{ color: "#FFFFFF" }}>
+                  Our focus is on understanding your unique biology to create tailored health recommendations.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

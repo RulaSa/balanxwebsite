@@ -95,6 +95,43 @@
     scroll-behavior: smooth;
     font-family: var(--font-agrandir-wide), 'Agrandir Wide', sans-serif;
   }
+
+  /* Custom font weight classes for better control */
+  .font-thin {
+    font-weight: 100;
+  }
+  
+  .font-extralight {
+    font-weight: 200;
+  }
+  
+  .font-light {
+    font-weight: 300;
+  }
+  
+  .font-normal {
+    font-weight: 400;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .font-extrabold {
+    font-weight: 800;
+  }
+  
+  .font-black {
+    font-weight: 900;
+  }
 }
 
 /* Custom CSS for glowing card effect */
@@ -120,6 +157,22 @@
   color: transparent;
   background-image: linear-gradient(to right, #e5e7eb, #9ca3af, #e5e7eb); /* Silver gradient */
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)); /* Subtle white glow */
+}
+
+.metallic-text-yellow {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #fffef0, #fff8dc, #f0e68c, #daa520); /* Light yellow gradient */
+  filter: drop-shadow(0 0 3px rgba(255, 255, 0, 0.4)); /* Subtle yellow glow */
+}
+
+.metallic-text-white {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ffffff, #f8f9fa, #e9ecef, #dee2e6); /* White gradient */
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6)); /* Subtle white glow */
 }
 
 /* Glassmorphism navbar styles */

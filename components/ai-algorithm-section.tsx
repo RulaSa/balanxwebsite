@@ -83,7 +83,7 @@ function HeroSection() {
         loop
         playsInline
       >
-        <source src="/video/Website- Sarah & Mark.mp4" type="video/mp4" />
+        <source src="/video/realMark.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
@@ -93,16 +93,18 @@ function HeroSection() {
           <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-r from-blue-400/80 to-purple-400/80 rounded-full flex items-center justify-center animate-pulse backdrop-blur-sm">
             <span className="text-4xl">👥</span>
           </div>
-          <h1 className="text-6xl font-extralight mb-4 drop-shadow-lg" style={{ color: '#0E7490' }}>
-            Meet Sarah &amp; Mark
-          </h1>
+          <div className="bg-white/20 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/30 shadow-lg inline-block">
+            <h1 className="text-6xl font-semibold drop-shadow-lg" style={{ color: '#0E7490' }}>
+              Meet Sarah &amp; Mark
+            </h1>
+          </div>
         </div>
         <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
           <br />
         </p>
         <div className="inline-block bg-black/60 backdrop-blur-md rounded-2xl px-6 py-3 border border-white/20 animate-bounce">
           <div className="text-gray-300 drop-shadow-md">
-            {"Please follow Sarah and Mark's story to learn how our algorithm works ↓"}
+            {"How our algorithm works ↓"}
           </div>
         </div>
       </div>
@@ -175,22 +177,12 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
           >
             <div className="relative">
               <div className="aspect-[4/3] bg-white/10 backdrop-blur-md rounded-3xl shadow-xl border border-white/20 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10"></div>
-                <div className="relative h-full flex flex-col items-center justify-center p-8">
-                  <div className="flex items-center justify-center space-x-8 mb-6">
-                    <div className="w-16 h-16 bg-blue-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-blue-400/30">
-                      <span className="text-4xl">💼</span>
-                    </div>
-                    <div className="w-2 h-2 bg-white/60 rounded-full"></div>
-                    <div className="w-16 h-16 bg-purple-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-purple-400/30">
-                      <span className="text-4xl">🏠</span>
-                    </div>
-                  </div>
-                  <p className="text-white font-extralight text-center leading-relaxed drop-shadow-md">
-                    Sarah & Mark's Daily Reality
-                  </p>
-                  <div className="mt-4 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-                </div>
+                <img 
+                  src="/images/hug.jpg" 
+                  alt="Sarah and Mark hug" 
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "center 30%" }}
+                />
               </div>
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400/30 rounded-full blur-sm"></div>
               <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400/30 rounded-full blur-sm"></div>
@@ -206,7 +198,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             }}
           >
             <div>
-              <h2 className="text-5xl font-extralight text-white mb-6 leading-tight drop-shadow-lg">
+              <h2 className="text-5xl font-semibold text-white mb-6 leading-tight drop-shadow-lg">
                 The Real-Life Struggle
               </h2>
               <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mb-8"></div>
@@ -266,11 +258,11 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
           {[
             {
               title: "Work Stress",
-              icon: "⚠️",
+              icon: "sange1",
               items: ["Mark facing potential layoff", "Sarah's demanding deadlines", "Financial uncertainty"],
               bgColor: "bg-red-500/20",
               borderColor: "border-red-400/30",
-              iconBg: "bg-red-500/30",
+              iconBg: "bg-transparent",
               iconColor: "text-amber-900",
               titleColor: "text-amber-900",
               textColor: "text-amber-900",
@@ -278,11 +270,11 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             },
             {
               title: "Family Life",
-              icon: "👨‍👩‍👧‍👦",
+              icon: "sange2",
               items: ["Two kids under 8 years old", "Constant school activities", "No time for self-care"],
               bgColor: "bg-blue-500/20",
               borderColor: "border-blue-400/30",
-              iconBg: "bg-blue-500/30",
+              iconBg: "bg-transparent",
               iconColor: "text-amber-900",
               titleColor: "text-amber-900",
               textColor: "text-amber-900",
@@ -290,11 +282,11 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             },
             {
               title: "Health Concerns",
-              icon: "❤️",
+              icon: "sange3",
               items: ["Mark's Type 2 diabetes", "Sarah's chronic fatigue", "No time for doctor visits"],
               bgColor: "bg-purple-500/20",
               borderColor: "border-purple-400/30",
-              iconBg: "bg-purple-500/30",
+              iconBg: "bg-transparent",
               iconColor: "text-amber-900",
               titleColor: "text-amber-900",
               textColor: "text-amber-900",
@@ -307,11 +299,15 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             >
               <div className="flex items-center mb-6">
                 <div
-                  className={`w-12 h-12 ${card.iconBg} rounded-2xl flex items-center justify-center mr-4 backdrop-blur-sm`}
+                  className={`w-12 h-12 ${card.iconBg} rounded-2xl flex items-center justify-center mr-4 backdrop-blur-sm overflow-hidden`}
                 >
-                  <span className={`text-4xl ${card.iconColor}`}>{card.icon}</span>
+                  <img
+                    src={`/images/${card.icon}.jpg`}
+                    alt={`${card.title} icon`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className={`text-xl font-extralight ${card.titleColor} drop-shadow-md`}>{card.title}</h3>
+                <h3 className={`text-xl font-semibold ${card.titleColor} drop-shadow-md`}>{card.title}</h3>
               </div>
               <ul className={`${card.textColor} space-y-3 text-sm`}>
                 {card.items.map((item, itemIndex) => (
@@ -333,7 +329,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
             transition: "all 0.6s ease-out",
           }}
         >
-          <h3 className="text-3xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sound Familiar?</h3>
+          <h3 className="text-3xl font-semibold text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sound Familiar?</h3>
           <p className="text-amber-900 text-lg leading-relaxed max-w-4xl mx-auto drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             Like millions of working people, Sarah and Mark are caught in the endless cycle of responsibilities. They
             need a solution that fits into their chaotic schedule - something simple, personalized, and effective.
@@ -400,7 +396,7 @@ function BiomarkerInputs() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah's Microbiome Analysis</h2>
+          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah's Microbiome Analysis</h2>
           <p className="text-xl text-amber-900 drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Detected by BALANX's Advanced Microbiome Analysis</p>
         </div>
 
@@ -419,7 +415,7 @@ function BiomarkerInputs() {
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
-                  <h3 className="text-xl font-extralight text-amber-900 mb-2 text-center drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{biomarker.name}</h3>
+                  <h3 className="text-xl font-semibold text-amber-900 mb-2 text-center drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{biomarker.name}</h3>
                   <p className="text-lg text-amber-900 text-center font-mono mb-1" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{biomarker.value}</p>
                   <p className="text-sm text-amber-900 text-center font-extralight mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>({biomarker.status})</p>
                   <p className="text-sm text-amber-900 text-center italic" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{biomarker.concern}</p>
@@ -776,8 +772,8 @@ function AIBlackBox() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
-          <h2 className="text-4xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>AI Understanding Their Life</h2>
-          <p className="text-xl text-amber-900 drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
+          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>AI Understanding Their Life</h2>
+          <p className="text-xl text-amber-900 drop-shadow-md font-light" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             Advanced algorithms recognize the patterns of modern family stress
           </p>
         </div>
@@ -869,8 +865,8 @@ function MicrobiomeResults() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Lifestyle Impact Analysis</h2>
-          <p className="text-xl text-amber-900 drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
+          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Lifestyle Impact Analysis</h2>
+          <p className="text-xl text-amber-900 drop-shadow-md font-light" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             AI reveals how modern life is affecting Sarah & Mike's health
           </p>
         </div>
@@ -881,7 +877,7 @@ function MicrobiomeResults() {
               <div className="w-12 h-12 bg-red-500/40 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
                 <span className="text-4xl">⚠️</span>
               </div>
-              <h3 className="text-2xl font-extralight text-amber-900 drop-shadow-md">Stress Factors</h3>
+              <h3 className="text-2xl font-semibold text-amber-900 drop-shadow-md">Stress Factors</h3>
             </div>
             <div className="space-y-4">
               {stressFactors.map((factor, index) => (
@@ -900,7 +896,7 @@ function MicrobiomeResults() {
               <div className="w-12 h-12 bg-green-500/40 rounded-full flex items-center justify-center mr-4 backdrop-blur-sm">
                 <span className="text-4xl">✨</span>
               </div>
-              <h3 className="text-2xl font-extralight text-amber-900 drop-shadow-md">Solutions</h3>
+              <h3 className="text-2xl font-semibold text-amber-900 drop-shadow-md">Solutions</h3>
             </div>
             <div className="space-y-4">
               {healthOpportunities.map((opportunity, index) => (
@@ -916,11 +912,11 @@ function MicrobiomeResults() {
         </div>
 
         <div className="mt-12 text-center bg-blue-500/20 backdrop-blur-md rounded-2xl p-8 border border-blue-400/30">
-          <h4 className="text-xl font-extralight text-amber-900 mb-4 drop-shadow-md">AI Insight</h4>
-          <p className="text-amber-900 leading-relaxed">
+          <h4 className="text-xl font-semibold text-amber-900 mb-4 drop-shadow-md">AI Insight</h4>
+          <p className="text-amber-900 leading-relaxed font-light">
             The analysis shows classic patterns of modern family stress manifesting as a significant gut microbiome
             imbalance. Sarah and Mike need targeted nutritional support that addresses this root cause, fitting
-            seamlessly into their busy lifestyle.
+            seamlessly into your busy lifestyle.
           </p>
         </div>
       </div>
@@ -933,8 +929,8 @@ function CoffeeConfiguration() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-extralight text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah & Mike's Daily Healthcare Blend</h2>
-          <p className="text-xl text-amber-900 max-w-3xl mx-auto drop-shadow-md mb-4 ml-auto px-1 py-1 rounded-lg border-transparent bg-transparent opacity-100" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
+          <h2 className="text-5xl font-semibold text-amber-900 mb-6 drop-shadow-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah & Mike's Daily Healthcare Blend</h2>
+          <p className="text-xl text-amber-900 max-w-3xl mx-auto drop-shadow-md mb-4 ml-auto px-1 py-1 rounded-lg border-transparent bg-transparent opacity-100 font-light" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             AI-selected nutrients and flavors to restore balance to your busy lives
           </p>
           <div className="text-lg text-amber-900 font-extralight px-0.5 py-1.5 rounded-lg my-0 mx-28 bg-black opacity-75" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
@@ -1041,7 +1037,7 @@ function CoffeeConfiguration() {
 
           {/* Base Drink Configuration Section */}
           <div className="mb-16">
-            <h3 className="text-3xl font-extralight text-amber-900 text-center mb-8" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Base Drink Configuration</h3>
+            <h3 className="text-3xl font-semibold text-amber-900 text-center mb-8" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Base Drink Configuration</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
@@ -1111,7 +1107,7 @@ function CoffeeConfiguration() {
                       )}
                     </div>
                     <div>
-                      <h4 className="text-amber-900 font-extralight text-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
+                      <h4 className="text-amber-900 font-semibold text-lg" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
                       <p className="text-amber-900 text-sm font-mono" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.amount}</p>
                     </div>
                   </div>
@@ -1123,7 +1119,7 @@ function CoffeeConfiguration() {
 
           {/* Personalized Nutrients & Flavor Section */}
           <div>
-            <h3 className="text-3xl font-extralight text-amber-900 text-center mb-8" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Personalized Nutrients & Flavor</h3>
+            <h3 className="text-3xl font-semibold text-amber-900 text-center mb-8" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Personalized Nutrients & Flavor</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -1175,11 +1171,11 @@ function CoffeeConfiguration() {
                 >
                   <div className="flex items-start mb-4">
                     <div className="flex-1">
-                      <h4 className="text-white font-extralight text-lg mb-1" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
-                      <p className="text-white text-sm font-extralight mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
+                      <h4 className="text-white font-semibold text-lg mb-1" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
+                      <p className="text-white text-sm font-light mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
                     </div>
                   </div>
-                  <p className="text-white text-sm leading-relaxed" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
+                  <p className="text-white text-sm leading-relaxed font-light" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
                 </div>
               ))}
             </div>

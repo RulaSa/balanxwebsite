@@ -69,14 +69,16 @@ export default function AffoHealthcarePage2Section() {
       {/* Content */}
       <div ref={contentRef} className="relative z-20 max-w-7xl mx-auto text-center">
         <h2
-          className="text-5xl md:text-7xl font-extralight text-gray-800 mb-8 drop-shadow-lg"
+          className="text-5xl md:text-7xl font-semibold text-gray-800 mb-8 drop-shadow-lg"
           style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}
         >
           ÁFFO HEALTHCARE
         </h2>
-        <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-16 drop-shadow-md">
-          Experience personalized wellness through advanced bio-analysis and tailored nutrition.
-        </p>
+        <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 border border-white/30 max-w-3xl mx-auto mb-16 shadow-lg">
+          <p className="text-xl md:text-2xl drop-shadow-md" style={{ color: "#5A4632" }}>
+            Experience personalized wellness through advanced bio-analysis and tailored nutrition.
+          </p>
+        </div>
         
         {/* Embedded video */}
         <div className="w-full max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-2xl">
@@ -94,7 +96,7 @@ export default function AffoHealthcarePage2Section() {
 
         {/* Four Core Steps */}
         <div className="w-full max-w-7xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-extralight text-gray-800 mb-12 drop-shadow-lg">
+          <h3 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-12 drop-shadow-lg">
             Our Service Process
           </h3>
           
@@ -109,10 +111,10 @@ export default function AffoHealthcarePage2Section() {
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
-                <h4 className="text-xl font-extralight text-gray-800 mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 mb-3">
                   Daily Data Collection
                 </h4>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed font-light">
                   We gather essential health metrics and lifestyle data every day to track your wellness journey.
                 </p>
               </div>
@@ -128,10 +130,10 @@ export default function AffoHealthcarePage2Section() {
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
-                <h4 className="text-xl font-extralight text-gray-800 mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 mb-3">
                   AI Analysis
                 </h4>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed font-light">
                   Our algorithms process your data to identify trends and health patterns unique to you.
                 </p>
               </div>
@@ -147,10 +149,10 @@ export default function AffoHealthcarePage2Section() {
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
-                <h4 className="text-xl font-extralight text-gray-800 mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 mb-3">
                   Personalized Recommendations
                 </h4>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed font-light">
                   Receive tailored wellness and nutrition suggestions based on your individual profile.
                 </p>
               </div>
@@ -166,10 +168,10 @@ export default function AffoHealthcarePage2Section() {
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
-                <h4 className="text-xl font-extralight text-gray-800 mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 mb-3">
                   Health Reports
                 </h4>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed font-light">
                   Get regular, easy-to-read reports that summarize your progress and suggest next steps.
                 </p>
               </div>

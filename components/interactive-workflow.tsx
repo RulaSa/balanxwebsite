@@ -84,7 +84,7 @@ export default function InteractiveWorkflow() {
 
       <div ref={stickyContainerRef} className="sticky top-0 w-full h-screen flex flex-col items-center justify-center relative z-10">
         <h1
-          className="text-6xl md:text-8xl font-extralight text-center mb-16 drop-shadow-lg"
+          className="text-6xl md:text-8xl font-semibold text-center mb-16 drop-shadow-lg"
           style={{ color: "#1a1a1a" }}
         >
           {"What If Health Was ..."}
@@ -106,10 +106,11 @@ export default function InteractiveWorkflow() {
                     {step.description}
                   </p> // Step 2: Title on left
                 ) : (
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-8 max-w-md text-right card-glow">
+                  <div className="backdrop-blur-md rounded-xl shadow-lg border p-8 max-w-md text-right card-glow"
+                       style={{ backgroundColor: "rgba(179, 131, 94, 0.3)", borderColor: "rgba(179, 131, 94, 0.5)" }}>
                     <p
-                      className={`step-number-text text-2xl font-extralight mb-2 transition-colors duration-500 ${
-                        index === activeStep ? "metallic-text-gold" : ""
+                      className={`step-number-text text-2xl font-semibold mb-2 transition-colors duration-500 ${
+                        index === activeStep ? "metallic-text-white" : ""
                       }`}
                       style={{ color: index === activeStep ? undefined : "#222" }}
                     >
@@ -117,7 +118,7 @@ export default function InteractiveWorkflow() {
                       {step.number}
                     </p>
                     <h3
-                      className="step-title-text text-4xl font-extralight"
+                      className="step-title-text text-4xl font-semibold"
                       style={{ color: "#222" }}
                     >
                       {step.title}
@@ -138,9 +139,10 @@ export default function InteractiveWorkflow() {
               {/* Right Side Content */}
               <div className="flex-1 flex justify-start pl-12">
                 {index === 0 || index === 2 ? ( // Step 1 & 3: Title on right
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-8 max-w-md text-left card-glow">
+                  <div className="backdrop-blur-md rounded-xl shadow-lg border p-8 max-w-md text-left card-glow"
+                       style={{ backgroundColor: "rgba(179, 131, 94, 0.3)", borderColor: "rgba(179, 131, 94, 0.5)" }}>
                     <p
-                      className={`step-number-text text-2xl font-extralight mb-2 transition-colors duration-500 ${
+                      className={`step-number-text text-2xl font-semibold mb-2 transition-colors duration-500 ${
                         index === activeStep ? "metallic-text-gold" : ""
                       }`}
                       style={{ color: index === activeStep ? undefined : "#222" }}
@@ -149,7 +151,7 @@ export default function InteractiveWorkflow() {
                       {step.number}
                     </p>
                     <h3
-                      className="step-title-text text-4xl font-extralight"
+                      className="step-title-text text-4xl font-semibold"
                       style={{ color: "#222" }}
                     >
                       {step.title}
