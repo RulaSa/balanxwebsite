@@ -140,7 +140,7 @@ export default function BrandStoryPage() {
                   loop
                   playsInline
                 >
-                  <source src="/video/airplane.mov" type="video/mp4" />
+                  <source src="/video/airplane.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
