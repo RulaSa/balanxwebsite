@@ -109,7 +109,7 @@ export default function AffoHealthcarePage2() {
             BALANX-ÁFFO HEALTHCARE
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-16 drop-shadow-md">
-            Experience personalized wellness through advanced bio-analysis and tailored nutrition.
+            Experience personalized wellness through advanced <span className="whitespace-nowrap">bio-analysis</span> and tailored nutrition.
           </p>
           
           {/* Embedded video */}

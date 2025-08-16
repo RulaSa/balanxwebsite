@@ -241,7 +241,7 @@ export default function IntroSection({ onComplete }: IntroSectionProps) {
 
       <div ref={contentRef} className="relative z-10 text-center px-6">
         <h1
-          className="intro-element text-7xl md:text-9xl font-serif font-extralight text-white tracking-wider mb-6 drop-shadow-2xl"
+          className="intro-element text-8xl md:text-[10rem] font-serif font-extralight text-white tracking-wider mb-6 drop-shadow-2xl"
           style={{
             fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
             textShadow: "0 4px 20px rgba(0,0,0,0.5)",

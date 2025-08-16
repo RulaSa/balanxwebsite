@@ -98,8 +98,11 @@ export default function AboutAffoHealthcareSection() {
               <h2 
                 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-white drop-shadow-lg"
               >
-                <span className="text-white/90 font-light">What is</span>{" "}
-                <span className="text-white font-semibold">Affo Healthcare?</span>
+                <span className="text-white/90 font-light">What is</span>
+                <br />
+                <span className="text-white font-semibold text-6xl md:text-7xl lg:text-8xl">AFFO</span>
+                <br />
+                <span className="text-white font-semibold text-6xl md:text-7xl lg:text-8xl">Healthcare?</span>
               </h2>
             </div>
           </div>

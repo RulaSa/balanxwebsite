@@ -88,20 +88,42 @@ function HeroSection() {
       </video>
       
       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30" />
-      <div className="text-center z-10 px-6">
-        <div className="rounded-3xl p-12">
-          <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-r from-amber-400/90 to-orange-500/90 rounded-full flex items-center justify-center animate-pulse backdrop-blur-sm shadow-2xl">
-            <span className="text-4xl">👥</span>
+      <div className="text-center z-10 px-6 h-full flex flex-col items-center justify-center">
+        <div className="rounded-3xl p-12 mb-12">
+          <div className="w-24 h-24 mx-auto mb-8 rounded-full flex items-center justify-center animate-pulse backdrop-blur-sm shadow-2xl overflow-hidden">
+            {/* Purple gradient background */}
+            <div className="w-full h-full bg-gradient-to-r from-blue-400/90 via-purple-500/90 to-purple-700/90 flex items-center justify-center">
+              {/* Two stylized human figures */}
+              <svg className="w-12 h-12 text-purple-900" fill="currentColor" viewBox="0 0 24 24">
+                {/* Left figure */}
+                <path d="M8 6c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm-2 8c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/>
+                {/* Right figure */}
+                <path d="M16 6c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm-2 8c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/>
+                {/* Connection between them */}
+                <path d="M12 8c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/>
+              </svg>
+            </div>
           </div>
-          <div className="bg-gradient-to-r from-white/25 to-white/15 backdrop-blur-xl rounded-3xl px-10 py-8 border border-white/40 shadow-2xl inline-block transform hover:scale-105 transition-all duration-500">
-            <h1 className="text-6xl font-bold drop-shadow-2xl bg-gradient-to-r from-amber-800 via-orange-700 to-amber-600 bg-clip-text text-transparent" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
-              Meet Sarah & Mark
-            </h1>
+          <div className="relative inline-block group">
+            {/* Main container with glassmorphism */}
+            <div className="bg-white/10 backdrop-blur-2xl rounded-[2rem] px-8 py-6 border border-white/20 shadow-2xl relative overflow-hidden">
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 rounded-[2rem]"></div>
+              
+              {/* Content */}
+              <h1 className="text-6xl font-bold text-white drop-shadow-lg relative z-10" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
+                Meet Sarah & Mark
+              </h1>
+            </div>
+            
+            {/* Outer glow ring */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-amber-400/20 via-orange-400/20 to-amber-400/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-all duration-1000 scale-110 group-hover:scale-100"></div>
+            
+            {/* Subtle border highlight */}
+            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-amber-200/30 via-orange-200/30 to-amber-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
           </div>
         </div>
-        <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-8">
-          <br />
-        </p>
+        
         <div className="inline-block bg-black/60 backdrop-blur-md rounded-2xl px-6 py-3 border border-white/20 animate-bounce">
           <div className="text-gray-300 drop-shadow-md">
             How our algorithm works
@@ -125,7 +147,7 @@ function StoryIntroduction({ sentenceIndex, relativeScrollY }: { sentenceIndex: 
     const scrollThresholds = [
       { start: 600, end: 1000 }, // Sentence 1 - 增加间隔
       { start: 1000, end: 1400 }, // Sentence 2 - 增加间隔
-      { start: 1400, end: 1800 }, // Sentence 3 - 增加间隔
+      { start: 1050, end: 1450 }, // Sentence 3 - 再早一点
     ]
 
     const threshold = scrollThresholds[sentenceIndex]
@@ -396,7 +418,7 @@ function BiomarkerInputs() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-4 border-2 border-amber-600 rounded-xl bg-amber-50/30 backdrop-blur-sm" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah's Microbiome Analysis</h2>
+          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-6 rounded-2xl bg-gradient-to-r from-amber-50/40 via-white/30 to-amber-50/40 backdrop-blur-xl shadow-2xl border border-amber-200/50 hover:shadow-3xl hover:border-amber-300/70 transition-all duration-500" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah's Microbiome Analysis</h2>
           <p className="text-xl text-amber-900 drop-shadow-md" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Detected by BALANX's Advanced Microbiome Analysis</p>
         </div>
 
@@ -699,7 +721,7 @@ function AIBlackBox() {
 
   const codeStream = [
     "Initializing BALANX Microbiome AI...",
-    "Loading health profile [Sarah & Mike]...",
+            "Loading health profile [Sarah & Mark]...",
     "Parsing gut flora data sample [ID: sm7c3b0d]...",
     "stress_signature_score = 0.89 # Low Bifido & Lacto detected",
     "metabolic_strain_index = 0.76 # Imbalanced F/B Ratio",
@@ -714,7 +736,7 @@ function AIBlackBox() {
     "module.Omega3_D3 = calculate_for('ANTI_INFLAMMATION')",
     "module.Adaptogens = calculate_for('ENERGY_SUPPORT')",
     "Generating personalized wellness blend...",
-    "final_config = optimize_for_busy_lifestyle(Sarah, Mike)",
+            "final_config = optimize_for_busy_lifestyle(Sarah, Mark)",
     "Analysis Complete.",
   ]
 
@@ -772,7 +794,7 @@ function AIBlackBox() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
-          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-4 border-2 border-amber-600 rounded-xl bg-amber-50/30 backdrop-blur-sm" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>AI Understanding Their Life</h2>
+          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-6 rounded-2xl bg-gradient-to-r from-amber-50/40 via-white/30 to-amber-50/40 backdrop-blur-xl shadow-2xl border border-amber-200/50 hover:shadow-3xl hover:border-amber-300/70 transition-all duration-500" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>AI Understanding Their Life</h2>
           <p className="text-xl text-amber-900 drop-shadow-md font-light" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             Advanced algorithms recognize the patterns of modern family stress
           </p>
@@ -865,9 +887,9 @@ function MicrobiomeResults() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-4 border-2 border-amber-600 rounded-xl bg-amber-50/30 backdrop-blur-sm" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Lifestyle Impact Analysis</h2>
+          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-6 rounded-2xl bg-gradient-to-r from-amber-50/40 via-white/30 to-amber-50/40 backdrop-blur-xl shadow-2xl border border-amber-200/50 hover:shadow-3xl hover:border-amber-300/70 transition-all duration-500" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Lifestyle Impact Analysis</h2>
           <p className="text-xl text-amber-900 drop-shadow-md font-light" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
-            AI reveals how modern life is affecting Sarah & Mike's health
+            AI reveals how modern life is affecting Sarah & Mark's health
           </p>
         </div>
 
@@ -915,7 +937,7 @@ function MicrobiomeResults() {
           <h4 className="text-xl font-semibold text-amber-900 mb-4 drop-shadow-md">AI Insight</h4>
           <p className="text-amber-900 leading-relaxed font-light">
             The analysis shows classic patterns of modern family stress manifesting as a significant gut microbiome
-            imbalance. Sarah and Mike need targeted nutritional support that addresses this root cause, fitting
+            imbalance. Sarah and Mark need targeted nutritional support that addresses this root cause, fitting
             seamlessly into your busy lifestyle.
           </p>
         </div>
@@ -929,11 +951,11 @@ function CoffeeConfiguration() {
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-4 border-2 border-amber-600 rounded-xl bg-amber-50/30 backdrop-blur-sm" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah & Mike's Daily Healthcare Blend</h2>
+          <h2 className="text-4xl font-semibold text-amber-900 mb-6 drop-shadow-lg inline-block px-8 py-6 rounded-2xl bg-gradient-to-r from-amber-50/40 via-white/30 to-amber-50/40 backdrop-blur-xl shadow-2xl border border-amber-200/50 hover:shadow-3xl hover:border-amber-300/70 transition-all duration-500" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Sarah & Mark's Daily Healthcare Blend</h2>
           <p className="text-xl text-amber-900 max-w-3xl mx-auto drop-shadow-md mb-4 ml-auto px-1 py-1 rounded-lg border-transparent bg-transparent opacity-100 font-light" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             AI-selected nutrients and flavors to restore balance to your busy lives
           </p>
-          <div className="text-lg text-white font-extralight px-0.5 py-1.5 rounded-lg my-0 mx-28 bg-black opacity-75" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
+          <div className="text-lg text-white font-extralight px-4 py-3 rounded-lg my-0 mx-28 bg-slate-700/90 backdrop-blur-sm border border-slate-600/50" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>
             Based on your microbiome analysis, the AI has selected the optimal flavor and nutrient combination from the<br />{" "}
             <span className="text-white font-extralight" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Calm & Focus Mind & Body Balance Series</span>
           </div>
@@ -1038,7 +1060,7 @@ function CoffeeConfiguration() {
           {/* Base Drink Configuration Section */}
           <div className="mb-16">
             <div className="text-center">
-              <h3 className="text-3xl font-semibold text-amber-900 mb-8 inline-block px-6 py-3 border-2 border-amber-600 rounded-xl bg-amber-50/30 backdrop-blur-sm" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Base Drink Configuration</h3>
+              <h3 className="text-3xl font-semibold text-amber-900 mb-8 inline-block px-6 py-4 rounded-2xl bg-gradient-to-r from-amber-50/40 via-white/30 to-amber-50/40 backdrop-blur-xl shadow-2xl border border-amber-200/50 hover:shadow-3xl hover:border-amber-300/70 transition-all duration-500" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Base Drink Configuration</h3>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
@@ -1121,63 +1143,91 @@ function CoffeeConfiguration() {
 
           {/* Personalized Nutrients & Flavor Section */}
           <div className="text-center">
-            <h3 className="text-3xl font-semibold text-amber-900 text-center mb-8 inline-block px-6 py-3 border-2 border-amber-600 rounded-xl bg-amber-50/30 backdrop-blur-sm" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Personalized Nutrients & Flavor</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto justify-items-center">
-              {[
-                {
-                  title: "Flavor Tank",
-                  subtitle: "Yuzu Rosemary",
-                  description:
-                    "Mental clarity, fatigue relief. A bright, herbal blend designed to cut through mental fog and restore focus to your day",
-                  background: "/images/wu1.png",
-                },
-                {
-                  title: "Omega-3",
-                  subtitle: "500 mg (from Algae Oil)",
-                  description: "Supports brain health and combats inflammation linked to gut dysbiosis",
-                  background: "/images/wu2.png",
-                },
-                {
-                  title: "L-Theanine",
-                  subtitle: "150 mg",
-                  description:
-                    "Works with caffeine to provide a state of calm focus, buffering the stress response identified by your analysis",
-                  background: "/images/wu3.png",
-                },
-                {
-                  title: "Stress Resilience Complex",
-                  subtitle: "Magnesium & B-Complex",
-                  description:
-                    "Essential nutrients for nervous system support, helping to improve mood and restore energy levels depleted by chronic stress",
-                  background: "/images/wu4.png",
-                },
-                {
-                  title: "Microbiome Support",
-                  subtitle: "Polyphenols + Soluble Fiber",
-                  description:
-                    "Each flavor tank contains ingredients to nourish beneficial gut bacteria, addressing the root cause of imbalance",
-                  background: "/images/wu5.png",
-                },
-              ].map((item, index) => (
-                <div
-                  key={`nutrient-${index}`}
-                  className="rounded-3xl p-6 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden h-full flex flex-col"
-                  style={{
-                    backgroundImage: `url(${item.background})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                  }}
-                >
-                  <div className="flex items-start mb-4 flex-1">
-                    <div className="flex-1">
-                      <h4 className="text-white font-semibold text-lg mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
-                      <p className="text-white text-sm font-light mb-3" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
+            <h3 className="text-3xl font-semibold text-amber-900 text-center mb-8 inline-block px-6 py-4 rounded-2xl bg-gradient-to-r from-amber-50/40 via-white/30 to-amber-50/40 backdrop-blur-xl shadow-2xl border border-amber-200/50 hover:shadow-3xl hover:border-amber-300/70 transition-all duration-500" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>Personalized Nutrients & Flavor</h3>
+            <div className="max-w-7xl mx-auto">
+              {/* Top Row - 3 boxes */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 justify-items-center">
+                {[
+                  {
+                    title: "Flavor Tank",
+                    subtitle: "Yuzu Rosemary",
+                    description:
+                      "Mental clarity, fatigue relief. A bright, herbal blend designed to cut through mental fog and restore focus to your day",
+                    background: "/images/wu1.png",
+                  },
+                  {
+                    title: "Omega-3",
+                    subtitle: "500 mg (from Algae Oil)",
+                    description: "Supports brain health and combats inflammation linked to gut dysbiosis",
+                    background: "/images/wu2.png",
+                  },
+                  {
+                    title: "L-Theanine",
+                    subtitle: "150 mg",
+                    description:
+                      "Works with caffeine to provide a state of calm focus, buffering the stress response identified by your analysis",
+                    background: "/images/wu3.png",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={`nutrient-top-${index}`}
+                    className="rounded-3xl p-6 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden h-full flex flex-col w-full max-w-sm"
+                    style={{
+                      backgroundImage: `url(${item.background})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+                  >
+                    <div className="flex items-start mb-4 flex-1">
+                      <div className="flex-1">
+                        <h4 className="text-white font-semibold text-lg mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
+                        <p className="text-white text-sm font-light mb-3" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
+                      </div>
                     </div>
+                    <p className="text-white text-sm leading-relaxed font-light mt-auto" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
                   </div>
-                  <p className="text-white text-sm leading-relaxed font-light mt-auto" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+              
+              {/* Bottom Row - 2 boxes centered */}
+              <div className="flex justify-center items-center gap-12 max-w-4xl mx-auto">
+                {[
+                  {
+                    title: "Stress Resilience Complex",
+                    subtitle: "Magnesium & B-Complex",
+                    description:
+                      "Essential nutrients for nervous system support, helping to improve mood and restore energy levels depleted by chronic stress",
+                    background: "/images/wu4.png",
+                  },
+                  {
+                    title: "Microbiome Support",
+                    subtitle: "Polyphenols + Soluble Fiber",
+                    description:
+                      "Each flavor tank contains ingredients to nourish beneficial gut bacteria, addressing the root cause of imbalance",
+                    background: "/images/wu5.png",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={`nutrient-bottom-${index}`}
+                    className="rounded-3xl p-6 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden h-full flex flex-col w-full max-w-sm"
+                    style={{
+                      backgroundImage: `url(${item.background})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+                  >
+                    <div className="flex items-start mb-4 flex-1">
+                      <div className="flex-1">
+                        <h4 className="text-white font-semibold text-lg mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
+                        <p className="text-white text-sm font-light mb-3" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
+                      </div>
+                    </div>
+                    <p className="text-white text-sm leading-relaxed font-light mt-auto" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

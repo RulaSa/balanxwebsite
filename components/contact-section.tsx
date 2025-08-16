@@ -97,8 +97,8 @@ export default function ContactSection() {
       background: "radial-gradient(ellipse at 60% 50%, #b78062 0%, #b78062 40%, #a66c4e 100%)"
     }}>
       {/* Main Contact Section */}
-      <div className="relative z-10 py-60 px-6 ">
-        <div className="max-w-7xl mx-auto pt-20">
+      <div className="relative z-10 py-32 px-6 min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="text-left">
@@ -153,7 +153,7 @@ export default function ContactSection() {
       </div>
 
       {/* Footer Section */}
-      <div className="border-t border-orange-200 py-32 px-6 mt-20">
+      <div className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Brand Section */}
@@ -163,7 +163,7 @@ export default function ContactSection() {
                   <img
                     src="/images/logo-clean.png"
                     alt="BalanX Logo"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover brightness-0 invert"
                   />
                 </div>
                 <span className="text-2xl font-wide font-semibold text-white" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>

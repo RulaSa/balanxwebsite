@@ -89,7 +89,7 @@ export default function AffoHealthcarePage() {
           ÁFFO HEALTHCARE
         </h1>
         <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto mb-16 drop-shadow-md">
-          Experience personalized wellness through advanced bio-analysis and tailored nutrition.
+          Experience personalized wellness through advanced <span className="whitespace-nowrap">bio-analysis</span> and tailored nutrition.
         </p>
         {/* Embedded video */}
         <div className="w-full max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-2xl">

@@ -85,7 +85,7 @@ export default function AffoHealthcareSection() {
         </h2>
         <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 border border-white/30 max-w-3xl mx-auto mb-16 shadow-lg">
           <p className="text-xl md:text-2xl text-white/90 drop-shadow-md">
-            Experience personalized wellness through advanced bio-analysis and tailored nutrition.
+            Experience personalized wellness through advanced <span className="whitespace-nowrap">bio-analysis</span> and tailored nutrition.
           </p>
         </div>
         

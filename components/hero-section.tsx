@@ -122,7 +122,7 @@ export default function HeroSection() {
           <div className="text-center">
             <div 
               ref={titleRef}
-              className="text-7xl md:text-9xl lg:text-[12rem] font-bold tracking-widest drop-shadow-2xl mb-6"
+              className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-widest drop-shadow-2xl mb-6"
               style={{ 
                 fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
                 background: "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(173,216,230,0.8) 50%, rgba(255,215,0,0.7) 100%)",
@@ -132,17 +132,19 @@ export default function HeroSection() {
                 filter: "drop-shadow(0 0 30px rgba(255,255,255,0.4))"
               }}
             >
-              BALANX
+              BALANX-BIO
             </div>
             <div 
               ref={subtitleRef}
-              className="text-xl md:text-2xl lg:text-3xl text-white font-light tracking-wide drop-shadow-lg max-w-4xl mx-auto px-6 leading-relaxed"
+              className="text-lg md:text-xl lg:text-2xl text-white font-light tracking-wide drop-shadow-lg max-w-4xl mx-auto px-6 leading-relaxed"
               style={{ 
-                fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif"
+                fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
+                marginLeft: "auto",
+                marginRight: "0",
+                transform: "translateX(2rem)"
               }}
             >
-              Where AI meets the invisible,<br />
-              where you meet balance
+              – Where AI Meet Health, Where You Meet Balance
             </div>
           </div>
         </div>

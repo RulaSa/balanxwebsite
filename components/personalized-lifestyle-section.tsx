@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Link from "next/link"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -87,7 +88,7 @@ export default function PersonalizedLifestyleSection() {
       <div className="relative z-20 w-full h-full flex items-center justify-center px-4 md:px-6">
         <div 
           ref={textRef}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1200px] mx-auto w-full"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1200px] mx-auto w-full"
         >
           {/* Left Side - Three Numbered Points */}
           <div className="space-y-6">
@@ -126,10 +127,21 @@ export default function PersonalizedLifestyleSection() {
               style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
             >
               <span className="text-5xl md:text-7xl lg:text-8xl">Personalize</span><br />
-              <span className="text-4xl md:text-6xl lg:text-7xl">Your Lifestyle</span>
+              <span className="text-4xl md:text-6xl lg:text-7xl mt-20">Your Lifestyle</span>
             </h2>
           </div>
         </div>
+      </div>
+
+      {/* Join the Waitlist Button - Bottom Right Corner */}
+      <div className="absolute bottom-8 right-8 z-30">
+        <Link
+          href="/pre-order"
+          className="inline-flex items-center px-8 py-3 bg-white/90 text-black font-medium rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 backdrop-blur-sm text-lg"
+          style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
+        >
+          Join the Waitlist
+        </Link>
       </div>
     </section>
   )
