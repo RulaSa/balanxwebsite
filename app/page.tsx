@@ -1,5 +1,6 @@
 "use client"
 
+// Added comment for testing push - 2025-08-19
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
