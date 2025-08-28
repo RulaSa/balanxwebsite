@@ -59,12 +59,13 @@ export default function AffoHealthcareSection() {
     <section
       ref={sectionRef}
       data-section="affo-healthcare"
-      className="fade-in-section relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-black to-gray-900"
+      className="fade-in-section relative min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-black to-gray-900"
     >
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover opacity-60"
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1846e211-60b1-4108-86f9-901aeef72c29%20%281%29-Ayv68fmwXKkfHBtbYgzAza9cZQ8pi8.mp4"
+        style={{ maxWidth: '100%', height: 'auto' }}
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1846e211-60b1-4108-86f9-901aeef72c29%20%281%29-Ayv68fmwXKkfHBtbYgzAza9cQ8pi8.mp4"
         autoPlay
         loop
         muted
@@ -77,22 +78,23 @@ export default function AffoHealthcareSection() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto text-center">
+      <div className="relative z-20 max-w-7xl mx-auto text-center px-4">
         <h2
-          className="text-5xl md:text-7xl font-extralight text-white mb-8 drop-shadow-lg"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extralight text-white mb-6 sm:mb-8 drop-shadow-lg"
         >
           ÁFFO HEALTHCARE
         </h2>
-        <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 border border-white/30 max-w-3xl mx-auto mb-16 shadow-lg">
-          <p className="text-xl md:text-2xl text-white/90 drop-shadow-md">
+        <div className="bg-white/20 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/30 max-w-full sm:max-w-2xl lg:max-w-3xl mx-auto mb-12 sm:mb-16 shadow-lg">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-md">
             Experience personalized wellness through advanced <span className="whitespace-nowrap">bio-analysis</span> and tailored nutrition.
           </p>
         </div>
         
         {/* Embedded video */}
-        <div className="w-full max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-2xl">
+        <div className="w-full max-w-full sm:max-w-3xl lg:max-w-4xl mx-auto mb-12 sm:mb-16 rounded-xl overflow-hidden shadow-2xl">
           <video
             className="w-full h-auto object-cover"
+            style={{ maxWidth: '100%', height: 'auto' }}
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/exploded-BTR24P5NPnuMt8Axv3S3SZKDqIED1R.mp4"
             autoPlay
             loop
@@ -104,7 +106,7 @@ export default function AffoHealthcareSection() {
         </div>
 
         {/* Coffee Health Section */}
-        <CoffeeHealthSection ref={coffeeHealthSectionRef} className="mt-16" />
+        <CoffeeHealthSection ref={coffeeHealthSectionRef} className="mt-12 sm:mt-16" />
       </div>
     </section>
   )

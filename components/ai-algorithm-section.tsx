@@ -1191,7 +1191,7 @@ function CoffeeConfiguration() {
               </div>
               
               {/* Bottom Row - 2 boxes centered */}
-              <div className="flex justify-center items-center gap-12 max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 max-w-4xl mx-auto">
                 {[
                   {
                     title: "Stress Resilience Complex",
@@ -1210,7 +1210,7 @@ function CoffeeConfiguration() {
                 ].map((item, index) => (
                   <div
                     key={`nutrient-bottom-${index}`}
-                    className="rounded-3xl p-6 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden h-full flex flex-col w-full max-w-sm"
+                    className="rounded-2xl p-4 sm:p-6 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden h-full flex flex-col w-full max-w-sm relative"
                     style={{
                       backgroundImage: `url(${item.background})`,
                       backgroundSize: 'cover',
@@ -1218,13 +1218,16 @@ function CoffeeConfiguration() {
                       backgroundRepeat: 'no-repeat'
                     }}
                   >
-                    <div className="flex items-start mb-4 flex-1">
+                    {/* Semi-transparent overlay for better text readability */}
+                    <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
+                    
+                    <div className="relative z-10 flex items-start mb-4 flex-1">
                       <div className="flex-1">
                         <h4 className="text-white font-semibold text-lg mb-2" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.title}</h4>
-                        <p className="text-white text-sm font-light mb-3" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
+                        <p className="text-white text-sm font-light mb-3" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
                       </div>
                     </div>
-                    <p className="text-white text-sm leading-relaxed font-light mt-auto" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.subtitle}</p>
+                    <p className="text-white text-sm leading-relaxed font-light mt-auto relative z-10" style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}>{item.description}</p>
                   </div>
                 ))}
               </div>

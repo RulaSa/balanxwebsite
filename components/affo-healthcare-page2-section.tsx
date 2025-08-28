@@ -60,9 +60,10 @@ export default function AffoHealthcarePage2Section() {
     <section
       ref={sectionRef}
       data-section="affo-healthcare-page2"
-      className="fade-in-section relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden"
+      className="fade-in-section relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden affo-page2-mobile"
       style={{
-        background: "linear-gradient(to bottom, #d4c1a7 0%, #e8dccd 50%, #f8f5f0 100%)"
+        background: "linear-gradient(to bottom, #d4c1a7 0%, #e8dccd 50%, #f8f5f0 100%)",
+        marginTop: 0
       }}
     >
 

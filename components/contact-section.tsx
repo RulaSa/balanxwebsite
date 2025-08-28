@@ -93,8 +93,9 @@ export default function ContactSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} data-section="contact" className="relative text-gray-900 overflow-hidden" style={{
-      background: "radial-gradient(ellipse at 60% 50%, #b78062 0%, #b78062 40%, #a66c4e 100%)"
+    <section ref={sectionRef} data-section="contact" className="relative text-gray-900 overflow-hidden contact-section-mobile" style={{
+      background: "radial-gradient(ellipse at 60% 50%, #b78062 0%, #b78062 40%, #a66c4e 100%)",
+      marginTop: 0
     }}>
       {/* Main Contact Section */}
       <div className="relative z-10 py-32 px-6 min-h-screen flex items-center">
@@ -155,15 +156,16 @@ export default function ContactSection() {
       {/* Footer Section */}
       <div className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {/* Brand Section */}
-            <div className="lg:col-span-1">
+            <div className="w-full md:w-full lg:w-full">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
                   <img
                     src="/images/logo-clean.png"
                     alt="BalanX Logo"
                     className="w-full h-full object-cover brightness-0 invert"
+                    style={{ maxWidth: '100%', height: 'auto' }}
                   />
                 </div>
                 <span className="text-2xl font-wide font-semibold text-white" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
@@ -219,7 +221,7 @@ export default function ContactSection() {
               </div>
 
             {/* Contact Column */}
-            <div>
+            <div className="w-full md:w-full lg:w-full">
               <h3 className="text-xl font-wide font-semibold mb-6 text-white" style={{ fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif" }}>
                 Contact
               </h3>

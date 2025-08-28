@@ -88,3 +88,405 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Global CSS Cleanup and Mobile Responsiveness */
+
+/* Apply box-sizing: border-box to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove rigid vh/vw usage and use flexible containers */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure proper text sizing and spacing */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+/* Ensure images scale properly */
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Ensure containers don't overflow */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Prevent text overlap */
+.text-overflow-safe {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Flexible height containers */
+.flexible-height {
+  min-height: 50vh;
+  height: auto;
+}
+
+/* Ensure proper spacing on mobile */
+.mobile-spacing {
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .mobile-spacing {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+}
+
+/* General Mobile-Friendly Adjustments */
+
+/* Standardized spacing consistency */
+.section-spacing {
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+  }
+}
+
+/* Use relative units instead of hard-coded pixels */
+.container-fluid {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-fluid {
+    width: 80%;
+  }
+}
+
+/* Horizontal scrolling components */
+.horizontal-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Consistent margins and padding */
+.standard-margin {
+  margin: 1rem;
+}
+
+.standard-padding {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .standard-margin {
+    margin: 1.5rem;
+  }
+  
+  .standard-padding {
+    padding: 1.5rem;
+  }
+}
+
+/* Prevent large bottom margins that create empty space */
+.section-container {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsive grid system */
+.responsive-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* MOBILE-ONLY RESPONSIVE CHANGES (max-width: 768px) */
+/* All changes below apply only to mobile devices and preserve desktop layout */
+
+@media (max-width: 768px) {
+  /* Hero Section - Text positioning - move up by 20% */
+  .hero-text-positioning {
+    transform: translateY(-20vh);
+  }
+  
+  /* Timeline Section - Spacing adjustments - move up by 35% */
+  .timeline-section-mobile {
+    margin-top: -35vh !important;
+  }
+  
+  /* AFFO Healthcare Section - Video scaling and spacing */
+  .affo-section-mobile {
+    margin-top: -25vh !important;
+  }
+  
+  .affo-section-mobile video {
+    object-position: center top;
+    transform: scale(1, 1.4);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* AffoHealthcarePage2Section - Spacing */
+  .affo-page2-mobile {
+    margin-top: -100vh !important;
+  }
+  
+  /* Personalized Lifestyle Section - Content positioning */
+  .personalize-content-mobile {
+    transform: translateY(15vh);
+  }
+  
+  .personalize-content-mobile video {
+    object-position: center center;
+    transform: scale(1.3);
+    filter: brightness(0.7);
+  }
+  
+  .personalize-button-mobile {
+    bottom: calc(12% + 20vh);
+  }
+  
+  /* Contact Section - Remove gap */
+  .contact-section-mobile {
+    margin-top: -20vh !important;
+  }
+  
+  /* Timeline faster scrolling for mobile */
+  .timeline-section-mobile .spacer-mobile {
+    height: calc(var(--steps) * 35vh);
+  }
+  
+  /* Font size adjustments for mobile */
+  .personalize-content-mobile h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  .personalize-content-mobile p {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  }
+  
+  /* Bullet points mobile styling */
+  .personalize-content-mobile .flex-shrink-0 {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Button mobile styling */
+  .personalize-button-mobile .inline-flex {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  /* AFFO cards transparency for mobile */
+  .affo-section-mobile .affo-item {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
+}
+
+/* Desktop-only styles (preserve original layout) */
+@media (min-width: 769px) {
+  /* Ensure desktop layout remains unchanged */
+  .hero-text-positioning {
+    transform: translateY(0);
+  }
+  
+  .timeline-section-mobile {
+    margin-top: 0 !important;
+  }
+  
+  .affo-section-mobile {
+    margin-top: 3rem !important;
+  }
+  
+  .affo-page2-mobile {
+    margin-top: 0 !important;
+  }
+  
+  .personalize-content-mobile {
+    transform: translateY(0);
+  }
+  
+  .personalize-button-mobile {
+    bottom: 3rem;
+  }
+  
+  .contact-section-mobile {
+    margin-top: 0 !important;
+  }
+}
+
+/* Legacy styles - keeping for compatibility */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.step-card {
+  padding: 1rem 1.25rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  min-height: fit-content;
+  height: auto;
+}
+
+.text-safe {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.5;
+}
+
+.consistent-spacing {
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .consistent-spacing {
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+  }
+}

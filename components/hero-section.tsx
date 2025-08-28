@@ -88,68 +88,54 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden hero"
+      className="relative w-full overflow-hidden hero"
+      style={{ 
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
     >
       {/* Video Background */}
-      <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-0">
+      <video 
+        ref={videoRef} 
+        autoPlay 
+        muted 
+        loop 
+        playsInline 
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        style={{ maxWidth: '100%', height: 'auto' }}
+      >
         <source src="/video/0_Pink_Lake_Salt_Lake_3840x2160.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay with mouse-following light effect */}
-      <div
-        className="absolute inset-0 bg-black/30 z-10 overflow-hidden"
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect()
-          const x = e.clientX - rect.left
-          const y = e.clientY - rect.top
-
-          // Update CSS custom properties for the light position
-          e.currentTarget.style.setProperty("--mouse-x", `${x}px`)
-          e.currentTarget.style.setProperty("--mouse-y", `${y}px`)
-        }}
-        style={{
-          background: `
-            radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-              rgba(255, 255, 255, 0.1) 0%, 
-              rgba(255, 255, 255, 0.05) 20%, 
-              transparent 50%),
-            rgba(0, 0, 0, 0.3)
-          `,
-        }}
-      >
-        {/* BALANX-BIO Text - Center */}
-        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-          <div className="text-center">
-            <div 
-              ref={titleRef}
-              className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-widest drop-shadow-2xl mb-6"
-              style={{ 
-                fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
-                background: "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(173,216,230,0.8) 50%, rgba(255,215,0,0.7) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                filter: "drop-shadow(0 0 30px rgba(255,255,255,0.4))"
-              }}
-            >
-              BALANX-BIO
-            </div>
-            <div 
-              ref={subtitleRef}
-              className="text-lg md:text-xl lg:text-2xl text-white font-light tracking-wide drop-shadow-lg max-w-4xl mx-auto px-6 leading-relaxed"
-              style={{ 
-                fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
-                marginLeft: "auto",
-                marginRight: "0",
-                transform: "translateX(2rem)"
-              }}
-            >
-              – Where AI Meet Health, Where You Meet Balance
-            </div>
+      {/* Content - Centered to video background */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center">
+        <div className="text-center px-4 hero-text-positioning">
+          <div 
+            ref={titleRef}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-widest drop-shadow-2xl mb-1 md:mb-6"
+            style={{ 
+              fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif",
+              background: "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(173,216,230,0.8) 50%, rgba(255,215,0,0.7) 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              filter: "drop-shadow(0 0 30px rgba(255,255,255,0.4))"
+            }}
+          >
+            BALANX-BIO
+          </div>
+          <div 
+            ref={subtitleRef}
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-light tracking-wide drop-shadow-lg max-w-4xl mx-auto px-4 md:px-6 leading-relaxed"
+            style={{ 
+              fontFamily: "var(--font-agrandir-wide), Poppins, sans-serif"
+            }}
+          >
+            – Where AI Meet Health, Where You Meet Balance
           </div>
         </div>
-
-        {/* 移除滚动提示 - 根据需求 */}
       </div>
 
       {/* Decorative floating elements */}
@@ -161,7 +147,7 @@ export default function HeroSection() {
 
         {/* SVG decorative elements */}
         <div className="parallax-element absolute top-1/5 right-1/5 opacity-10">
-          <svg width="120" height="120" viewBox="0 0 120 120">
+          <svg width="120" height="120" viewBox="0 0 120 120" style={{ maxWidth: '100%', height: 'auto' }}>
             <path
               className="svg-draw"
               d="M60 20 L80 60 L40 60 Z M60 60 L60 100"
@@ -173,22 +159,21 @@ export default function HeroSection() {
         </div>
 
         <div className="parallax-element absolute bottom-1/5 left-1/5 opacity-10">
-          <svg width="100" height="100" viewBox="0 0 100 100">
+          <svg width="100" height="100" viewBox="0 0 100 100" style={{ maxWidth: '100%', height: 'auto' }}>
             <circle className="svg-draw" cx="50" cy="50" r="40" fill="none" stroke="#d4af37" strokeWidth="2" />
             <circle className="svg-draw" cx="50" cy="50" r="20" fill="none" stroke="#f59e0b" strokeWidth="1" />
           </svg>
         </div>
       </div>
 
-      {/* Content */}
-      <div
-        className="relative z-30 text-center px-6 w-full h-full"
-      >
-        {/* Arc Curve Feature Layout */}
-        <div className="relative w-full h-full">
-          
-        </div>
-      </div>
+      {/* Mobile-specific styling */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .hero-text-positioning {
+            transform: translateY(-20vh) !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

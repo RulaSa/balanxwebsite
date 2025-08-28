@@ -114,6 +114,7 @@ const CoffeeHealthSection = forwardRef<HTMLDivElement, CoffeeHealthSectionProps>
   const titleRef = useRef<HTMLHeadingElement>(null)
   const descriptionRef = useRef<HTMLParagraphElement>(null)
   const cardsRef = useRef<Array<HTMLDivElement | null>>([])
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -128,7 +129,7 @@ const CoffeeHealthSection = forwardRef<HTMLDivElement, CoffeeHealthSectionProps>
           stagger: 0.2,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: ref.current, // Use the passed ref as the trigger
+            trigger: sectionRef.current, // Use the passed ref as the trigger
             start: "top 70%",
             toggleActions: "play none none reverse",
           },
@@ -164,8 +165,9 @@ const CoffeeHealthSection = forwardRef<HTMLDivElement, CoffeeHealthSectionProps>
 
   return (
     <section
-      ref={ref} // Assign the passed ref to the section element
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden ${className}`}
+      ref={sectionRef}
+      data-section="coffee-health"
+      className={`relative min-h-[80vh] flex items-center justify-center overflow-hidden ${className}`}
     >
       {/* Video Background for this section */}
       <video

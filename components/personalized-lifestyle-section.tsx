@@ -63,7 +63,7 @@ export default function PersonalizedLifestyleSection() {
     <section
       ref={sectionRef}
       id="personalized-lifestyle"
-      className="fade-in-section relative w-full h-screen md:h-screen overflow-hidden"
+      className="fade-in-section relative w-full min-h-[80vh] overflow-hidden strong-overlay"
     >
       {/* Video Background */}
       <video
@@ -73,71 +73,93 @@ export default function PersonalizedLifestyleSection() {
         loop
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        style={{ 
+          maxWidth: '100%', 
+          height: 'auto',
+          objectFit: 'cover',
+          objectPosition: 'center center'
+        }}
       >
         <source src="/video/6035530_Woman_People_3840x2160.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark Overlay */}
+      {/* Mobile-specific video adjustment */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          video {
+            object-position: center center;
+            transform: scale(1.3);
+            filter: brightness(0.7);
+          }
+        }
+      `}</style>
+
+      {/* Dark Overlay - stronger on mobile to remove white background effect */}
       <div 
         className="absolute inset-0 z-10"
-        style={{ backgroundColor: "rgba(0,0,0,0.25)" }}
+        style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+      ></div>
+      
+      {/* Additional mobile overlay */}
+      <div 
+        className="absolute inset-0 z-11 md:hidden"
+        style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
       ></div>
 
       {/* Content */}
-      <div className="relative z-20 w-full h-full flex items-center justify-center px-4 md:px-6">
+      <div className="relative z-20 w-full h-full flex items-center justify-center px-4 md:px-6 personalize-content-mobile">
         <div 
           ref={textRef}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-[1200px] mx-auto w-full"
+          className="flex flex-col items-center max-w-[1200px] mx-auto w-full"
         >
-          {/* Left Side - Three Numbered Points */}
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+          {/* Title - Now on top */}
+          <div className="text-center mb-8">
+            <h2 
+              className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white drop-shadow-lg leading-tight"
+              style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
+            >
+              Personalize Your Lifestyle
+            </h2>
+          </div>
+
+          {/* Three Numbered Points - Now below title */}
+          <div className="space-y-3 md:space-y-4 max-w-2xl">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 w-6 h-6 md:w-7 md:h-7 bg-white/40 rounded-full flex items-center justify-center text-white font-bold text-sm">
                 1
               </div>
-              <p className="text-xl leading-relaxed text-white drop-shadow-md">
+              <p className="text-sm md:text-lg leading-relaxed text-white drop-shadow-lg font-medium">
                 Every ingredient is selected through AI analysis of your microbiome, stress patterns, and lifestyle needs.
               </p>
             </div>
             
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 w-6 h-6 md:w-7 md:h-7 bg-white/40 rounded-full flex items-center justify-center text-white font-bold text-sm">
                 2
               </div>
-              <p className="text-xl leading-relaxed text-white drop-shadow-md">
+              <p className="text-sm md:text-lg leading-relaxed text-white drop-shadow-lg font-medium">
                 A precision-engineered wellness solution that goes beyond coffee.
               </p>
             </div>
             
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-white/30 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 w-6 h-6 md:w-7 md:h-7 bg-white/40 rounded-full flex items-center justify-center text-white font-bold text-sm">
                 3
               </div>
-              <p className="text-xl leading-relaxed text-white drop-shadow-md">
+              <p className="text-sm md:text-lg leading-relaxed text-white drop-shadow-lg font-medium">
                 One simple morning ritual to address fatigue, stress, gut health, and mental clarity.
               </p>
             </div>
           </div>
-
-          {/* Right Side - Title */}
-          <div className="text-center lg:text-left">
-            <h2 
-              className="text-4xl md:text-6xl lg:text-7xl font-semibold text-white drop-shadow-lg leading-tight"
-              style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
-            >
-              <span className="text-5xl md:text-7xl lg:text-8xl">Personalize</span><br />
-              <span className="text-4xl md:text-6xl lg:text-7xl mt-20">Your Lifestyle</span>
-            </h2>
-          </div>
         </div>
       </div>
 
-      {/* Join the Waitlist Button - Bottom Right Corner */}
-      <div className="absolute bottom-8 right-8 z-30">
+      {/* Join the Waitlist Button - Moved up by 20% */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 z-30 personalize-button-mobile">
         <Link
           href="/pre-order"
-          className="inline-flex items-center px-8 py-3 bg-white/90 text-black font-medium rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 backdrop-blur-sm text-lg"
+          className="inline-flex items-center px-6 py-2 md:px-8 md:py-3 bg-white/90 text-black font-medium rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 backdrop-blur-sm text-sm md:text-lg"
           style={{ fontFamily: "var(--font-agrandir-wide), Quicksand, sans-serif" }}
         >
           Join the Waitlist
