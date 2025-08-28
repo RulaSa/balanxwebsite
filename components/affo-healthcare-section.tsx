@@ -19,16 +19,16 @@ export default function AffoHealthcareSection() {
         // Fade in animation for the section
         gsap.fromTo(
           sectionRef.current,
-          { opacity: 0, y: 100 },
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
             y: 0,
-            duration: 1.5,
-            ease: "power3.out",
+            duration: 0.6,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top 80%",
-              end: "bottom 20%",
+              start: "top 95%",
+              end: "bottom 10%",
               toggleActions: "play none none reverse",
             },
           }

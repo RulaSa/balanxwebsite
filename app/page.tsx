@@ -33,17 +33,17 @@ export default function Home() {
       gsap.utils.toArray(".fade-in-section").forEach((section: any, index) => {
         gsap.fromTo(
           section,
-          { opacity: 0, y: 100, scale: 0.95 },
+          { opacity: 0, y: 50, scale: 0.98 },
           {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 1.8,
-            ease: "power3.out",
+            duration: 0.8,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 85%",
-              end: "bottom 20%",
+              start: "top 95%",
+              end: "bottom 10%",
               toggleActions: "play none none reverse",
             },
           },

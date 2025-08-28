@@ -18,16 +18,16 @@ export default function AboutAffoHealthcareSection() {
         // Fade in animation for the section
         gsap.fromTo(
           sectionRef.current,
-          { opacity: 0, y: 100 },
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
             y: 0,
-            duration: 1.5,
-            ease: "power3.out",
+            duration: 0.6,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top 80%",
-              end: "bottom 20%",
+              start: "top 95%",
+              end: "bottom 10%",
               toggleActions: "play none none reverse",
             },
           }
@@ -36,16 +36,16 @@ export default function AboutAffoHealthcareSection() {
         // Animate content elements
         gsap.fromTo(
           contentRef.current.children,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 20 },
           {
             opacity: 1,
             y: 0,
-            duration: 1.2,
-            stagger: 0.3,
-            ease: "power3.out",
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: contentRef.current,
-              start: "top 80%",
+              start: "top 92%",
               toggleActions: "play none none reverse",
             },
           }

@@ -34,16 +34,16 @@ export default function ContactSection() {
       // Staggered content animation
       gsap.fromTo(
         ".contact-element",
-        { opacity: 0, y: 60 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
-          stagger: 0.2,
+          duration: 0.6,
+          stagger: 0.1,
           ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 70%",
+            start: "top 90%",
             toggleActions: "play none none reverse",
           },
         },
@@ -93,7 +93,7 @@ export default function ContactSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} data-section="contact" className="relative text-gray-900 overflow-hidden contact-section-mobile" style={{
+    <section ref={sectionRef} data-section="contact" className="relative text-gray-900 overflow-hidden contact-section-mobile contact-section-adjusted" style={{
       background: "radial-gradient(ellipse at 60% 50%, #b78062 0%, #b78062 40%, #a66c4e 100%)",
       marginTop: 0
     }}>
@@ -291,6 +291,15 @@ export default function ContactSection() {
         isOpen={isPartnershipPopupOpen} 
         onClose={() => setIsPartnershipPopupOpen(false)} 
       />
+
+      {/* Mobile-specific styling to move section up by 8.5% */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          section.contact-section-adjusted {
+            margin-top: -25.5vh !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

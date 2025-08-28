@@ -20,16 +20,16 @@ export default function PersonalizedLifestyleSection() {
         // Fade in animation for the section
         gsap.fromTo(
           sectionRef.current,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
             y: 0,
-            duration: 1.2,
-            ease: "power3.out",
+            duration: 0.6,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: "top 80%",
-              end: "bottom 20%",
+              start: "top 90%",
+              end: "bottom 10%",
               toggleActions: "play none none reverse",
             },
           }
@@ -38,17 +38,17 @@ export default function PersonalizedLifestyleSection() {
         // Text entrance animation
         gsap.fromTo(
           textRef.current,
-          { opacity: 0, scale: 0.95, y: 30 },
+          { opacity: 0, scale: 0.98, y: 20 },
           {
             opacity: 1,
             scale: 1,
             y: 0,
-            duration: 1.5,
-            ease: "power3.out",
-            delay: 0.3,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: 0.1,
             scrollTrigger: {
               trigger: textRef.current,
-              start: "top 85%",
+              start: "top 90%",
               toggleActions: "play none none reverse",
             },
           }
@@ -108,7 +108,7 @@ export default function PersonalizedLifestyleSection() {
       ></div>
 
       {/* Content */}
-      <div className="relative z-20 w-full h-full flex items-center justify-center px-4 md:px-6 personalize-content-mobile">
+      <div className="relative z-20 w-full h-full flex items-center justify-center px-4 md:px-6 personalize-content-mobile personalize-content-adjusted">
         <div 
           ref={textRef}
           className="flex flex-col items-center max-w-[1200px] mx-auto w-full"
@@ -123,8 +123,8 @@ export default function PersonalizedLifestyleSection() {
             </h2>
           </div>
 
-          {/* Three Numbered Points - Now below title */}
-          <div className="space-y-3 md:space-y-4 max-w-2xl">
+                      {/* Three Numbered Points - Now below title */}
+            <div className="space-y-4 md:space-y-5 max-w-2xl personalize-points-spacing">
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 w-6 h-6 md:w-7 md:h-7 bg-white/40 rounded-full flex items-center justify-center text-white font-bold text-sm">
                 1
@@ -156,7 +156,7 @@ export default function PersonalizedLifestyleSection() {
       </div>
 
       {/* Join the Waitlist Button - Moved up by 20% */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 z-30 personalize-button-mobile">
+      <div className="absolute left-1/2 transform -translate-x-1/2 z-30 personalize-button-mobile personalize-button-adjusted">
         <Link
           href="/pre-order"
           className="inline-flex items-center px-6 py-2 md:px-8 md:py-3 bg-white/90 text-black font-medium rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 backdrop-blur-sm text-sm md:text-lg"
@@ -165,6 +165,32 @@ export default function PersonalizedLifestyleSection() {
           Join the Waitlist
         </Link>
       </div>
+
+      {/* Mobile-specific styling for better spacing and positioning */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          /* Move all content up by another 5% */
+          .personalize-content-adjusted {
+            transform: translateY(10vh) !important;
+          }
+          
+          /* Better spacing between points */
+          .personalize-points-spacing {
+            margin-bottom: 2rem !important;
+            gap: 1.5rem !important;
+          }
+          
+          .personalize-points-spacing > div {
+            margin-bottom: 1.5rem !important;
+          }
+          
+          /* Position button - moved up with content */
+          .personalize-button-adjusted {
+            bottom: 30vh !important;
+            margin-top: 1rem !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }
