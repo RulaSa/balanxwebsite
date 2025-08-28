@@ -59,13 +59,13 @@ export default function AboutAffoHealthcareSection() {
   return (
     <section
       ref={sectionRef}
-      id="about-affo-healthcare"
+      id="about-affo-healthcare" 
       className="fade-in-section relative w-full overflow-hidden affo-section affo-section-mobile"
       style={{
-        minHeight: "200vh",
+        minHeight: "64vh",
         marginTop: "3rem",
         paddingTop: "2rem",
-        paddingBottom: "100vh"
+        paddingBottom: "32vh"
       }}
     >
       {/* Video Background */}
@@ -183,6 +183,23 @@ export default function AboutAffoHealthcareSection() {
           </div>
         </div>
       </div>
+
+      {/* Mobile-specific styling to cut section height */}
+      <style jsx>{`
+        section#about-affo-healthcare {
+          min-height: 64vh !important;
+          padding-bottom: 32vh !important;
+          height: auto !important;
+        }
+        
+        @media (max-width: 768px) {
+          section#about-affo-healthcare {
+            min-height: 50vh !important;
+            padding-bottom: 20vh !important;
+            height: auto !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

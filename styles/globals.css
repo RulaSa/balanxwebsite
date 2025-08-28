@@ -360,7 +360,7 @@ img, video, svg {
   
   /* AffoHealthcarePage2Section - Spacing */
   .affo-page2-mobile {
-    margin-top: -100vh !important;
+    margin-top: 0 !important;
   }
   
   /* Personalized Lifestyle Section - Content positioning */
@@ -381,6 +381,11 @@ img, video, svg {
   /* Contact Section - Remove gap */
   .contact-section-mobile {
     margin-top: -20vh !important;
+  }
+  
+  /* AFFO Healthcare Section (microscope) - Move up by 100% */
+  .affo-healthcare-mobile {
+    margin-top: -100vh !important;
   }
   
   /* Timeline faster scrolling for mobile */

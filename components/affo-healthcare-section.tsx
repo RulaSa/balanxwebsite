@@ -59,7 +59,7 @@ export default function AffoHealthcareSection() {
     <section
       ref={sectionRef}
       data-section="affo-healthcare"
-      className="fade-in-section relative min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-black to-gray-900"
+      className="fade-in-section relative min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-black to-gray-900 affo-healthcare-mobile"
     >
       {/* Background video */}
       <video
@@ -108,6 +108,15 @@ export default function AffoHealthcareSection() {
         {/* Coffee Health Section */}
         <CoffeeHealthSection ref={coffeeHealthSectionRef} className="mt-12 sm:mt-16" />
       </div>
+
+      {/* Mobile-specific styling */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          section.affo-healthcare-mobile {
+            margin-top: -200vh !important;
+          }
+        }
+      `}</style>
     </section>
   )
 } 
